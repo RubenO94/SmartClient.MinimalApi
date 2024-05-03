@@ -18,7 +18,8 @@ namespace SmartClientMinimalApi.Core.DTO
 
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Password { get; set; }
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.Always)]
         public List<string>? Roles { get; set; }
         public bool isAdmin { get; set; } = false;
 
@@ -56,7 +57,7 @@ namespace SmartClientMinimalApi.Core.DTO
     {
         public static AuthenticationResponseDTO ToAuthenticationResponseDTO(this LogInResult result, IJwtService jwtService)
         {
-            return jwtService.CreateJwtToken(result.SmartUser.ToDTO());
+            return jwtService.CreateJwtToken(result.SmartUser.ToDTO(), result.role.ToList());
         }
     }
 }

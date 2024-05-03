@@ -21,18 +21,21 @@ namespace SmartClientMinimalApi.Core.Services
             _appSettings = appSettings;
         }
 
-        public AuthenticationResponseDTO CreateJwtToken(SmartUserDTO user)
+        public AuthenticationResponseDTO CreateJwtToken(SmartUserDTO user, List<string> roles)
         {
             DateTime expirationTime = DateTime.UtcNow.AddMinutes(_appSettings.JwtExpirationMinutes);
 
-            Claim[] claims = new Claim[]
+            var claims = new List<Claim>()
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.UserID.ToString()),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
                 new Claim(ClaimTypes.NameIdentifier, user.Email?.ToString() ?? string.Empty),
                 new Claim(ClaimTypes.Name, user.UserName?.ToString() ?? string.Empty),
+                new Claim(ClaimTypes.Role, roles.FirstOrDefault(rl => rl == "Admin") ?? "User")
             };
+
+            //claims.AddRange(roles.Select(rl => new Claim(ClaimTypes.Role, rl)).ToList());
 
             // Configurar a chave de segurança e as credenciais de assinatura
             SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSettings.JwtKey));
@@ -53,7 +56,7 @@ namespace SmartClientMinimalApi.Core.Services
             string token = tokenHandler.WriteToken(tokenGenerator);
 
             // Retorna o AuthenticationResponse com o token e as informações do utilizador
-            return new AuthenticationResponseDTO(user, token, expirationTime, null);
+            return new AuthenticationResponseDTO(user, token, expirationTime, roles);
         }
 
         public ClaimsPrincipal? GetPrincipalFromJwtToken(string? token)

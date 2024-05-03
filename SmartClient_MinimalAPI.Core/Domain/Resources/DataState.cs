@@ -32,8 +32,12 @@ namespace SmartClientMinimalApi.Core.Domain.Resources
     /// </summary>
     public class DataSuccess<T> : DataState<T>
     {
-        public DataSuccess(int statusCode, T data) : base(statusCode, true, data, null)
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        [JsonPropertyOrder(1)]
+        public int TotalCount { get; set; }
+        public DataSuccess(int statusCode, T data, int totalCount = default) : base(statusCode, true, data, null)
         {
+            TotalCount = totalCount;
         }
     }
 
@@ -51,22 +55,64 @@ namespace SmartClientMinimalApi.Core.Domain.Resources
     public static class DataStateExtensions
     {
         public static DataFailed<object> CreateDataFailed(Error error) => new DataFailed<object>(500, error);
-        public static DataSuccess<T> ToDataSuccess<T>(this T result, HttpStatusCode statusCode ) => new DataSuccess<T>((int)statusCode, result);
+
+
+        public static DataSuccess<T> ToDataSuccess<T>(this T result, HttpStatusCode statusCode = HttpStatusCode.OK) where T : class
+        {
+            if (result == null)
+                throw new ArgumentNullException(nameof(result));
+
+            var totalCount = 0;
+
+            // Verifica se o objeto result possui a propriedade Count
+            var countProperty = result.GetType().GetProperty("Count");
+            if (countProperty != null && countProperty.PropertyType == typeof(int))
+            {
+                totalCount = (int)countProperty.GetValue(result)!;
+            }
+
+            return new DataSuccess<T>((int)statusCode, result, totalCount);
+        }
+        public static DataSuccess<T> ToDataSuccess<T>(this BasicResult? result, T data, HttpStatusCode statusCode = HttpStatusCode.OK) where T : class
+        {
+            if (result == null)
+                throw new ArgumentNullException(nameof(result));
+
+            var totalCount = 0;
+
+            // Verifica se o objeto result possui a propriedade Count
+            var countProperty = result.GetType().GetProperty("Count");
+            if (countProperty != null && countProperty.PropertyType == typeof(int))
+            {
+                totalCount = (int)countProperty.GetValue(result)!;
+            }
+
+            return new DataSuccess<T>((int)statusCode, data, totalCount);
+        }
+
+        public static DataSuccess<T> ToDataSuccess<T>(this LogInResult? result, T data, HttpStatusCode statusCode = HttpStatusCode.InternalServerError) => new DataSuccess<T>((int)statusCode, data);
+
+
+        public static DataFailed<object> ToDataFailed(this object? result)
+        {
+            var error = new Error("Ocorreu um erro inesperado ao tentar comunicar com o servidor");
+            return new DataFailed<object>(statusCode: 500, error);
+        }
+
+        public static DataFailed<object> ToDataFailed(this BasicResult? result)
+        {
+            var error = new Error("Ocorreu um erro inesperado ao tentar comunicar com o servidor");
+            if (result != null)
+            {
+                error.Message = result.message;
+                error.Details = result.exception;
+            }
+            return new DataFailed<object>(statusCode: 500, error);
+        }
+
         public static DataFailed<object> ToDataFailed(this LogInResult result)
         {
-            var error = new Error(result.message); // Use a mensagem de erro do resultado
-            return new DataFailed<object>(statusCode: 500, error);
-        }
-
-        public static DataFailed<object> ToDataFailed(this BasicResult result)
-        {
-            var error = new Error(result.message); // Use a mensagem de erro do resultado
-            return new DataFailed<object>(statusCode: 500, error);
-        }
-
-        public static DataFailed<object> ToDataFailed(this SaveFormResult result)
-        {
-            var error = new Error(result.message); // Use a mensagem de erro do resultado
+            var error = new Error(result.message);
             return new DataFailed<object>(statusCode: 500, error);
         }
 

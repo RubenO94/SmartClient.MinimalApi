@@ -1,4 +1,5 @@
-﻿using SmartClientMinimalApi.Core.ServicesContracts;
+﻿using Microsoft.AspNetCore.Mvc;
+using SmartClientMinimalApi.Core.ServicesContracts;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography.X509Certificates;
 
@@ -20,6 +21,9 @@ namespace SmartClientMinimalApi.RouteGroups
                 await context.Response.WriteAsync("POST - Hello World");
             });
 
+            group.MapPut("/put", async (HttpContext context) => {
+                return Results.BadRequest("ERRO");
+            });
 
             return group;
         }
