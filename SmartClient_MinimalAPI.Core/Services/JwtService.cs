@@ -1,6 +1,7 @@
 ﻿using Microsoft.IdentityModel.Tokens;
+using SmartClient.MinimalAPI.Core.DTO.Authentications;
+using SmartClient.MinimalAPI.Core.DTO.SmartUsers;
 using SmartClientMinimalApi.Core.Domain.ApplicationContracts;
-using SmartClientMinimalApi.Core.DTO;
 using SmartClientMinimalApi.Core.ServicesContracts;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -21,7 +22,7 @@ namespace SmartClientMinimalApi.Core.Services
             _appSettings = appSettings;
         }
 
-        public AuthenticationResponseDTO CreateJwtToken(SmartUserDTO user, List<string> roles)
+        public AuthenticationResponseDTO CreateJwtToken(SmartUserResponseDTO user, List<string> roles)
         {
             DateTime expirationTime = DateTime.UtcNow.AddMinutes(_appSettings.JwtExpirationMinutes);
 

@@ -2,6 +2,10 @@ using SmartClient.MinimalApi.EndpointFilters;
 using SmartClientMinimalApi.RouteGroups;
 using SmartClientMinimalApi.StartupExtensions;
 using Serilog;
+using SmartClient.MinimalApi.RouteGroups;
+using Asp.Versioning.ApiExplorer;
+using SmartClient.MinimalApi.StartupSettings;
+using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,23 +19,55 @@ builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider services, 
 
 // ConfigureServiceExtension
 builder.Services.ConfigureServices(builder.Configuration);
+builder.Services.ConfigureOptions<ConfigureSwaggerGenOptions>();
 
 var app = builder.Build();
 
-// Route Groups
-app.MapGroup("/authentication").AuthenticationAPI();
-app.MapGroup("/tickets").TicketsAPI().RequireAuthorization().AddEndpointFilter<ValidationFilter>();
-app.MapGroup("/smartUsers").SmartUsersAPI().RequireAuthorization();
+// Api Versions
+var apiVersionSet = app.NewApiVersionSet()
+    .HasApiVersion(new Asp.Versioning.ApiVersion(1))
+    .HasApiVersion(new Asp.Versioning.ApiVersion(2))
+    .ReportApiVersions()
+    .Build();
 
+// Set Api versions
+var versionedGroups = app.MapGroup("api/v{version:apiVersion}").WithApiVersionSet(apiVersionSet);
+
+var apiVersion1 = versionedGroups.MapToApiVersion(1);
+apiVersion1.AddEndpointFilter<ValidationFilter>();
+// Route Groups
+apiVersion1.MapGroup("authentication").AuthenticationAPI();
+apiVersion1.MapGroup("tickets").TicketsAPI().RequireAuthorization();
+apiVersion1.MapGroup("stockMovements").StockMovementsAPI().RequireAuthorization();
+apiVersion1.MapGroup("smartUsers").SmartUsersAPI().RequireAuthorization();
+apiVersion1.MapGroup("schedule").ScheduleAPI();
+
+
+
+app.UseOutputCache();
+app.UseResponseCaching();
 
 app.UseHttpLogging();
 
-app.UseSwagger();
-app.UseSwaggerUI(options =>
+
+if (app.Environment.IsDevelopment())
 {
-    string swaggerJsonBasePath = string.IsNullOrWhiteSpace(options.RoutePrefix) ? "." : "..";
-    options.SwaggerEndpoint($"{swaggerJsonBasePath}/swagger/v1/swagger.json", "1.0");
-});
+    app.UseSwagger();
+    app.UseSwaggerUI(options =>
+    {
+        IReadOnlyList<ApiVersionDescription> descriptions = app.DescribeApiVersions();
+
+        foreach (var description in descriptions)
+        {
+            string url = $"/swagger/{description.GroupName}/swagger.json";
+            string name = description.GroupName.ToUpperInvariant();
+
+            options.SwaggerEndpoint(url, name);
+        }
+
+    });
+}
+
 
 
 app.UseAuthentication();

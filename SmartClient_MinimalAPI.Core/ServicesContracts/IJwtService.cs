@@ -1,4 +1,5 @@
-﻿using SmartClientMinimalApi.Core.DTO;
+﻿using SmartClient.MinimalAPI.Core.DTO.Authentications;
+using SmartClient.MinimalAPI.Core.DTO.SmartUsers;
 using System.Security.Claims;
 
 namespace SmartClientMinimalApi.Core.ServicesContracts
@@ -14,7 +15,7 @@ namespace SmartClientMinimalApi.Core.ServicesContracts
         /// <param name="user">O utilizador para o qual o token é gerado.</param>
         /// /// <param name="roles">A lista de roles do utilizador.</param>
         /// <returns>Um objeto AuthResponseDTO contendo o token JWT gerado e as informações do utilizador.</returns>
-        AuthenticationResponseDTO CreateJwtToken(SmartUserDTO user, List<string> roles);
+        AuthenticationResponseDTO CreateJwtToken(SmartUserResponseDTO user, List<string> roles);
 
         /// <summary>
         /// Obtém o principal (ClaimsPrincipal) a partir de um token JWT.

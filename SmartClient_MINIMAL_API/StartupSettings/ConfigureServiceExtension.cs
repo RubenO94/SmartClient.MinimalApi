@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
+using Asp.Versioning;
+using SmartClient.MinimalApi.StartupSettings;
 
 namespace SmartClientMinimalApi.StartupExtensions
 {
@@ -24,44 +26,9 @@ namespace SmartClientMinimalApi.StartupExtensions
 
             services.AddScoped<ISmartClientWebService, SmartClientWebService>();
 
-            services.AddTransient<ILogger>(p =>
-            {
-                var loggerFactory = p.GetRequiredService<ILoggerFactory>();
-                return loggerFactory.CreateLogger("Serilog");
-            });
-
             #region OpenApi
             services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen(options =>
-            {
-                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-                {
-                    Name = "Authorization",
-                    In = ParameterLocation.Header,
-                    Type = SecuritySchemeType.ApiKey,
-                    Scheme = "Bearer"
-                });
-
-                options.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
-                    {
-                          new OpenApiSecurityScheme
-                          {
-                              Reference = new OpenApiReference
-                              {
-                                  Type = ReferenceType.SecurityScheme,
-                                  Id = "Bearer"
-                              }
-                          },
-                         new string[] {}
-                    }
-                });
-                
-                //options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "api.xml"));
-
-                options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo() { Title = "SmartClient Web API", Version = "1.0" });
-
-            }); //generates OpenAPI specification
+            services.AddSwaggerGen();
             #endregion
 
 
@@ -113,6 +80,26 @@ namespace SmartClientMinimalApi.StartupExtensions
 
             #endregion
 
+            #region API Versioning
+            services.AddApiVersioning(options =>
+            {
+                options.DefaultApiVersion = new ApiVersion(1);
+                options.ApiVersionReader = new UrlSegmentApiVersionReader();
+            })
+                .AddApiExplorer(options =>
+            {
+                options.GroupNameFormat = "'v'V";
+                options.SubstituteApiVersionInUrl = true;
+            });
+            #endregion
+
+            #region Caching
+            services.AddResponseCaching();
+            services.AddOutputCache(options =>
+            {
+                options.AddBasePolicy(builder => builder.Expire(TimeSpan.FromSeconds(60)));
+            });
+            #endregion
 
             return services;
         }

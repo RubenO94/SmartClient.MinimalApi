@@ -422,10 +422,10 @@ namespace SmartClientWS
     public partial class DeleteResult : SmartClientWS.BasicResult
     {
         
-        private SmartClientWS.DeleteDependency[] DependenciesField;
+        private System.Collections.Generic.List<SmartClientWS.DeleteDependency> DependenciesField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.DeleteDependency[] Dependencies
+        public System.Collections.Generic.List<SmartClientWS.DeleteDependency> Dependencies
         {
             get
             {
@@ -671,7 +671,7 @@ namespace SmartClientWS
         
         private SmartClientWS.RepairQuote ApprovedQuoteField;
         
-        private SmartClientWS.SmartUser[] AssignedField;
+        private System.Collections.Generic.List<SmartClientWS.SmartUser> AssignedField;
         
         private SmartClientWS.Client ClientField;
         
@@ -687,7 +687,7 @@ namespace SmartClientWS
         
         private bool FinishedField;
         
-        private SmartClientWS.RepairItem[] ItemsField;
+        private System.Collections.Generic.List<SmartClientWS.RepairItem> ItemsField;
         
         private int LastRepairQuoteIDField;
         
@@ -725,7 +725,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.SmartUser[] Assigned
+        public System.Collections.Generic.List<SmartClientWS.SmartUser> Assigned
         {
             get
             {
@@ -829,7 +829,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.RepairItem[] Items
+        public System.Collections.Generic.List<SmartClientWS.RepairItem> Items
         {
             get
             {
@@ -1028,10 +1028,10 @@ namespace SmartClientWS
     public partial class TicketRepairItemsResult : SmartClientWS.BasicResult
     {
         
-        private SmartClientWS.TicketItemInfo[] ItemsField;
+        private System.Collections.Generic.List<SmartClientWS.TicketItemInfo> ItemsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.TicketItemInfo[] Items
+        public System.Collections.Generic.List<SmartClientWS.TicketItemInfo> Items
         {
             get
             {
@@ -1179,7 +1179,7 @@ namespace SmartClientWS
         
         private int CountField;
         
-        private SmartClientWS.RepairQuote[] QuotesField;
+        private System.Collections.Generic.List<SmartClientWS.RepairQuote> QuotesField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Count
@@ -1195,7 +1195,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.RepairQuote[] Quotes
+        public System.Collections.Generic.List<SmartClientWS.RepairQuote> Quotes
         {
             get
             {
@@ -1238,7 +1238,7 @@ namespace SmartClientWS
         
         private int CountField;
         
-        private SmartClientWS.Repair[] RepairsField;
+        private System.Collections.Generic.List<SmartClientWS.Repair> RepairsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Count
@@ -1254,7 +1254,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Repair[] Repairs
+        public System.Collections.Generic.List<SmartClientWS.Repair> Repairs
         {
             get
             {
@@ -1432,7 +1432,7 @@ namespace SmartClientWS
         
         private int CountField;
         
-        private SmartClientWS.LoginLog[] DataField;
+        private System.Collections.Generic.List<SmartClientWS.LoginLog> DataField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Count
@@ -1448,7 +1448,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.LoginLog[] Data
+        public System.Collections.Generic.List<SmartClientWS.LoginLog> Data
         {
             get
             {
@@ -1469,7 +1469,7 @@ namespace SmartClientWS
         
         private int CountField;
         
-        private SmartClientWS.Contract[] DataField;
+        private System.Collections.Generic.List<SmartClientWS.Contract> DataField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Count
@@ -1485,7 +1485,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Contract[] Data
+        public System.Collections.Generic.List<SmartClientWS.Contract> Data
         {
             get
             {
@@ -1646,7 +1646,7 @@ namespace SmartClientWS
         
         private int CountField;
         
-        private SmartClientWS.RegisterViewModel[] DataField;
+        private System.Collections.Generic.List<SmartClientWS.RegisterViewModel> DataField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Count
@@ -1662,7 +1662,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.RegisterViewModel[] Data
+        public System.Collections.Generic.List<SmartClientWS.RegisterViewModel> Data
         {
             get
             {
@@ -1683,7 +1683,7 @@ namespace SmartClientWS
         
         private int CountField;
         
-        private SmartClientWS.Ticket[] TicketsField;
+        private System.Collections.Generic.List<SmartClientWS.Ticket> TicketsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Count
@@ -1699,7 +1699,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Ticket[] Tickets
+        public System.Collections.Generic.List<SmartClientWS.Ticket> Tickets
         {
             get
             {
@@ -1761,9 +1761,9 @@ namespace SmartClientWS
         
         private string NameField;
         
-        private SmartClientWS.UserRole[] RolesField;
+        private System.Collections.Generic.List<SmartClientWS.UserRole> RolesField;
         
-        private int[] UserIDsField;
+        private System.Collections.Generic.List<int> UserIDsField;
         
         private int UserProfileIDField;
         
@@ -1807,7 +1807,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.UserRole[] Roles
+        public System.Collections.Generic.List<SmartClientWS.UserRole> Roles
         {
             get
             {
@@ -1820,7 +1820,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int[] UserIDs
+        public System.Collections.Generic.List<int> UserIDs
         {
             get
             {
@@ -1854,7 +1854,7 @@ namespace SmartClientWS
         
         private bool CheckedField;
         
-        private SmartClientWS.UserRole[] ChildrenField;
+        private System.Collections.Generic.List<SmartClientWS.UserRole> ChildrenField;
         
         private bool HasChildrenField;
         
@@ -1876,7 +1876,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.UserRole[] Children
+        public System.Collections.Generic.List<SmartClientWS.UserRole> Children
         {
             get
             {
@@ -2004,7 +2004,7 @@ namespace SmartClientWS
         
         private string CommentsField;
         
-        private SmartClientWS.Contract[] ContractsField;
+        private System.Collections.Generic.List<SmartClientWS.Contract> ContractsField;
         
         private int ContractsCountField;
         
@@ -2026,11 +2026,11 @@ namespace SmartClientWS
         
         private string NameField;
         
-        private SmartClientWS.ClientPendingPayment[] PendingPaymentsField;
+        private System.Collections.Generic.List<SmartClientWS.ClientPendingPayment> PendingPaymentsField;
         
         private System.Nullable<System.DateTime> PendingPaymentsTimestampField;
         
-        private SmartClientWS.Person[] PersonsField;
+        private System.Collections.Generic.List<SmartClientWS.Person> PersonsField;
         
         private int ReportCountField;
         
@@ -2166,7 +2166,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Contract[] Contracts
+        public System.Collections.Generic.List<SmartClientWS.Contract> Contracts
         {
             get
             {
@@ -2309,7 +2309,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.ClientPendingPayment[] PendingPayments
+        public System.Collections.Generic.List<SmartClientWS.ClientPendingPayment> PendingPayments
         {
             get
             {
@@ -2335,7 +2335,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Person[] Persons
+        public System.Collections.Generic.List<SmartClientWS.Person> Persons
         {
             get
             {
@@ -2460,15 +2460,15 @@ namespace SmartClientWS
         
         private string AbbrevField;
         
-        private SmartClientWS.ItemAttachment[] AttachmentsField;
+        private System.Collections.Generic.List<SmartClientWS.ItemAttachment> AttachmentsField;
         
         private float BasePriceField;
         
-        private string[] CaracteristicsField;
+        private System.Collections.Generic.List<string> CaracteristicsField;
         
         private string CaracteristicsStringField;
         
-        private SmartClientWS.LimitType[] ContractLimitTriggersField;
+        private System.Collections.Generic.List<SmartClientWS.LimitType> ContractLimitTriggersField;
         
         private string DescriptionField;
         
@@ -2518,7 +2518,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.ItemAttachment[] Attachments
+        public System.Collections.Generic.List<SmartClientWS.ItemAttachment> Attachments
         {
             get
             {
@@ -2544,7 +2544,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] Caracteristics
+        public System.Collections.Generic.List<string> Caracteristics
         {
             get
             {
@@ -2570,7 +2570,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.LimitType[] ContractLimitTriggers
+        public System.Collections.Generic.List<SmartClientWS.LimitType> ContractLimitTriggers
         {
             get
             {
@@ -2930,7 +2930,7 @@ namespace SmartClientWS
         
         private int ClientIDField;
         
-        private SmartClientWS.Contract[] ContractsField;
+        private System.Collections.Generic.List<SmartClientWS.Contract> ContractsField;
         
         private string NIFField;
         
@@ -2938,7 +2938,7 @@ namespace SmartClientWS
         
         private int PartnerClientIDField;
         
-        private SmartClientWS.Person[] PersonsField;
+        private System.Collections.Generic.List<SmartClientWS.Person> PersonsField;
         
         private int ReportCountField;
         
@@ -3003,7 +3003,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Contract[] Contracts
+        public System.Collections.Generic.List<SmartClientWS.Contract> Contracts
         {
             get
             {
@@ -3055,7 +3055,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Person[] Persons
+        public System.Collections.Generic.List<SmartClientWS.Person> Persons
         {
             get
             {
@@ -3520,12 +3520,12 @@ namespace SmartClientWS
     public partial class ClientStats : object
     {
         
-        private SmartClientWS.ContractStats[] ContractField;
+        private System.Collections.Generic.List<SmartClientWS.ContractStats> ContractField;
         
-        private SmartClientWS.TicketStats[] TicketField;
+        private System.Collections.Generic.List<SmartClientWS.TicketStats> TicketField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.ContractStats[] Contract
+        public System.Collections.Generic.List<SmartClientWS.ContractStats> Contract
         {
             get
             {
@@ -3538,7 +3538,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.TicketStats[] Ticket
+        public System.Collections.Generic.List<SmartClientWS.TicketStats> Ticket
         {
             get
             {
@@ -3571,15 +3571,15 @@ namespace SmartClientWS
         
         private System.Nullable<System.DateTime> EndField;
         
-        private SmartClientWS.ContractInvoice[] InvoicesField;
+        private System.Collections.Generic.List<SmartClientWS.ContractInvoice> InvoicesField;
         
-        private SmartClientWS.ContractLimit[] LimitsField;
+        private System.Collections.Generic.List<SmartClientWS.ContractLimit> LimitsField;
         
         private string NotesField;
         
         private int NoticeField;
         
-        private string[] NotifyField;
+        private System.Collections.Generic.List<string> NotifyField;
         
         private SmartClientWS.PartnerClient PartnerClientField;
         
@@ -3689,7 +3689,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.ContractInvoice[] Invoices
+        public System.Collections.Generic.List<SmartClientWS.ContractInvoice> Invoices
         {
             get
             {
@@ -3702,7 +3702,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.ContractLimit[] Limits
+        public System.Collections.Generic.List<SmartClientWS.ContractLimit> Limits
         {
             get
             {
@@ -3741,7 +3741,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] Notify
+        public System.Collections.Generic.List<string> Notify
         {
             get
             {
@@ -5163,7 +5163,7 @@ namespace SmartClientWS
         
         private decimal IVAField;
         
-        private SmartClientWS.Product[] ItemsField;
+        private System.Collections.Generic.List<SmartClientWS.Product> ItemsField;
         
         private string NotifyEmailsField;
         
@@ -5181,7 +5181,7 @@ namespace SmartClientWS
         
         private int RepairQuoteIDField;
         
-        private SmartClientWS.SmartUser[] RepairResponsiblesField;
+        private System.Collections.Generic.List<SmartClientWS.SmartUser> RepairResponsiblesField;
         
         private SmartClientWS.RepairQuoteStatus StatusField;
         
@@ -5335,7 +5335,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Product[] Items
+        public System.Collections.Generic.List<SmartClientWS.Product> Items
         {
             get
             {
@@ -5452,7 +5452,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.SmartUser[] RepairResponsibles
+        public System.Collections.Generic.List<SmartClientWS.SmartUser> RepairResponsibles
         {
             get
             {
@@ -5523,11 +5523,11 @@ namespace SmartClientWS
     public partial class Ticket : object
     {
         
-        private SmartClientWS.SmartUser[] AssignedField;
+        private System.Collections.Generic.List<SmartClientWS.SmartUser> AssignedField;
         
         private string AssignedStrField;
         
-        private SmartClientWS.Attachment[] AttachmentsField;
+        private System.Collections.Generic.List<SmartClientWS.Attachment> AttachmentsField;
         
         private bool BilledField;
         
@@ -5551,11 +5551,11 @@ namespace SmartClientWS
         
         private string HoursSpentField;
         
-        private SmartClientWS.Attachment[] InternalAttachmentsField;
+        private System.Collections.Generic.List<SmartClientWS.Attachment> InternalAttachmentsField;
         
         private int InternalResponseCountField;
         
-        private SmartClientWS.Attachment[] InvoiceAttachmentsField;
+        private System.Collections.Generic.List<SmartClientWS.Attachment> InvoiceAttachmentsField;
         
         private bool NotSeenFlagField;
         
@@ -5565,7 +5565,7 @@ namespace SmartClientWS
         
         private int NotSeenUserField;
         
-        private SmartClientWS.TicketNote[] NotesField;
+        private System.Collections.Generic.List<SmartClientWS.TicketNote> NotesField;
         
         private SmartClientWS.ActionOrigin OriginField;
         
@@ -5581,7 +5581,7 @@ namespace SmartClientWS
         
         private int RepairQuoteDaysPastField;
         
-        private SmartClientWS.TicketResponse[] ResponsesField;
+        private System.Collections.Generic.List<SmartClientWS.TicketResponse> ResponsesField;
         
         private string StateField;
         
@@ -5612,7 +5612,7 @@ namespace SmartClientWS
         private bool UnknownField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.SmartUser[] Assigned
+        public System.Collections.Generic.List<SmartClientWS.SmartUser> Assigned
         {
             get
             {
@@ -5638,7 +5638,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Attachment[] Attachments
+        public System.Collections.Generic.List<SmartClientWS.Attachment> Attachments
         {
             get
             {
@@ -5794,7 +5794,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Attachment[] InternalAttachments
+        public System.Collections.Generic.List<SmartClientWS.Attachment> InternalAttachments
         {
             get
             {
@@ -5820,7 +5820,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Attachment[] InvoiceAttachments
+        public System.Collections.Generic.List<SmartClientWS.Attachment> InvoiceAttachments
         {
             get
             {
@@ -5885,7 +5885,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.TicketNote[] Notes
+        public System.Collections.Generic.List<SmartClientWS.TicketNote> Notes
         {
             get
             {
@@ -5989,7 +5989,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.TicketResponse[] Responses
+        public System.Collections.Generic.List<SmartClientWS.TicketResponse> Responses
         {
             get
             {
@@ -6194,7 +6194,7 @@ namespace SmartClientWS
         
         private SmartClientWS.Item ItemReferenceField;
         
-        private SmartClientWS.RepairItemLine[] SerialNumbersField;
+        private System.Collections.Generic.List<SmartClientWS.RepairItemLine> SerialNumbersField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int ItemID
@@ -6223,7 +6223,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.RepairItemLine[] SerialNumbers
+        public System.Collections.Generic.List<SmartClientWS.RepairItemLine> SerialNumbers
         {
             get
             {
@@ -6870,7 +6870,7 @@ namespace SmartClientWS
         
         private string TelerikIconField;
         
-        private int[] TicketDefaultAssignedField;
+        private System.Collections.Generic.List<int> TicketDefaultAssignedField;
         
         private string TicketTypeFromEmailField;
         
@@ -7098,7 +7098,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int[] TicketDefaultAssigned
+        public System.Collections.Generic.List<int> TicketDefaultAssigned
         {
             get
             {
@@ -7255,7 +7255,7 @@ namespace SmartClientWS
     public partial class TicketResponse : object
     {
         
-        private SmartClientWS.Attachment[] AttachmentsField;
+        private System.Collections.Generic.List<SmartClientWS.Attachment> AttachmentsField;
         
         private string ContentField;
         
@@ -7288,7 +7288,7 @@ namespace SmartClientWS
         private int UserIDField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Attachment[] Attachments
+        public System.Collections.Generic.List<SmartClientWS.Attachment> Attachments
         {
             get
             {
@@ -7506,7 +7506,7 @@ namespace SmartClientWS
         
         private float QuantityField;
         
-        private SmartClientWS.TicketRepairItem[] SerialNumbersField;
+        private System.Collections.Generic.List<SmartClientWS.TicketRepairItem> SerialNumbersField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public SmartClientWS.Item Item
@@ -7535,7 +7535,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.TicketRepairItem[] SerialNumbers
+        public System.Collections.Generic.List<SmartClientWS.TicketRepairItem> SerialNumbers
         {
             get
             {
@@ -7799,7 +7799,7 @@ namespace SmartClientWS
         
         private bool AskForContractFlagField;
         
-        private SmartClientWS.Attachment[] AttachmentsField;
+        private System.Collections.Generic.List<SmartClientWS.Attachment> AttachmentsField;
         
         private bool CanEditField;
         
@@ -7821,7 +7821,7 @@ namespace SmartClientWS
         
         private System.Nullable<System.DateTime> DateField;
         
-        private SmartClientWS.ServiceDescription[] DescriptionsField;
+        private System.Collections.Generic.List<SmartClientWS.ServiceDescription> DescriptionsField;
         
         private string EmailField;
         
@@ -7843,7 +7843,7 @@ namespace SmartClientWS
         
         private bool MaintenanceContractField;
         
-        private SmartClientWS.RegisterViewModel[] MergedField;
+        private System.Collections.Generic.List<SmartClientWS.RegisterViewModel> MergedField;
         
         private bool NewSignatureRequiredField;
         
@@ -7857,7 +7857,7 @@ namespace SmartClientWS
         
         private bool PresentField;
         
-        private SmartClientWS.Product[] ProductsField;
+        private System.Collections.Generic.List<SmartClientWS.Product> ProductsField;
         
         private bool SendEmailField;
         
@@ -7927,7 +7927,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Attachment[] Attachments
+        public System.Collections.Generic.List<SmartClientWS.Attachment> Attachments
         {
             get
             {
@@ -8070,7 +8070,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.ServiceDescription[] Descriptions
+        public System.Collections.Generic.List<SmartClientWS.ServiceDescription> Descriptions
         {
             get
             {
@@ -8213,7 +8213,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.RegisterViewModel[] Merged
+        public System.Collections.Generic.List<SmartClientWS.RegisterViewModel> Merged
         {
             get
             {
@@ -8304,7 +8304,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Product[] Products
+        public System.Collections.Generic.List<SmartClientWS.Product> Products
         {
             get
             {
@@ -8788,7 +8788,7 @@ namespace SmartClientWS
         
         private System.Nullable<System.DateTime> DataLicencaField;
         
-        private SmartClientWS.EntityLicense[] EntityLicensesField;
+        private System.Collections.Generic.List<SmartClientWS.EntityLicense> EntityLicensesField;
         
         private int IDLicencaSoftwareField;
         
@@ -8804,7 +8804,7 @@ namespace SmartClientWS
         
         private int LimiteUtilizadoresField;
         
-        private SmartClientWS.LicenseModule[] ModulesField;
+        private System.Collections.Generic.List<SmartClientWS.LicenseModule> ModulesField;
         
         private string ModulesHelpStringField;
         
@@ -8984,7 +8984,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.EntityLicense[] EntityLicenses
+        public System.Collections.Generic.List<SmartClientWS.EntityLicense> EntityLicenses
         {
             get
             {
@@ -9088,7 +9088,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.LicenseModule[] Modules
+        public System.Collections.Generic.List<SmartClientWS.LicenseModule> Modules
         {
             get
             {
@@ -9676,7 +9676,7 @@ namespace SmartClientWS
         
         private int LimiteFuncionariosField;
         
-        private SmartClientWS.LicenseModule[] ModulesField;
+        private System.Collections.Generic.List<SmartClientWS.LicenseModule> ModulesField;
         
         private bool Modulo1Field;
         
@@ -9786,7 +9786,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.LicenseModule[] Modules
+        public System.Collections.Generic.List<SmartClientWS.LicenseModule> Modules
         {
             get
             {
@@ -10541,7 +10541,7 @@ namespace SmartClientWS
     public partial class RmaRequest : object
     {
         
-        private SmartClientWS.Attachment[] AttachmentsField;
+        private System.Collections.Generic.List<SmartClientWS.Attachment> AttachmentsField;
         
         private SmartClientWS.Client ClientField;
         
@@ -10557,7 +10557,7 @@ namespace SmartClientWS
         
         private long RmaRequestIDField;
         
-        private SmartClientWS.SerialNumberInfoResult[] SerialNumbersField;
+        private System.Collections.Generic.List<SmartClientWS.SerialNumberInfoResult> SerialNumbersField;
         
         private SmartClientWS.SmartUser SmartUserField;
         
@@ -10566,7 +10566,7 @@ namespace SmartClientWS
         private SmartClientWS.Ticket TicketField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Attachment[] Attachments
+        public System.Collections.Generic.List<SmartClientWS.Attachment> Attachments
         {
             get
             {
@@ -10670,7 +10670,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.SerialNumberInfoResult[] SerialNumbers
+        public System.Collections.Generic.List<SmartClientWS.SerialNumberInfoResult> SerialNumbers
         {
             get
             {
@@ -10819,7 +10819,7 @@ namespace SmartClientWS
     public partial class GenericBasicResultOfArrayOfApprovald26Z9wzW : object
     {
         
-        private SmartClientWS.Approval[] ValueField;
+        private System.Collections.Generic.List<SmartClientWS.Approval> ValueField;
         
         private string exceptionField;
         
@@ -10828,7 +10828,7 @@ namespace SmartClientWS
         private bool successField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Approval[] Value
+        public System.Collections.Generic.List<SmartClientWS.Approval> Value
         {
             get
             {
@@ -11126,7 +11126,7 @@ namespace SmartClientWS
     public partial class GenericBasicResultOfArrayOfRmaRequestd26Z9wzW : object
     {
         
-        private SmartClientWS.RmaRequest[] ValueField;
+        private System.Collections.Generic.List<SmartClientWS.RmaRequest> ValueField;
         
         private string exceptionField;
         
@@ -11135,7 +11135,7 @@ namespace SmartClientWS
         private bool successField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.RmaRequest[] Value
+        public System.Collections.Generic.List<SmartClientWS.RmaRequest> Value
         {
             get
             {
@@ -11201,7 +11201,7 @@ namespace SmartClientWS
     public partial class GenericBasicResultOfArrayOfstringuHEDJ7Dj : object
     {
         
-        private string[] ValueField;
+        private System.Collections.Generic.List<string> ValueField;
         
         private string exceptionField;
         
@@ -11210,7 +11210,7 @@ namespace SmartClientWS
         private bool successField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] Value
+        public System.Collections.Generic.List<string> Value
         {
             get
             {
@@ -11276,7 +11276,7 @@ namespace SmartClientWS
     public partial class GenericBasicResultOfArrayOfServiceUsaged26Z9wzW : object
     {
         
-        private SmartClientWS.ServiceUsage[] ValueField;
+        private System.Collections.Generic.List<SmartClientWS.ServiceUsage> ValueField;
         
         private string exceptionField;
         
@@ -11285,7 +11285,7 @@ namespace SmartClientWS
         private bool successField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.ServiceUsage[] Value
+        public System.Collections.Generic.List<SmartClientWS.ServiceUsage> Value
         {
             get
             {
@@ -11463,7 +11463,7 @@ namespace SmartClientWS
     public partial class GenericBasicResultOfArrayOfTicketsPerUser7UZ5wvo3 : object
     {
         
-        private SmartClientWS.TicketsPerUser[] ValueField;
+        private System.Collections.Generic.List<SmartClientWS.TicketsPerUser> ValueField;
         
         private string exceptionField;
         
@@ -11472,7 +11472,7 @@ namespace SmartClientWS
         private bool successField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.TicketsPerUser[] Value
+        public System.Collections.Generic.List<SmartClientWS.TicketsPerUser> Value
         {
             get
             {
@@ -11605,7 +11605,7 @@ namespace SmartClientWS
     public partial class GenericBasicResultOfArrayOfdateTimeuHEDJ7Dj : object
     {
         
-        private System.DateTime[] ValueField;
+        private System.Collections.Generic.List<System.DateTime> ValueField;
         
         private string exceptionField;
         
@@ -11614,7 +11614,7 @@ namespace SmartClientWS
         private bool successField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime[] Value
+        public System.Collections.Generic.List<System.DateTime> Value
         {
             get
             {
@@ -11680,7 +11680,7 @@ namespace SmartClientWS
     public partial class GenericBasicResultOfArrayOfResponseCreation7UZ5wvo3 : object
     {
         
-        private SmartClientWS.ResponseCreation[] ValueField;
+        private System.Collections.Generic.List<SmartClientWS.ResponseCreation> ValueField;
         
         private string exceptionField;
         
@@ -11689,7 +11689,7 @@ namespace SmartClientWS
         private bool successField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.ResponseCreation[] Value
+        public System.Collections.Generic.List<SmartClientWS.ResponseCreation> Value
         {
             get
             {
@@ -11949,7 +11949,7 @@ namespace SmartClientWS
     public partial class GenericBasicResultOfArrayOfUserTicket7UZ5wvo3 : object
     {
         
-        private SmartClientWS.UserTicket[] ValueField;
+        private System.Collections.Generic.List<SmartClientWS.UserTicket> ValueField;
         
         private string exceptionField;
         
@@ -11958,7 +11958,7 @@ namespace SmartClientWS
         private bool successField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.UserTicket[] Value
+        public System.Collections.Generic.List<SmartClientWS.UserTicket> Value
         {
             get
             {
@@ -12411,7 +12411,7 @@ namespace SmartClientWS
     public partial class GenericBasicResultOfArrayOfTicketTimelineItemz_Po_PyaTV : object
     {
         
-        private SmartClientWS.TicketTimelineItem[] ValueField;
+        private System.Collections.Generic.List<SmartClientWS.TicketTimelineItem> ValueField;
         
         private string exceptionField;
         
@@ -12420,7 +12420,7 @@ namespace SmartClientWS
         private bool successField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.TicketTimelineItem[] Value
+        public System.Collections.Generic.List<SmartClientWS.TicketTimelineItem> Value
         {
             get
             {
@@ -12553,7 +12553,7 @@ namespace SmartClientWS
     public partial class GenericBasicResultOfArrayOfSerialNumberHistoryEql_Pusgr : object
     {
         
-        private SmartClientWS.SerialNumberHistory[] ValueField;
+        private System.Collections.Generic.List<SmartClientWS.SerialNumberHistory> ValueField;
         
         private string exceptionField;
         
@@ -12562,7 +12562,7 @@ namespace SmartClientWS
         private bool successField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.SerialNumberHistory[] Value
+        public System.Collections.Generic.List<SmartClientWS.SerialNumberHistory> Value
         {
             get
             {
@@ -13087,12 +13087,12 @@ namespace SmartClientWS
     public partial class QuickAttachmentsResult : object
     {
         
-        private SmartClientWS.Attachment[] AttachmentsField;
+        private System.Collections.Generic.List<SmartClientWS.Attachment> AttachmentsField;
         
         private int CountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Attachment[] Attachments
+        public System.Collections.Generic.List<SmartClientWS.Attachment> Attachments
         {
             get
             {
@@ -13176,7 +13176,7 @@ namespace SmartClientWS
     public partial class FilterRequest : object
     {
         
-        private SmartClientWS.aggregate[] AggregatesField;
+        private System.Collections.Generic.List<SmartClientWS.aggregate> AggregatesField;
         
         private SmartClientWS.Filter FilterField;
         
@@ -13186,12 +13186,12 @@ namespace SmartClientWS
         
         private int SkipField;
         
-        private SmartClientWS.Sort[] SortField;
+        private System.Collections.Generic.List<SmartClientWS.Sort> SortField;
         
         private int TakeField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.aggregate[] Aggregates
+        public System.Collections.Generic.List<SmartClientWS.aggregate> Aggregates
         {
             get
             {
@@ -13256,7 +13256,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Sort[] Sort
+        public System.Collections.Generic.List<SmartClientWS.Sort> Sort
         {
             get
             {
@@ -13287,92 +13287,92 @@ namespace SmartClientWS
     [System.Runtime.Serialization.DataContractAttribute(Name="Filter", Namespace="http://schemas.datacontract.org/2004/07/Kendo.DynamicLinq")]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.NewTicketResponseData))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.BasicResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.StockListing[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.StockListing>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.StockListing))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Attachment[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.Attachment>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Attachment))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.FileType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SmartClientWindow))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ActionOrigin))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.IntBasicResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SoftwareLicense[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.SoftwareLicense>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SoftwareLicense))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Client))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Address))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ClientType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Contract[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.Contract>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Contract))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ContractInvoice[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ContractInvoice>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ContractInvoice))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ContractLimit[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ContractLimit>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ContractLimit))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.LimitType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ContractType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ContractTypeCategory))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.PartnerClient))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Person[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.Person>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Person))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ClientStats))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ContractStats[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ContractStats>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ContractStats))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketStats[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.TicketStats>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketStats))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ContractRenewal))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SmartUser))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.UserProfile))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.UserRole[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.UserRole>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.UserRole))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ClientPendingPayment[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ClientPendingPayment>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ClientPendingPayment))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.EntityLicense[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.EntityLicense>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.EntityLicense))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.LicenseModule[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.LicenseModule>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.LicenseModule))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.HardwareLicense[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.HardwareLicense>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.HardwareLicense))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Item))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemAttachment[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ItemAttachment>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemAttachment))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.LimitType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SoftwareItem[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.LimitType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.SoftwareItem>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SoftwareItem))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SoftwareLicenseActivation[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.SoftwareLicenseActivation>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SoftwareLicenseActivation))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.DeleteResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.DeleteDependency[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.DeleteDependency>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.DeleteDependency))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RmaRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SerialNumberInfoResult[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.SerialNumberInfoResult>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SerialNumberInfoResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.StockZone))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Supplier))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RmaStatus))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Ticket))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SmartUser[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.SmartUser>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.UserFavorite))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketNote[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.TicketNote>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketNote))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Priority))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketResponse[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.TicketResponse>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.LongBasicResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.GenericBasicResultOflong))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ApprovalResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.GenericBasicResultOfArrayOfApprovald26Z9wzW))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Approval[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.Approval>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Approval))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RmaRequestsResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.GenericBasicResultOfArrayOfRmaRequestd26Z9wzW))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RmaRequest[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.RmaRequest>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.StringListBasicResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.GenericBasicResultOfArrayOfstringuHEDJ7Dj))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Product[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.Product>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Product))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ProductType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ServiceUsageResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.GenericBasicResultOfArrayOfServiceUsaged26Z9wzW))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ServiceUsage[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ServiceUsage>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ServiceUsage))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.GenericBasicResultOfArrayOfTicketsPerUser7UZ5wvo3))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.GenericBasicResultOfArrayOfdateTimeuHEDJ7Dj))]
@@ -13384,176 +13384,176 @@ namespace SmartClientWS
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.GenericBasicResultOfArrayOfTicketTimelineItemz_Po_PyaTV))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.GenericBasicResultOfArrayOfSerialNumberHistoryEql_Pusgr))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.QuickAttachmentsResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.UserProfile[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SmartUserTicketStats[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.UserProfile>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.SmartUserTicketStats>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SmartUserTicketStats))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Ticket[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.Ticket>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.StockMovementsResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.GenericBasicResultOfArrayOfStockMovementd26Z9wzW))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.StockMovement[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.StockMovement>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.StockMovement))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.StockMovementLine[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.StockMovementLine>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.StockMovementLine))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TotpUrlBasicResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketRepairItemsResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketItemInfo[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.TicketItemInfo>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketItemInfo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketRepairItem[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.TicketRepairItem>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketRepairItem))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.CustomFileInfo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.GetQuotesResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RepairQuote[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.RepairQuote>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RepairQuote))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Repair))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RepairItem[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.RepairItem>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RepairItem))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RepairItemLine[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.RepairItemLine>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RepairItemLine))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RepairQuoteStatus))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RepairQuoteResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.GetRepairsResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Repair[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RepairAttachment[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.Repair>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.RepairAttachment>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RepairAttachment))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RepairForm))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RepairForm[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.RepairForm>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SmartClientFileInfo))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.StringBasicResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.GenericBasicResultOfstring))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.LoginLogsResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.LoginLog[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.LoginLog>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.LoginLog))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ChangesLog[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ChangesLog>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ChangesLog))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SupplierPerson[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.SupplierPerson>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SupplierPerson))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.BankDetail[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.BankDetail>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.BankDetail))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SupplierItem[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.SupplierItem>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SupplierItem))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemSupplier[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ItemSupplier>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemSupplier))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Meeting[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.Meeting>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Meeting))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.MeetingAttendee[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.MeetingAttendee>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.MeetingAttendee))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.MeetingNotificationType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SupportStats))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.PartnerClientResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.PartnerClient[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SmartClientWindow[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.FileType[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.PartnerClient>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.SmartClientWindow>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.FileType>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ContractsResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.BasicTicket[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.BasicTicket>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.BasicTicket))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RegisterViewModel))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ServiceDescription[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ServiceDescription>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ServiceDescription))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.RegisterViewModel[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.IVARate[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.RegisterViewModel>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.IVARate>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.IVARate))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketTask))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketTask[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ContractTypeCategory[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.TicketTask>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ContractTypeCategory>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketResponseTemplatesResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketResponseTemplate[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.TicketResponseTemplate>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketResponseTemplate))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemSubTypeGrid[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ItemSubTypeGrid>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemSubTypeGrid))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemSubType[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ItemSubType>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemSubType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ClientType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketDeleteReason[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ClientType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.TicketDeleteReason>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketDeleteReason))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.EmailBlacklist[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.EmailBlacklist>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.EmailBlacklist))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ReportDeleteReason[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ReportDeleteReason>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ReportDeleteReason))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.CheckInResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.StockZone[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemStockByZone[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.StockZone>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ItemStockByZone>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemStockByZone))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemStockMovement[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ItemStockMovement>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemStockMovement))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SerialNumberInfo[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.SerialNumberInfo>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SerialNumberInfo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Supplier[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.Supplier>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SerialNumberInfoWithRepairResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.StockMovementResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemImage[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ItemImage>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemImage))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.LogInResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.CaptchaResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.NewFormResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SaveFormResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ClientsResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Client[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.Client>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SimpleClientsResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SimpleClient[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.SimpleClient>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SimpleClient))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ServiceFormsResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ProductType[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ProductType>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketsResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.NewTicketResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.NewTicketResponseResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.NewContractResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ContractType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ContractRenewal[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ClientTotalTimeResult[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ContractType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ContractRenewal>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ClientTotalTimeResult>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ClientTotalTimeResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.UserReportStats[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.TicketType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.UserReportStats>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.UserReportStats))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ClientRegistation))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ClientResetPassword))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemsResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Item[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemType[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.Item>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ItemType>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ItemType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.MeetingState[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.MeetingState>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.MeetingState))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SerialNumberHistoryResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SerialNumberHistory[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.SerialNumberHistory>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SerialNumberHistory))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.SerialNumberHistoryType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketTimelineResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketTimelineItem[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.TicketTimelineItem>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketTimelineItem))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Contact))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ContactResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketsPerUserResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketsPerUser[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.TicketsPerUser>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketsPerUser))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.TicketsCreationTimesResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ResponseCreationResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ResponseCreation[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.ResponseCreation>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.ResponseCreation))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.DashboardStatsResult))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.DashboardStats))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.UserOldestTicketResult))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.UserTicket[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.UserTicket>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.UserTicket))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(long[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(string[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(int[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.DateTime[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.aggregate[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<long>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<string>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<int>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<System.DateTime>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.aggregate>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.aggregate))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Filter[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Sort[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.Filter>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.Sort>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.Sort))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.FilterRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.FirebaseNotification))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.FirebaseNotificationData))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.FindGlobalEntityByNIFResult[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SmartClientWS.FindGlobalEntityByNIFResult>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SmartClientWS.FindGlobalEntityByNIFResult))]
     public partial class Filter : object
     {
         
         private string fieldField;
         
-        private SmartClientWS.Filter[] filtersField;
+        private System.Collections.Generic.List<SmartClientWS.Filter> filtersField;
         
         private string logicField;
         
@@ -13575,7 +13575,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Filter[] filters
+        public System.Collections.Generic.List<SmartClientWS.Filter> filters
         {
             get
             {
@@ -13917,7 +13917,7 @@ namespace SmartClientWS
     public partial class GenericBasicResultOfArrayOfStockMovementd26Z9wzW : object
     {
         
-        private SmartClientWS.StockMovement[] ValueField;
+        private System.Collections.Generic.List<SmartClientWS.StockMovement> ValueField;
         
         private string exceptionField;
         
@@ -13926,7 +13926,7 @@ namespace SmartClientWS
         private bool successField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.StockMovement[] Value
+        public System.Collections.Generic.List<SmartClientWS.StockMovement> Value
         {
             get
             {
@@ -13984,7 +13984,7 @@ namespace SmartClientWS
     public partial class StockMovement : object
     {
         
-        private SmartClientWS.Attachment[] AttachmentsField;
+        private System.Collections.Generic.List<SmartClientWS.Attachment> AttachmentsField;
         
         private SmartClientWS.Client ClientField;
         
@@ -14008,7 +14008,7 @@ namespace SmartClientWS
         
         private string InvoiceNumField;
         
-        private SmartClientWS.StockMovementLine[] LinesField;
+        private System.Collections.Generic.List<SmartClientWS.StockMovementLine> LinesField;
         
         private bool LoanField;
         
@@ -14039,7 +14039,7 @@ namespace SmartClientWS
         private System.DateTime timestampField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Attachment[] Attachments
+        public System.Collections.Generic.List<SmartClientWS.Attachment> Attachments
         {
             get
             {
@@ -14195,7 +14195,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.StockMovementLine[] Lines
+        public System.Collections.Generic.List<SmartClientWS.StockMovementLine> Lines
         {
             get
             {
@@ -14406,7 +14406,7 @@ namespace SmartClientWS
         
         private float QuantityBeforeField;
         
-        private string[] SerialNumbersField;
+        private System.Collections.Generic.List<string> SerialNumbersField;
         
         private int StockMovementLineIDField;
         
@@ -14476,7 +14476,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] SerialNumbers
+        public System.Collections.Generic.List<string> SerialNumbers
         {
             get
             {
@@ -14524,7 +14524,7 @@ namespace SmartClientWS
         
         private decimal IVAField;
         
-        private SmartClientWS.RepairItemLine[] ItemsField;
+        private System.Collections.Generic.List<SmartClientWS.RepairItemLine> ItemsField;
         
         private int NewRepairStatusField;
         
@@ -14655,7 +14655,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.RepairItemLine[] Items
+        public System.Collections.Generic.List<SmartClientWS.RepairItemLine> Items
         {
             get
             {
@@ -15367,11 +15367,11 @@ namespace SmartClientWS
         
         private SmartClientWS.Meeting Meeting1Field;
         
-        private SmartClientWS.MeetingAttendee[] MeetingAttendeesField;
+        private System.Collections.Generic.List<SmartClientWS.MeetingAttendee> MeetingAttendeesField;
         
         private int MeetingIDField;
         
-        private SmartClientWS.Meeting[] Meetings1Field;
+        private System.Collections.Generic.List<SmartClientWS.Meeting> Meetings1Field;
         
         private string NotificationSessionField;
         
@@ -15389,7 +15389,7 @@ namespace SmartClientWS
         
         private System.Nullable<System.DateTime> SequenceEndField;
         
-        private SmartClientWS.SmartUser[] SmartUsersField;
+        private System.Collections.Generic.List<SmartClientWS.SmartUser> SmartUsersField;
         
         private System.DateTime StartField;
         
@@ -15543,7 +15543,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.MeetingAttendee[] MeetingAttendees
+        public System.Collections.Generic.List<SmartClientWS.MeetingAttendee> MeetingAttendees
         {
             get
             {
@@ -15569,7 +15569,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Meeting[] Meetings1
+        public System.Collections.Generic.List<SmartClientWS.Meeting> Meetings1
         {
             get
             {
@@ -15686,7 +15686,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.SmartUser[] SmartUsers
+        public System.Collections.Generic.List<SmartClientWS.SmartUser> SmartUsers
         {
             get
             {
@@ -15858,12 +15858,12 @@ namespace SmartClientWS
     public partial class PartnerClientResult : object
     {
         
-        private SmartClientWS.PartnerClient[] ClientsField;
+        private System.Collections.Generic.List<SmartClientWS.PartnerClient> ClientsField;
         
         private int CountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.PartnerClient[] Clients
+        public System.Collections.Generic.List<SmartClientWS.PartnerClient> Clients
         {
             get
             {
@@ -15895,7 +15895,7 @@ namespace SmartClientWS
     public partial class BasicTicket : object
     {
         
-        private SmartClientWS.SmartUser[] AssignedField;
+        private System.Collections.Generic.List<SmartClientWS.SmartUser> AssignedField;
         
         private long ParentTicketIDField;
         
@@ -15912,7 +15912,7 @@ namespace SmartClientWS
         private SmartClientWS.TicketType TicketTypeField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.SmartUser[] Assigned
+        public System.Collections.Generic.List<SmartClientWS.SmartUser> Assigned
         {
             get
             {
@@ -16173,7 +16173,7 @@ namespace SmartClientWS
         
         private int CountField;
         
-        private SmartClientWS.TicketResponseTemplate[] TemplatesField;
+        private System.Collections.Generic.List<SmartClientWS.TicketResponseTemplate> TemplatesField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Count
@@ -16189,7 +16189,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.TicketResponseTemplate[] Templates
+        public System.Collections.Generic.List<SmartClientWS.TicketResponseTemplate> Templates
         {
             get
             {
@@ -16329,7 +16329,7 @@ namespace SmartClientWS
         
         private bool CheckedField;
         
-        private SmartClientWS.ItemSubType[] ChildrenField;
+        private System.Collections.Generic.List<SmartClientWS.ItemSubType> ChildrenField;
         
         private bool HasChildrenField;
         
@@ -16351,7 +16351,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.ItemSubType[] Children
+        public System.Collections.Generic.List<SmartClientWS.ItemSubType> Children
         {
             get
             {
@@ -17128,7 +17128,7 @@ namespace SmartClientWS
         
         private bool otpRequiredField;
         
-        private string[] roleField;
+        private System.Collections.Generic.List<string> roleField;
         
         private bool successField;
         
@@ -17198,7 +17198,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] role
+        public System.Collections.Generic.List<string> role
         {
             get
             {
@@ -17282,12 +17282,12 @@ namespace SmartClientWS
     public partial class ClientsResult : object
     {
         
-        private SmartClientWS.Client[] ClientsField;
+        private System.Collections.Generic.List<SmartClientWS.Client> ClientsField;
         
         private int CountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Client[] Clients
+        public System.Collections.Generic.List<SmartClientWS.Client> Clients
         {
             get
             {
@@ -17319,12 +17319,12 @@ namespace SmartClientWS
     public partial class SimpleClientsResult : object
     {
         
-        private SmartClientWS.SimpleClient[] ClientsField;
+        private System.Collections.Generic.List<SmartClientWS.SimpleClient> ClientsField;
         
         private int CountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.SimpleClient[] Clients
+        public System.Collections.Generic.List<SmartClientWS.SimpleClient> Clients
         {
             get
             {
@@ -17722,7 +17722,7 @@ namespace SmartClientWS
         
         private int CountField;
         
-        private SmartClientWS.Item[] ItemsField;
+        private System.Collections.Generic.List<SmartClientWS.Item> ItemsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Count
@@ -17738,7 +17738,7 @@ namespace SmartClientWS
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SmartClientWS.Item[] Items
+        public System.Collections.Generic.List<SmartClientWS.Item> Items
         {
             get
             {
@@ -17848,49 +17848,49 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.FileDownloadResult> DownloadListingReportAsync(SmartClientWS.ListingFileDownloadRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetSimpleStockListing", ReplyAction="http://tempuri.org/ISMService/GetSimpleStockListingResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.StockListing[]> GetSimpleStockListingAsync(System.Nullable<System.DateTime> DateStart, System.Nullable<System.DateTime> DateEnd);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.StockListing>> GetSimpleStockListingAsync(System.Nullable<System.DateTime> DateStart, System.Nullable<System.DateTime> DateEnd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetDetailedStockListing", ReplyAction="http://tempuri.org/ISMService/GetDetailedStockListingResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.StockListing[]> GetDetailedStockListingAsync(System.Nullable<System.DateTime> DateStart, System.Nullable<System.DateTime> DateEnd);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.StockListing>> GetDetailedStockListingAsync(System.Nullable<System.DateTime> DateStart, System.Nullable<System.DateTime> DateEnd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetStockMovementAttachments", ReplyAction="http://tempuri.org/ISMService/GetStockMovementAttachmentsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.Attachment[]> GetStockMovementAttachmentsAsync(int StockMovementID, bool IsTemporary, bool GetPath);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Attachment>> GetStockMovementAttachmentsAsync(int StockMovementID, bool IsTemporary, bool GetPath);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/DownloadRepairLabel", ReplyAction="http://tempuri.org/ISMService/DownloadRepairLabelResponse")]
         System.Threading.Tasks.Task<SmartClientWS.FileDownloadResult> DownloadRepairLabelAsync(SmartClientWS.FileDownloadRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/MergeTickets", ReplyAction="http://tempuri.org/ISMService/MergeTicketsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.IntBasicResult> MergeTicketsAsync(long[] TicketIDs, long IntoTicketID, int UserID);
+        System.Threading.Tasks.Task<SmartClientWS.IntBasicResult> MergeTicketsAsync(System.Collections.Generic.List<long> TicketIDs, long IntoTicketID, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/AddExistingSubTickets", ReplyAction="http://tempuri.org/ISMService/AddExistingSubTicketsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.IntBasicResult> AddExistingSubTicketsAsync(long[] TicketIDs, long IntoTicketID, int UserID);
+        System.Threading.Tasks.Task<SmartClientWS.IntBasicResult> AddExistingSubTicketsAsync(System.Collections.Generic.List<long> TicketIDs, long IntoTicketID, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/TestVirusScan", ReplyAction="http://tempuri.org/ISMService/TestVirusScanResponse")]
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> TestVirusScanAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetSoftwareLicenses", ReplyAction="http://tempuri.org/ISMService/GetSoftwareLicensesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.SoftwareLicense[]> GetSoftwareLicensesAsync(int ClientID, int PartnerClient);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SoftwareLicense>> GetSoftwareLicensesAsync(int ClientID, int PartnerClient);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetSoftwareLicense", ReplyAction="http://tempuri.org/ISMService/GetSoftwareLicenseResponse")]
         System.Threading.Tasks.Task<SmartClientWS.SoftwareLicense> GetSoftwareLicenseAsync(int IDLicencaSoftware);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetHardwareLicenses", ReplyAction="http://tempuri.org/ISMService/GetHardwareLicensesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.HardwareLicense[]> GetHardwareLicensesAsync(int ClientID, int PartnerClient);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.HardwareLicense>> GetHardwareLicensesAsync(int ClientID, int PartnerClient);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetLicenseTerminalModels", ReplyAction="http://tempuri.org/ISMService/GetLicenseTerminalModelsResponse")]
-        System.Threading.Tasks.Task<string[]> GetLicenseTerminalModelsAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<string>> GetLicenseTerminalModelsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetLicenseTerminalModel", ReplyAction="http://tempuri.org/ISMService/GetLicenseTerminalModelResponse")]
         System.Threading.Tasks.Task<string> GetLicenseTerminalModelAsync(string key);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetLicenseSoftwares", ReplyAction="http://tempuri.org/ISMService/GetLicenseSoftwaresResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.SoftwareItem[]> GetLicenseSoftwaresAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SoftwareItem>> GetLicenseSoftwaresAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetLicenseModules", ReplyAction="http://tempuri.org/ISMService/GetLicenseModulesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.LicenseModule[]> GetLicenseModulesAsync(string code, int IDLicencaSoftware);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.LicenseModule>> GetLicenseModulesAsync(string code, int IDLicencaSoftware);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetSoftwareLicenseActivations", ReplyAction="http://tempuri.org/ISMService/GetSoftwareLicenseActivationsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.SoftwareLicenseActivation[]> GetSoftwareLicenseActivationsAsync(int IDLicencaSoftware);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SoftwareLicenseActivation>> GetSoftwareLicenseActivationsAsync(int IDLicencaSoftware);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/DeleteSoftwareLicense", ReplyAction="http://tempuri.org/ISMService/DeleteSoftwareLicenseResponse")]
         System.Threading.Tasks.Task<SmartClientWS.DeleteResult> DeleteSoftwareLicenseAsync(SmartClientWS.SoftwareLicense softwareLinces, int UserID);
@@ -17945,7 +17945,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.FileUploadResult> UploadSmartClientFileAsync(SmartClientWS.FileUploadRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetSmartClientFiles", ReplyAction="http://tempuri.org/ISMService/GetSmartClientFilesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.Attachment[]> GetSmartClientFilesAsync(long OriginID, SmartClientWS.ActionOrigin Origin, bool GetPath);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Attachment>> GetSmartClientFilesAsync(long OriginID, SmartClientWS.ActionOrigin Origin, bool GetPath);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetRmaRequests", ReplyAction="http://tempuri.org/ISMService/GetRmaRequestsResponse")]
         System.Threading.Tasks.Task<SmartClientWS.RmaRequestsResult> GetRmaRequestsAsync(int UserID, System.Nullable<bool> Finished);
@@ -17963,7 +17963,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> SendPendingApprovalsNotificationAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/CreateTicketRepair", ReplyAction="http://tempuri.org/ISMService/CreateTicketRepairResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.IntBasicResult> CreateTicketRepairAsync(long TicketID, int UserID, int[] Assigned);
+        System.Threading.Tasks.Task<SmartClientWS.IntBasicResult> CreateTicketRepairAsync(long TicketID, int UserID, System.Collections.Generic.List<int> Assigned);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/DownloadTicketRepairLabel", ReplyAction="http://tempuri.org/ISMService/DownloadTicketRepairLabelResponse")]
         System.Threading.Tasks.Task<SmartClientWS.FileDownloadResult> DownloadTicketRepairLabelAsync(SmartClientWS.FileDownloadRequest request);
@@ -17976,7 +17976,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.FileUploadResult> UploadImageAsync(SmartClientWS.FileUploadRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/AutomaticClientExit", ReplyAction="http://tempuri.org/ISMService/AutomaticClientExitResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.BasicResult> AutomaticClientExitAsync(SmartClientWS.Product[] items, long OriginID, SmartClientWS.ActionOrigin Origin, int UserID);
+        System.Threading.Tasks.Task<SmartClientWS.BasicResult> AutomaticClientExitAsync(System.Collections.Generic.List<SmartClientWS.Product> items, long OriginID, SmartClientWS.ActionOrigin Origin, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetTicketClient", ReplyAction="http://tempuri.org/ISMService/GetTicketClientResponse")]
         System.Threading.Tasks.Task<SmartClientWS.Client> GetTicketClientAsync(long TicketID);
@@ -18000,7 +18000,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> ChangeTicketInvoiceStatusAsync(long TicketID, bool Invoiced, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/ChangeTicketResponseOrigin", ReplyAction="http://tempuri.org/ISMService/ChangeTicketResponseOriginResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.LongBasicResult> ChangeTicketResponseOriginAsync(long ResponseID, string Subject, string Note, long TicketID, int[] Assigned, int UserID);
+        System.Threading.Tasks.Task<SmartClientWS.LongBasicResult> ChangeTicketResponseOriginAsync(long ResponseID, string Subject, string Note, long TicketID, System.Collections.Generic.List<int> Assigned, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/UpdateTicketPriority", ReplyAction="http://tempuri.org/ISMService/UpdateTicketPriorityResponse")]
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> UpdateTicketPriorityAsync(SmartClientWS.Priority Priority, long TicketID, int user, bool updateTicket);
@@ -18012,19 +18012,19 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.RemoteFileInfo> DownloadMarkdownAsync(SmartClientWS.DownloadRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetTicketsPerUser", ReplyAction="http://tempuri.org/ISMService/GetTicketsPerUserResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.TicketsPerUserResult> GetTicketsPerUserAsync(int[] Users, int[] Types);
+        System.Threading.Tasks.Task<SmartClientWS.TicketsPerUserResult> GetTicketsPerUserAsync(System.Collections.Generic.List<int> Users, System.Collections.Generic.List<int> Types);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetTicketCreation", ReplyAction="http://tempuri.org/ISMService/GetTicketCreationResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.TicketsCreationTimesResult> GetTicketCreationAsync(int[] Users, int[] Types, int Months);
+        System.Threading.Tasks.Task<SmartClientWS.TicketsCreationTimesResult> GetTicketCreationAsync(System.Collections.Generic.List<int> Users, System.Collections.Generic.List<int> Types, int Months);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetResponseCreation", ReplyAction="http://tempuri.org/ISMService/GetResponseCreationResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ResponseCreationResult> GetResponseCreationAsync(int[] Users, int[] Types, int days);
+        System.Threading.Tasks.Task<SmartClientWS.ResponseCreationResult> GetResponseCreationAsync(System.Collections.Generic.List<int> Users, System.Collections.Generic.List<int> Types, int days);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetDashBoardStats", ReplyAction="http://tempuri.org/ISMService/GetDashBoardStatsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.DashboardStatsResult> GetDashBoardStatsAsync(int[] Users, int[] Types, int days);
+        System.Threading.Tasks.Task<SmartClientWS.DashboardStatsResult> GetDashBoardStatsAsync(System.Collections.Generic.List<int> Users, System.Collections.Generic.List<int> Types, int days);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/UserOldestTicket", ReplyAction="http://tempuri.org/ISMService/UserOldestTicketResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.UserOldestTicketResult> UserOldestTicketAsync(int[] Users, int[] Types);
+        System.Threading.Tasks.Task<SmartClientWS.UserOldestTicketResult> UserOldestTicketAsync(System.Collections.Generic.List<int> Users, System.Collections.Generic.List<int> Types);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/CreateNextYearContractInvoices", ReplyAction="http://tempuri.org/ISMService/CreateNextYearContractInvoicesResponse")]
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> CreateNextYearContractInvoicesAsync();
@@ -18039,7 +18039,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<string> FindGlobalNIFAsync(string NIF);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/FindGlobalEntityByNIF", ReplyAction="http://tempuri.org/ISMService/FindGlobalEntityByNIFResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.FindGlobalEntityByNIFResult[]> FindGlobalEntityByNIFAsync(string NIF);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.FindGlobalEntityByNIFResult>> FindGlobalEntityByNIFAsync(string NIF);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetTicketTimeline", ReplyAction="http://tempuri.org/ISMService/GetTicketTimelineResponse")]
         System.Threading.Tasks.Task<SmartClientWS.TicketTimelineResult> GetTicketTimelineAsync(long TicketID);
@@ -18057,7 +18057,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> SendMeetingNotificationAsync(int MeetingID, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetMeetingStates", ReplyAction="http://tempuri.org/ISMService/GetMeetingStatesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.MeetingState[]> GetMeetingStatesAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.MeetingState>> GetMeetingStatesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/SetGlobalVariable", ReplyAction="http://tempuri.org/ISMService/SetGlobalVariableResponse")]
         System.Threading.Tasks.Task<long> SetGlobalVariableAsync(string name, string value);
@@ -18078,7 +18078,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> AddQuickFileToResponseAsync(int AttachmentID, int FileTypeID, int TicketID, int UserID, int ResponseType);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetEmailAttachments", ReplyAction="http://tempuri.org/ISMService/GetEmailAttachmentsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.Attachment[]> GetEmailAttachmentsAsync(long TicketID, string TicketSessionID, bool getPath, int ResponseType, int UserID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Attachment>> GetEmailAttachmentsAsync(long TicketID, string TicketSessionID, bool getPath, int ResponseType, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/DownloadQuickFile", ReplyAction="http://tempuri.org/ISMService/DownloadQuickFileResponse")]
         System.Threading.Tasks.Task<SmartClientWS.RemoteFileInfo> DownloadQuickFileAsync(SmartClientWS.BasicDownloadRequest request);
@@ -18090,17 +18090,17 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<bool> RemoveQuickAttachmentByIDAsync(int ItemAttachmentID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/RemoveQuickAttachment", ReplyAction="http://tempuri.org/ISMService/RemoveQuickAttachmentResponse")]
-        System.Threading.Tasks.Task<bool> RemoveQuickAttachmentAsync(string[] fileNames);
+        System.Threading.Tasks.Task<bool> RemoveQuickAttachmentAsync(System.Collections.Generic.List<string> fileNames);
         
         // CODEGEN: Generating message contract since the operation has multiple return values.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/UploadQuickAttachment", ReplyAction="http://tempuri.org/ISMService/UploadQuickAttachmentResponse")]
         System.Threading.Tasks.Task<SmartClientWS.UploadResult> UploadQuickAttachmentAsync(SmartClientWS.RemoteFileInfo request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetQuickFiles", ReplyAction="http://tempuri.org/ISMService/GetQuickFilesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.Attachment[]> GetQuickFilesAsync(bool getPath);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Attachment>> GetQuickFilesAsync(bool getPath);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetUserProfiles", ReplyAction="http://tempuri.org/ISMService/GetUserProfilesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.UserProfile[]> GetUserProfilesAsync(bool GetRoles, bool GetUsers);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.UserProfile>> GetUserProfilesAsync(bool GetRoles, bool GetUsers);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/CreateOrUpdateUserProfile", ReplyAction="http://tempuri.org/ISMService/CreateOrUpdateUserProfileResponse")]
         System.Threading.Tasks.Task<SmartClientWS.IntBasicResult> CreateOrUpdateUserProfileAsync(SmartClientWS.UserProfile profile);
@@ -18109,23 +18109,23 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> DeleteUserProfileAsync(int UserProfileID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetProfileRoles", ReplyAction="http://tempuri.org/ISMService/GetProfileRolesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.UserRole[]> GetProfileRolesAsync(int UserProfileID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.UserRole>> GetProfileRolesAsync(int UserProfileID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/UpdateUserProfileRoles", ReplyAction="http://tempuri.org/ISMService/UpdateUserProfileRolesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.BasicResult> UpdateUserProfileRolesAsync(SmartClientWS.UserRole[] roles, int UserProfileID, int[] SmartUsers);
+        System.Threading.Tasks.Task<SmartClientWS.BasicResult> UpdateUserProfileRolesAsync(System.Collections.Generic.List<SmartClientWS.UserRole> roles, int UserProfileID, System.Collections.Generic.List<int> SmartUsers);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetSmartUserTicketStats", ReplyAction="http://tempuri.org/ISMService/GetSmartUserTicketStatsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.SmartUserTicketStats[]> GetSmartUserTicketStatsAsync(int Days, int UserID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SmartUserTicketStats>> GetSmartUserTicketStatsAsync(int Days, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetBasicRepairTickets", ReplyAction="http://tempuri.org/ISMService/GetBasicRepairTicketsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.Ticket[]> GetBasicRepairTicketsAsync(int ClientID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Ticket>> GetBasicRepairTicketsAsync(int ClientID);
         
         // CODEGEN: Generating message contract since the operation has multiple return values.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/UploadStockMovementFile", ReplyAction="http://tempuri.org/ISMService/UploadStockMovementFileResponse")]
         System.Threading.Tasks.Task<SmartClientWS.UploadResult> UploadStockMovementFileAsync(SmartClientWS.RemoteFileInfo request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/RemoveStockMovementFile", ReplyAction="http://tempuri.org/ISMService/RemoveStockMovementFileResponse")]
-        System.Threading.Tasks.Task<bool> RemoveStockMovementFileAsync(string[] fileNames, int StockMovement, bool TemporaryMovement);
+        System.Threading.Tasks.Task<bool> RemoveStockMovementFileAsync(System.Collections.Generic.List<string> fileNames, int StockMovement, bool TemporaryMovement);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/RemoveStockMovementFileByID", ReplyAction="http://tempuri.org/ISMService/RemoveStockMovementFileByIDResponse")]
         System.Threading.Tasks.Task<bool> RemoveStockMovementFileByIDAsync(int AttachmentID);
@@ -18185,7 +18185,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.RepairQuoteResult> GetRepairQuoteAsync(int UserID, int RepairQuoteID, bool GetItems, bool GetRepairResponsibles, bool GetRepair);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetRepairQuoteItems", ReplyAction="http://tempuri.org/ISMService/GetRepairQuoteItemsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.Product[]> GetRepairQuoteItemsAsync(int RepairQuoteID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Product>> GetRepairQuoteItemsAsync(int RepairQuoteID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/ApproveRepairQuote", ReplyAction="http://tempuri.org/ISMService/ApproveRepairQuoteResponse")]
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> ApproveRepairQuoteAsync(int RepairQuoteID, int UserID, bool Approve);
@@ -18206,14 +18206,14 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<bool> RemoveRepairFileByIDAsync(int FileID, int RepairID, long RepairFormID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/RemoveRepairFiles", ReplyAction="http://tempuri.org/ISMService/RemoveRepairFilesResponse")]
-        System.Threading.Tasks.Task<bool> RemoveRepairFilesAsync(string[] fileNames, int RepairID, long RepairFormID, int UserID);
+        System.Threading.Tasks.Task<bool> RemoveRepairFilesAsync(System.Collections.Generic.List<string> fileNames, int RepairID, long RepairFormID, int UserID);
         
         // CODEGEN: Generating message contract since the operation has multiple return values.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/UploadRepairFile", ReplyAction="http://tempuri.org/ISMService/UploadRepairFileResponse")]
         System.Threading.Tasks.Task<SmartClientWS.RepairFileUploadResult> UploadRepairFileAsync(SmartClientWS.RemoteRepairFileInfo request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetRepairFiles", ReplyAction="http://tempuri.org/ISMService/GetRepairFilesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.RepairAttachment[]> GetRepairFilesAsync(int RepairID, long RepairFormID, bool GetPath);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.RepairAttachment>> GetRepairFilesAsync(int RepairID, long RepairFormID, bool GetPath);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetRepairFileInfoWithoutStream", ReplyAction="http://tempuri.org/ISMService/GetRepairFileInfoWithoutStreamResponse")]
         System.Threading.Tasks.Task<SmartClientWS.CustomFileInfo> GetRepairFileInfoWithoutStreamAsync(int FileID, int UserID, int RepairID, bool CheckPermissions);
@@ -18246,7 +18246,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.RepairForm> GetRepairFormAsync(long ReportFormID, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetRepairForms", ReplyAction="http://tempuri.org/ISMService/GetRepairFormsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.RepairForm[]> GetRepairFormsAsync(bool UserFilter, int UserID, string ObservationsFilter, System.Nullable<bool> finished, int RepairID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.RepairForm>> GetRepairFormsAsync(bool UserFilter, int UserID, string ObservationsFilter, System.Nullable<bool> finished, int RepairID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/DownloadRepairForm", ReplyAction="http://tempuri.org/ISMService/DownloadRepairFormResponse")]
         System.Threading.Tasks.Task<SmartClientWS.RemoteRepairFileInfo> DownloadRepairFormAsync(SmartClientWS.DownloadRequestRepairFileID request);
@@ -18301,7 +18301,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.FileUploadResult> UploadRepairQuoteFileAsync(SmartClientWS.FileUploadRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/RemoveRepairQuoteFiles", ReplyAction="http://tempuri.org/ISMService/RemoveRepairQuoteFilesResponse")]
-        System.Threading.Tasks.Task<bool> RemoveRepairQuoteFilesAsync(string[] fileNames, int RepairQuoteID, int UserID);
+        System.Threading.Tasks.Task<bool> RemoveRepairQuoteFilesAsync(System.Collections.Generic.List<string> fileNames, int RepairQuoteID, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/RemoveRepairQuoteFileByID", ReplyAction="http://tempuri.org/ISMService/RemoveRepairQuoteFileByIDResponse")]
         System.Threading.Tasks.Task<bool> RemoveRepairQuoteFileByIDAsync(int FileID, int RepairQuoteID);
@@ -18310,7 +18310,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.Attachment> GetRepairQuoteFileAsync(int FileID, bool GetPath);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetRepairQuoteFiles", ReplyAction="http://tempuri.org/ISMService/GetRepairQuoteFilesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.Attachment[]> GetRepairQuoteFilesAsync(int RepairQuoteID, bool GetPath);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Attachment>> GetRepairQuoteFilesAsync(int RepairQuoteID, bool GetPath);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/DeleteRepairForm", ReplyAction="http://tempuri.org/ISMService/DeleteRepairFormResponse")]
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> DeleteRepairFormAsync(int RepairID, long RepairFormID, int UserID, int ReportDeleteReasonID);
@@ -18346,10 +18346,10 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.LoginLogsResult> GetLoginLogsAsync(int UserID, SmartClientWS.FilterRequest ServerRequest);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetChangeLogs", ReplyAction="http://tempuri.org/ISMService/GetChangeLogsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ChangesLog[]> GetChangeLogsAsync(string typeFilter);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ChangesLog>> GetChangeLogsAsync(string typeFilter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetClientAttachments", ReplyAction="http://tempuri.org/ISMService/GetClientAttachmentsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.Attachment[]> GetClientAttachmentsAsync(int ClientID, bool getPath);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Attachment>> GetClientAttachmentsAsync(int ClientID, bool getPath);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetClientAttachment", ReplyAction="http://tempuri.org/ISMService/GetClientAttachmentResponse")]
         System.Threading.Tasks.Task<SmartClientWS.Attachment> GetClientAttachmentAsync(int ClientID, int ClientAttachmentID, bool getPath);
@@ -18359,7 +18359,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.UploadResult> UploadClientAttachmentAsync(SmartClientWS.BasicIntRemoteFileInfo request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/RemoveClientAttachment", ReplyAction="http://tempuri.org/ISMService/RemoveClientAttachmentResponse")]
-        System.Threading.Tasks.Task<bool> RemoveClientAttachmentAsync(string[] fileNames, int ClientID);
+        System.Threading.Tasks.Task<bool> RemoveClientAttachmentAsync(System.Collections.Generic.List<string> fileNames, int ClientID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/RemoveClientAttachmentByID", ReplyAction="http://tempuri.org/ISMService/RemoveClientAttachmentByIDResponse")]
         System.Threading.Tasks.Task<bool> RemoveClientAttachmentByIDAsync(int ItemAttachmentID, int ClientID);
@@ -18374,7 +18374,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> RollBackChangeAsync(int ChangeLogID, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetContractAttachments", ReplyAction="http://tempuri.org/ISMService/GetContractAttachmentsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.Attachment[]> GetContractAttachmentsAsync(int ContractID, bool getPath);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Attachment>> GetContractAttachmentsAsync(int ContractID, bool getPath);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetContractAttachment", ReplyAction="http://tempuri.org/ISMService/GetContractAttachmentResponse")]
         System.Threading.Tasks.Task<SmartClientWS.Attachment> GetContractAttachmentAsync(int ContractID, int ContractAttachmentID, bool getPath);
@@ -18384,7 +18384,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.UploadResult> UploadContractAttachmentAsync(SmartClientWS.BasicIntRemoteFileInfo request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/RemoveContractAttachment", ReplyAction="http://tempuri.org/ISMService/RemoveContractAttachmentResponse")]
-        System.Threading.Tasks.Task<bool> RemoveContractAttachmentAsync(string[] fileNames, int ContractID);
+        System.Threading.Tasks.Task<bool> RemoveContractAttachmentAsync(System.Collections.Generic.List<string> fileNames, int ContractID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/RemoveContractAttachmentByID", ReplyAction="http://tempuri.org/ISMService/RemoveContractAttachmentByIDResponse")]
         System.Threading.Tasks.Task<bool> RemoveContractAttachmentByIDAsync(int ContractAttachmentID, int ContractID);
@@ -18393,7 +18393,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.BasicIntRemoteFileInfo> DownloadContractFileAsync(SmartClientWS.BasicDownloadRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetSupplierPersons", ReplyAction="http://tempuri.org/ISMService/GetSupplierPersonsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.SupplierPerson[]> GetSupplierPersonsAsync(int SupplierID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SupplierPerson>> GetSupplierPersonsAsync(int SupplierID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/CreateSupplierPerson", ReplyAction="http://tempuri.org/ISMService/CreateSupplierPersonResponse")]
         System.Threading.Tasks.Task<int> CreateSupplierPersonAsync(SmartClientWS.SupplierPerson person, int SupplierID);
@@ -18405,7 +18405,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.SupplierPerson> DeleteSupplierPersonsAsync(SmartClientWS.SupplierPerson person, int SupplierID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetSupplierBankDetails", ReplyAction="http://tempuri.org/ISMService/GetSupplierBankDetailsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.BankDetail[]> GetSupplierBankDetailsAsync(int SupplierID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.BankDetail>> GetSupplierBankDetailsAsync(int SupplierID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetBankDetail", ReplyAction="http://tempuri.org/ISMService/GetBankDetailResponse")]
         System.Threading.Tasks.Task<SmartClientWS.BankDetail> GetBankDetailAsync(int BankDetailID);
@@ -18420,7 +18420,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.BankDetail> DeleteBankDetailAsync(SmartClientWS.BankDetail newData);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetSupplierItems", ReplyAction="http://tempuri.org/ISMService/GetSupplierItemsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.SupplierItem[]> GetSupplierItemsAsync(int SupplierID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SupplierItem>> GetSupplierItemsAsync(int SupplierID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetSupplierItem", ReplyAction="http://tempuri.org/ISMService/GetSupplierItemResponse")]
         System.Threading.Tasks.Task<SmartClientWS.SupplierItem> GetSupplierItemAsync(int SupplierID, int ItemID);
@@ -18435,13 +18435,13 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.SupplierItem> DeleteSupplierItemAsync(SmartClientWS.SupplierItem newData, int SupplierID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetItemSuppliers", ReplyAction="http://tempuri.org/ISMService/GetItemSuppliersResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ItemSupplier[]> GetItemSuppliersAsync(int ItemID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemSupplier>> GetItemSuppliersAsync(int ItemID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/EditClient", ReplyAction="http://tempuri.org/ISMService/EditClientResponse")]
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> EditClientAsync(SmartClientWS.Client client, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetAllMeetings", ReplyAction="http://tempuri.org/ISMService/GetAllMeetingsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.Meeting[]> GetAllMeetingsAsync(System.DateTime Start, System.DateTime End, int[] AssignedFilter);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Meeting>> GetAllMeetingsAsync(System.DateTime Start, System.DateTime End, System.Collections.Generic.List<int> AssignedFilter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetMeeting", ReplyAction="http://tempuri.org/ISMService/GetMeetingResponse")]
         System.Threading.Tasks.Task<SmartClientWS.Meeting> GetMeetingAsync(int MeetingID);
@@ -18474,7 +18474,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.PartnerClientResult> GetPartnerClientsAsync(string filter, int OffsetNum, int RowsCount, bool useOffset, int ClientID, bool ActiveOnly, bool GetClients);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetSmartClientWindows", ReplyAction="http://tempuri.org/ISMService/GetSmartClientWindowsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.SmartClientWindow[]> GetSmartClientWindowsAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SmartClientWindow>> GetSmartClientWindowsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetSmartClientWindow", ReplyAction="http://tempuri.org/ISMService/GetSmartClientWindowResponse")]
         System.Threading.Tasks.Task<SmartClientWS.SmartClientWindow> GetSmartClientWindowAsync(int SmartClientWindowID);
@@ -18486,7 +18486,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.FileType> GetFileTypeAsync(int FileTypeID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetFileTypes", ReplyAction="http://tempuri.org/ISMService/GetFileTypesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.FileType[]> GetFileTypesAsync(string WindowNameFilter);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.FileType>> GetFileTypesAsync(string WindowNameFilter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/CreateFileType", ReplyAction="http://tempuri.org/ISMService/CreateFileTypeResponse")]
         System.Threading.Tasks.Task<SmartClientWS.IntBasicResult> CreateFileTypeAsync(SmartClientWS.FileType newFileType);
@@ -18510,7 +18510,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> UpdateTicketProgressAsync(int TicketID, int Value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetRelatedTickets", ReplyAction="http://tempuri.org/ISMService/GetRelatedTicketsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.BasicTicket[]> GetRelatedTicketsAsync(int ParentTicketID, int TicketID, int user);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.BasicTicket>> GetRelatedTicketsAsync(int ParentTicketID, int TicketID, int user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetReportFinishTicketType", ReplyAction="http://tempuri.org/ISMService/GetReportFinishTicketTypeResponse")]
         System.Threading.Tasks.Task<SmartClientWS.TicketType> GetReportFinishTicketTypeAsync();
@@ -18525,7 +18525,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<float> GetIvaAsync(System.Nullable<System.DateTime> time);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetIVARates", ReplyAction="http://tempuri.org/ISMService/GetIVARatesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.IVARate[]> GetIVARatesAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.IVARate>> GetIVARatesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/CreateIVARate", ReplyAction="http://tempuri.org/ISMService/CreateIVARateResponse")]
         System.Threading.Tasks.Task<int> CreateIVARateAsync(SmartClientWS.IVARate newIVARate);
@@ -18555,7 +18555,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.IntBasicResult> DeleteTicketTaskAsync(SmartClientWS.TicketTask data);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetTicketTasks", ReplyAction="http://tempuri.org/ISMService/GetTicketTasksResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.TicketTask[]> GetTicketTasksAsync(int TicketID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.TicketTask>> GetTicketTasksAsync(int TicketID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/SetContractInvoiceAttachmentID", ReplyAction="http://tempuri.org/ISMService/SetContractInvoiceAttachmentIDResponse")]
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> SetContractInvoiceAttachmentIDAsync(int InvoiceID, int AttachmentID);
@@ -18564,10 +18564,10 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> ReopenTaskFormAsync(System.Guid id, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetContractTypeCategories", ReplyAction="http://tempuri.org/ISMService/GetContractTypeCategoriesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ContractTypeCategory[]> GetContractTypeCategoriesAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ContractTypeCategory>> GetContractTypeCategoriesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetAllContractsHoursBank", ReplyAction="http://tempuri.org/ISMService/GetAllContractsHoursBankResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.Contract[]> GetAllContractsHoursBankAsync(bool onlyActive);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Contract>> GetAllContractsHoursBankAsync(bool onlyActive);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/DeleteContract", ReplyAction="http://tempuri.org/ISMService/DeleteContractResponse")]
         System.Threading.Tasks.Task<SmartClientWS.DeleteResult> DeleteContractAsync(int ContractID);
@@ -18588,10 +18588,10 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> UpdateTicketDevelopmentFinishedAsync(int TicketID, bool DevelopmentFinished, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetItemSubTypesGrid", ReplyAction="http://tempuri.org/ISMService/GetItemSubTypesGridResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ItemSubTypeGrid[]> GetItemSubTypesGridAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemSubTypeGrid>> GetItemSubTypesGridAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetItemTypeItemSubTypes", ReplyAction="http://tempuri.org/ISMService/GetItemTypeItemSubTypesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ItemSubType[]> GetItemTypeItemSubTypesAsync(int ItemTypeID, bool OnlyChecked);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemSubType>> GetItemTypeItemSubTypesAsync(int ItemTypeID, bool OnlyChecked);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/CreateClientType", ReplyAction="http://tempuri.org/ISMService/CreateClientTypeResponse")]
         System.Threading.Tasks.Task<int> CreateClientTypeAsync(SmartClientWS.ClientType newClientType);
@@ -18603,10 +18603,10 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.DeleteResult> DeleteClientTypeAsync(SmartClientWS.ClientType newClientType);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetClientTypes", ReplyAction="http://tempuri.org/ISMService/GetClientTypesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ClientType[]> GetClientTypesAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ClientType>> GetClientTypesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetTicketDeleteReasons", ReplyAction="http://tempuri.org/ISMService/GetTicketDeleteReasonsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.TicketDeleteReason[]> GetTicketDeleteReasonsAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.TicketDeleteReason>> GetTicketDeleteReasonsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/CreateTicketDeleteReason", ReplyAction="http://tempuri.org/ISMService/CreateTicketDeleteReasonResponse")]
         System.Threading.Tasks.Task<int> CreateTicketDeleteReasonAsync(SmartClientWS.TicketDeleteReason newTicketDeleteReason);
@@ -18618,7 +18618,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.DeleteResult> DeleteTicketDeleteReasonAsync(SmartClientWS.TicketDeleteReason newTicketDeleteReason);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetTicketResponses", ReplyAction="http://tempuri.org/ISMService/GetTicketResponsesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.TicketResponse[]> GetTicketResponsesAsync(long TicketID, bool GetReadReceipts, int ResponseType);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.TicketResponse>> GetTicketResponsesAsync(long TicketID, bool GetReadReceipts, int ResponseType);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetTicketResponseByID", ReplyAction="http://tempuri.org/ISMService/GetTicketResponseByIDResponse")]
         System.Threading.Tasks.Task<SmartClientWS.TicketResponse> GetTicketResponseByIDAsync(long ResponseID, bool GetReadReceipts);
@@ -18627,7 +18627,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.RemoteFileInfo> DownloadServiceReportAsync(SmartClientWS.DownloadRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetTicketServiceReports", ReplyAction="http://tempuri.org/ISMService/GetTicketServiceReportsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.RegisterViewModel[]> GetTicketServiceReportsAsync(int TicketID, int UserID, bool SentOnly);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.RegisterViewModel>> GetTicketServiceReportsAsync(int TicketID, int UserID, bool SentOnly);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/CreateContractType", ReplyAction="http://tempuri.org/ISMService/CreateContractTypeResponse")]
         System.Threading.Tasks.Task<int> CreateContractTypeAsync(SmartClientWS.ContractType newContractType);
@@ -18639,7 +18639,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.DeleteResult> DeleteContractTypeAsync(SmartClientWS.ContractType newContractType);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetAllLimitTypes", ReplyAction="http://tempuri.org/ISMService/GetAllLimitTypesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.LimitType[]> GetAllLimitTypesAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.LimitType>> GetAllLimitTypesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/CreateLimitType", ReplyAction="http://tempuri.org/ISMService/CreateLimitTypeResponse")]
         System.Threading.Tasks.Task<int> CreateLimitTypeAsync(SmartClientWS.LimitType newLimitType);
@@ -18654,7 +18654,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> CreateContractInvoicesUpToAsync(int user, int year);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetBlacklistedEmails", ReplyAction="http://tempuri.org/ISMService/GetBlacklistedEmailsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.EmailBlacklist[]> GetBlacklistedEmailsAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.EmailBlacklist>> GetBlacklistedEmailsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/CreateEmailBlacklist", ReplyAction="http://tempuri.org/ISMService/CreateEmailBlacklistResponse")]
         System.Threading.Tasks.Task<SmartClientWS.EmailBlacklist> CreateEmailBlacklistAsync(SmartClientWS.EmailBlacklist newEmailBlacklist, int user);
@@ -18666,7 +18666,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.EmailBlacklist> DeleteEmailBlacklistAsync(SmartClientWS.EmailBlacklist newEmailBlacklist);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetReportDeleteReasons", ReplyAction="http://tempuri.org/ISMService/GetReportDeleteReasonsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ReportDeleteReason[]> GetReportDeleteReasonsAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ReportDeleteReason>> GetReportDeleteReasonsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/CreateReportDeleteReason", ReplyAction="http://tempuri.org/ISMService/CreateReportDeleteReasonResponse")]
         System.Threading.Tasks.Task<int> CreateReportDeleteReasonAsync(SmartClientWS.ReportDeleteReason newReportDeleteReason);
@@ -18690,7 +18690,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.ItemResult> CreateOrEditItemAsync(SmartClientWS.Item item, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetStockZones", ReplyAction="http://tempuri.org/ISMService/GetStockZonesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.StockZone[]> GetStockZonesAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.StockZone>> GetStockZonesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/CreateStockZone", ReplyAction="http://tempuri.org/ISMService/CreateStockZoneResponse")]
         System.Threading.Tasks.Task<int> CreateStockZoneAsync(SmartClientWS.StockZone StockZone);
@@ -18706,10 +18706,10 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.UploadResult> UploadItemAttachmentAsync(SmartClientWS.ItemRemoteFileInfo request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/RemoveItemAttachment", ReplyAction="http://tempuri.org/ISMService/RemoveItemAttachmentResponse")]
-        System.Threading.Tasks.Task<bool> RemoveItemAttachmentAsync(string[] fileNames, int ItemID);
+        System.Threading.Tasks.Task<bool> RemoveItemAttachmentAsync(System.Collections.Generic.List<string> fileNames, int ItemID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetItemAttachments", ReplyAction="http://tempuri.org/ISMService/GetItemAttachmentsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ItemAttachment[]> GetItemAttachmentsAsync(int ItemID, bool getPath);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemAttachment>> GetItemAttachmentsAsync(int ItemID, bool getPath);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/DownloadItemFile", ReplyAction="http://tempuri.org/ISMService/DownloadItemFileResponse")]
         System.Threading.Tasks.Task<SmartClientWS.RemoteFileInfo> DownloadItemFileAsync(SmartClientWS.ItemDownloadRequest request);
@@ -18718,16 +18718,16 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<bool> RemoveItemAttachmentByIDAsync(int ItemAttachmentID, int ItemID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/ItemStockByZone", ReplyAction="http://tempuri.org/ISMService/ItemStockByZoneResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ItemStockByZone[]> ItemStockByZoneAsync(int ItemID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemStockByZone>> ItemStockByZoneAsync(int ItemID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetItemStockMovements", ReplyAction="http://tempuri.org/ISMService/GetItemStockMovementsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ItemStockMovement[]> GetItemStockMovementsAsync(int ItemID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemStockMovement>> GetItemStockMovementsAsync(int ItemID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetItemStockMovementSerialNumbers", ReplyAction="http://tempuri.org/ISMService/GetItemStockMovementSerialNumbersResponse")]
-        System.Threading.Tasks.Task<string[]> GetItemStockMovementSerialNumbersAsync(int StockMovementID, int ItemID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<string>> GetItemStockMovementSerialNumbersAsync(int StockMovementID, int ItemID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetItemSerialNumbersInZone", ReplyAction="http://tempuri.org/ISMService/GetItemSerialNumbersInZoneResponse")]
-        System.Threading.Tasks.Task<string[]> GetItemSerialNumbersInZoneAsync(int ZoneID, int ItemID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<string>> GetItemSerialNumbersInZoneAsync(int ZoneID, int ItemID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/ValidateSerialNumber", ReplyAction="http://tempuri.org/ISMService/ValidateSerialNumberResponse")]
         System.Threading.Tasks.Task<SmartClientWS.SerialNumberInfoResult> ValidateSerialNumberAsync(int ZoneID, string SerialNumber, int SelectedStockMovementTypeID, int ClientID, int SupplierID, int FromZoneID, int ToZoneID, int ItemID);
@@ -18751,16 +18751,16 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> UpdateTicketSeendFlagAsync(string type, bool SeenFlag, long TicketID, int user, bool SendSignalRUpdate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetClientSerialNumbers", ReplyAction="http://tempuri.org/ISMService/GetClientSerialNumbersResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.SerialNumberInfo[]> GetClientSerialNumbersAsync(int ClientID, int ItemID, string FilterText, System.Nullable<bool> repairFilter);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SerialNumberInfo>> GetClientSerialNumbersAsync(int ClientID, int ItemID, string FilterText, System.Nullable<bool> repairFilter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetPartnerClientSerialNumbers", ReplyAction="http://tempuri.org/ISMService/GetPartnerClientSerialNumbersResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.SerialNumberInfo[]> GetPartnerClientSerialNumbersAsync(int PartnerClientID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SerialNumberInfo>> GetPartnerClientSerialNumbersAsync(int PartnerClientID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetSuppliers", ReplyAction="http://tempuri.org/ISMService/GetSuppliersResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.Supplier[]> GetSuppliersAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Supplier>> GetSuppliersAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetItemStockMovementsWithSerialNumber", ReplyAction="http://tempuri.org/ISMService/GetItemStockMovementsWithSerialNumberResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ItemStockMovement[]> GetItemStockMovementsWithSerialNumberAsync(int ItemID, string SerialNumber, bool OnlyAffected);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemStockMovement>> GetItemStockMovementsWithSerialNumberAsync(int ItemID, string SerialNumber, bool OnlyAffected);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetSerialNumberInfo", ReplyAction="http://tempuri.org/ISMService/GetSerialNumberInfoResponse")]
         System.Threading.Tasks.Task<SmartClientWS.SerialNumberInfoResult> GetSerialNumberInfoAsync(string SerialNumber);
@@ -18778,7 +18778,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> DeleteClientItemAsync(SmartClientWS.SerialNumberInfo data, int ClientID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetTemporaryStockMovements", ReplyAction="http://tempuri.org/ISMService/GetTemporaryStockMovementsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.StockMovement[]> GetTemporaryStockMovementsAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.StockMovement>> GetTemporaryStockMovementsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetTemporaryStockMovement", ReplyAction="http://tempuri.org/ISMService/GetTemporaryStockMovementResponse")]
         System.Threading.Tasks.Task<SmartClientWS.StockMovement> GetTemporaryStockMovementAsync(int StockMovementTempID);
@@ -18799,7 +18799,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.IntBasicResult> CreateOrEditSuppplierAsync(SmartClientWS.Supplier supplier, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetSupplierSerialNumbers", ReplyAction="http://tempuri.org/ISMService/GetSupplierSerialNumbersResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.SerialNumberInfo[]> GetSupplierSerialNumbersAsync(int SupplierID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SerialNumberInfo>> GetSupplierSerialNumbersAsync(int SupplierID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/CreateSupplierSerialNumber", ReplyAction="http://tempuri.org/ISMService/CreateSupplierSerialNumberResponse")]
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> CreateSupplierSerialNumberAsync(SmartClientWS.SerialNumberInfo data, int SupplierID);
@@ -18811,13 +18811,13 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> DeleteSupplierSerialNumberAsync(SmartClientWS.SerialNumberInfo data, int SupplierID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetItemSubTypes", ReplyAction="http://tempuri.org/ISMService/GetItemSubTypesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ItemSubType[]> GetItemSubTypesAsync(int ItemTypeID, int ItemID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemSubType>> GetItemSubTypesAsync(int ItemTypeID, int ItemID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/DownloadSerialNumbersReport", ReplyAction="http://tempuri.org/ISMService/DownloadSerialNumbersReportResponse")]
         System.Threading.Tasks.Task<SmartClientWS.RemoteFileInfo> DownloadSerialNumbersReportAsync(SmartClientWS.SerailNumberReportDownloadRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetItemImages", ReplyAction="http://tempuri.org/ISMService/GetItemImagesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ItemImage[]> GetItemImagesAsync(int ItemID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemImage>> GetItemImagesAsync(int ItemID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetItemImage", ReplyAction="http://tempuri.org/ISMService/GetItemImageResponse")]
         System.Threading.Tasks.Task<SmartClientWS.ItemImage> GetItemImageAsync(int ItemImageID);
@@ -18835,10 +18835,10 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.SmartUser> GetSmartUserByCardNumberAsync(string CardNumber, bool picture, bool signature, bool emailSignature);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetItemFileTypesTypes", ReplyAction="http://tempuri.org/ISMService/GetItemFileTypesTypesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.FileType[]> GetItemFileTypesTypesAsync(int ItemID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.FileType>> GetItemFileTypesTypesAsync(int ItemID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetClientsSmartUsers", ReplyAction="http://tempuri.org/ISMService/GetClientsSmartUsersResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.SmartUser[]> GetClientsSmartUsersAsync(int UserID, bool pictures);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SmartUser>> GetClientsSmartUsersAsync(int UserID, bool pictures);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/ClientCreateSmartUser", ReplyAction="http://tempuri.org/ISMService/ClientCreateSmartUserResponse")]
         System.Threading.Tasks.Task<SmartClientWS.SmartUser> ClientCreateSmartUserAsync(SmartClientWS.SmartUser smartUser, int UserID);
@@ -18854,7 +18854,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.UploadResult> UploadStreamAsync(SmartClientWS.RemoteFileInfo request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/RemoveFile", ReplyAction="http://tempuri.org/ISMService/RemoveFileResponse")]
-        System.Threading.Tasks.Task<bool> RemoveFileAsync(string[] fileNames, System.Guid FormID);
+        System.Threading.Tasks.Task<bool> RemoveFileAsync(System.Collections.Generic.List<string> fileNames, System.Guid FormID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/DownloadFormFile", ReplyAction="http://tempuri.org/ISMService/DownloadFormFileResponse")]
         System.Threading.Tasks.Task<SmartClientWS.RemoteFileInfo> DownloadFormFileAsync(SmartClientWS.DownloadRequest request);
@@ -18878,7 +18878,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.SaveFormResult> SaveFormAsync(System.Guid FormID, SmartClientWS.RegisterViewModel model, bool final, int user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetAttachments", ReplyAction="http://tempuri.org/ISMService/GetAttachmentsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.Attachment[]> GetAttachmentsAsync(System.Guid FormID, bool GetPath);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Attachment>> GetAttachmentsAsync(System.Guid FormID, bool GetPath);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetClients", ReplyAction="http://tempuri.org/ISMService/GetClientsResponse")]
         System.Threading.Tasks.Task<SmartClientWS.ClientsResult> GetClientsAsync(bool GetPersons, bool GetCounts, bool GetSalesRepresentative, bool GetExtraInfo, System.Nullable<bool> ResellerFilter, bool ActiveOnly, SmartClientWS.FilterRequest ServerFilter);
@@ -18890,10 +18890,10 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.ServiceFormsResult> GetServicesAsync(string state, int user, bool userFilter, int finished, SmartClientWS.FilterRequest ServerFilter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetMergeableServices", ReplyAction="http://tempuri.org/ISMService/GetMergeableServicesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.RegisterViewModel[]> GetMergeableServicesAsync(System.Guid FormID, int user);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.RegisterViewModel>> GetMergeableServicesAsync(System.Guid FormID, int user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetTypes", ReplyAction="http://tempuri.org/ISMService/GetTypesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ProductType[]> GetTypesAsync(string filter);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ProductType>> GetTypesAsync(string filter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetPriceUN", ReplyAction="http://tempuri.org/ISMService/GetPriceUNResponse")]
         System.Threading.Tasks.Task<SmartClientWS.SerialNumberInfoResult> GetPriceUNAsync(int ItemID, string SerNum);
@@ -18905,10 +18905,10 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.TicketsResult> GetTicketsAsync(string state, int user, bool userFilter, bool onlyNA, int TicketTypeIDFilter, System.Nullable<System.DateTime> FromDate, System.Nullable<System.DateTime> ToDate, System.Nullable<int> ClientID, System.Nullable<int> PartnerClientIDFilter, SmartClientWS.FilterRequest serverFilter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/CreateTicket", ReplyAction="http://tempuri.org/ISMService/CreateTicketResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.NewTicketResult> CreateTicketAsync(SmartClientWS.Ticket ticket, string Notify, string NotifyCc, int user, long ParentTicketID, int[] Assigned, bool NotifyAssigned, string NoteContent, SmartClientWS.ActionOrigin ticketOrigin, string OriginID, bool IgnorePartnerClient);
+        System.Threading.Tasks.Task<SmartClientWS.NewTicketResult> CreateTicketAsync(SmartClientWS.Ticket ticket, string Notify, string NotifyCc, int user, long ParentTicketID, System.Collections.Generic.List<int> Assigned, bool NotifyAssigned, string NoteContent, SmartClientWS.ActionOrigin ticketOrigin, string OriginID, bool IgnorePartnerClient);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/EditTicket", ReplyAction="http://tempuri.org/ISMService/EditTicketResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.NewTicketResult> EditTicketAsync(int ClientID, SmartClientWS.TicketType type, string Notify, string NotifyCc, string State, int TicketID, int[] Assigned, int user, int PartnerClientID, SmartClientWS.Priority Priority);
+        System.Threading.Tasks.Task<SmartClientWS.NewTicketResult> EditTicketAsync(int ClientID, SmartClientWS.TicketType type, string Notify, string NotifyCc, string State, int TicketID, System.Collections.Generic.List<int> Assigned, int user, int PartnerClientID, SmartClientWS.Priority Priority);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/DeleteTicket", ReplyAction="http://tempuri.org/ISMService/DeleteTicketResponse")]
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> DeleteTicketAsync(long TicketID, int TicketDeleteReasonID, bool BlacklistEmail, int user);
@@ -18920,7 +18920,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.Ticket> GetTicketByIDAsync(long TicketID, int user, bool GetResponses);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetTicketNotes", ReplyAction="http://tempuri.org/ISMService/GetTicketNotesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.TicketNote[]> GetTicketNotesAsync(long TicketID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.TicketNote>> GetTicketNotesAsync(long TicketID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/DeleteTicketNote", ReplyAction="http://tempuri.org/ISMService/DeleteTicketNoteResponse")]
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> DeleteTicketNoteAsync(long TicketID, int NoteID, int user);
@@ -18936,17 +18936,17 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.UploadResult> UploadEmailAttachmentAsync(SmartClientWS.RemoteFileInfo request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/RemoveEmailAttachment", ReplyAction="http://tempuri.org/ISMService/RemoveEmailAttachmentResponse")]
-        System.Threading.Tasks.Task<bool> RemoveEmailAttachmentAsync(string[] fileNames, long TicketID, string TicketSession, int UserID);
+        System.Threading.Tasks.Task<bool> RemoveEmailAttachmentAsync(System.Collections.Generic.List<string> fileNames, long TicketID, string TicketSession, int UserID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/AddResponseToTicket", ReplyAction="http://tempuri.org/ISMService/AddResponseToTicketResponse")]
         System.Threading.Tasks.Task<SmartClientWS.NewTicketResponseResult> AddResponseToTicketAsync(SmartClientWS.NewTicketResponseData Data);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/AddEmailResponseToTicket", ReplyAction="http://tempuri.org/ISMService/AddEmailResponseToTicketResponse")]
-        System.Threading.Tasks.Task<bool> AddEmailResponseToTicketAsync(string[] MessageIDs, string Email);
+        System.Threading.Tasks.Task<bool> AddEmailResponseToTicketAsync(System.Collections.Generic.List<string> MessageIDs, string Email);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/AddEmailResponseToTicketFromMessageUniqueID", ReplyAction="http://tempuri.org/ISMService/AddEmailResponseToTicketFromMessageUniqueIDResponse" +
             "")]
-        System.Threading.Tasks.Task<bool> AddEmailResponseToTicketFromMessageUniqueIDAsync(string[] UniqueIDs, string Email);
+        System.Threading.Tasks.Task<bool> AddEmailResponseToTicketFromMessageUniqueIDAsync(System.Collections.Generic.List<string> UniqueIDs, string Email);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/AssignToTicket", ReplyAction="http://tempuri.org/ISMService/AssignToTicketResponse")]
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> AssignToTicketAsync(int Assigned, long TicketID, int user, bool notify, bool sendEmail);
@@ -18955,7 +18955,7 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> DeSignToTicketAsync(int assign, long TicketID, int user, bool notify);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetSmartUsers", ReplyAction="http://tempuri.org/ISMService/GetSmartUsersResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.SmartUser[]> GetSmartUsersAsync(string user, bool pictures, System.Nullable<bool> active);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SmartUser>> GetSmartUsersAsync(string user, bool pictures, System.Nullable<bool> active);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/UpdateStatus", ReplyAction="http://tempuri.org/ISMService/UpdateStatusResponse")]
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> UpdateStatusAsync(string status, long TicketID, int user, bool changeChildren);
@@ -18970,16 +18970,16 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.NewContractResult> CreateContractAsync(SmartClientWS.Contract data, int user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetContractTypes", ReplyAction="http://tempuri.org/ISMService/GetContractTypesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ContractType[]> GetContractTypesAsync(int ContractTypeCategoryID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ContractType>> GetContractTypesAsync(int ContractTypeCategoryID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetContractType", ReplyAction="http://tempuri.org/ISMService/GetContractTypeResponse")]
         System.Threading.Tasks.Task<SmartClientWS.ContractType> GetContractTypeAsync(int ContractTypeID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetRenewalTypes", ReplyAction="http://tempuri.org/ISMService/GetRenewalTypesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ContractRenewal[]> GetRenewalTypesAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ContractRenewal>> GetRenewalTypesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetLimitTypes", ReplyAction="http://tempuri.org/ISMService/GetLimitTypesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.LimitType[]> GetLimitTypesAsync(int ContractTypeID, long[] Selected, bool getAll);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.LimitType>> GetLimitTypesAsync(int ContractTypeID, System.Collections.Generic.List<long> Selected, bool getAll);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetContract", ReplyAction="http://tempuri.org/ISMService/GetContractResponse")]
         System.Threading.Tasks.Task<SmartClientWS.Contract> GetContractAsync(long ContractID);
@@ -18994,25 +18994,25 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.ContractsResult> GetContractsExpiringAsync(SmartClientWS.FilterRequest serverFilter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetContractInvoices", ReplyAction="http://tempuri.org/ISMService/GetContractInvoicesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ContractInvoice[]> GetContractInvoicesAsync(long ContractID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ContractInvoice>> GetContractInvoicesAsync(long ContractID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetClient", ReplyAction="http://tempuri.org/ISMService/GetClientResponse")]
         System.Threading.Tasks.Task<SmartClientWS.Client> GetClientAsync(int id, string notFoundName, bool GetContracts, bool getPersons, bool GetStats, bool GetCounts, bool GetSalesRepresentative, bool GetExtras);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetClientSpentTime", ReplyAction="http://tempuri.org/ISMService/GetClientSpentTimeResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ClientTotalTimeResult[]> GetClientSpentTimeAsync(int ClientID, int PartnerClientID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ClientTotalTimeResult>> GetClientSpentTimeAsync(int ClientID, int PartnerClientID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetClientPersons", ReplyAction="http://tempuri.org/ISMService/GetClientPersonsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.Person[]> GetClientPersonsAsync(int ClientID, int PartnerClientID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Person>> GetClientPersonsAsync(int ClientID, int PartnerClientID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetClientContracts", ReplyAction="http://tempuri.org/ISMService/GetClientContractsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.Contract[]> GetClientContractsAsync(long ClientID, int PartnerClientID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Contract>> GetClientContractsAsync(long ClientID, int PartnerClientID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetContractInvoiceLimits", ReplyAction="http://tempuri.org/ISMService/GetContractInvoiceLimitsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ContractLimit[]> GetContractInvoiceLimitsAsync(long ContractID, long InvoiceID);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ContractLimit>> GetContractInvoiceLimitsAsync(long ContractID, long InvoiceID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetTicketTypes", ReplyAction="http://tempuri.org/ISMService/GetTicketTypesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.TicketType[]> GetTicketTypesAsync(System.Nullable<bool> ChildOnly);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.TicketType>> GetTicketTypesAsync(System.Nullable<bool> ChildOnly);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetTicketType", ReplyAction="http://tempuri.org/ISMService/GetTicketTypeResponse")]
         System.Threading.Tasks.Task<SmartClientWS.TicketType> GetTicketTypeAsync(int TicketTypeID, SmartClientWS.TicketType ifNull);
@@ -19027,19 +19027,19 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.TicketType> DeleteTicketTypeAsync(SmartClientWS.TicketType newTicketType);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetUserReportStats", ReplyAction="http://tempuri.org/ISMService/GetUserReportStatsResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.UserReportStats[]> GetUserReportStatsAsync(int user);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.UserReportStats>> GetUserReportStatsAsync(int user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetTicketStatsByUser", ReplyAction="http://tempuri.org/ISMService/GetTicketStatsByUserResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.TicketStats[]> GetTicketStatsByUserAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.TicketStats>> GetTicketStatsByUserAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetUserRoles", ReplyAction="http://tempuri.org/ISMService/GetUserRolesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.UserRole[]> GetUserRolesAsync(int user);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.UserRole>> GetUserRolesAsync(int user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetClientUserRoles", ReplyAction="http://tempuri.org/ISMService/GetClientUserRolesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.UserRole[]> GetClientUserRolesAsync(int user);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.UserRole>> GetClientUserRolesAsync(int user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/UpdateUserWithRoles", ReplyAction="http://tempuri.org/ISMService/UpdateUserWithRolesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.BasicResult> UpdateUserWithRolesAsync(SmartClientWS.UserRole[] roles, int user, bool newPasswordFlag, bool UseLDAP, string newPassword, string CardNumber, bool Active, int UserProfileID);
+        System.Threading.Tasks.Task<SmartClientWS.BasicResult> UpdateUserWithRolesAsync(System.Collections.Generic.List<SmartClientWS.UserRole> roles, int user, bool newPasswordFlag, bool UseLDAP, string newPassword, string CardNumber, bool Active, int UserProfileID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/UpdateUserInfo", ReplyAction="http://tempuri.org/ISMService/UpdateUserInfoResponse")]
         System.Threading.Tasks.Task<SmartClientWS.BasicResult> UpdateUserInfoAsync(int user, string image, string signature, string emailSignature, string Name);
@@ -19078,10 +19078,10 @@ namespace SmartClientWS
         System.Threading.Tasks.Task<SmartClientWS.ItemsResult> GetAllItemsAsync(int ItemTypeID, string filter, int OffsetNum, int RowsCount, bool useOffset, bool StockManagedOnly, int StockZoneIDFilter, bool SerialNumberManagedOnly);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetItemTypes", ReplyAction="http://tempuri.org/ISMService/GetItemTypesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ItemType[]> GetItemTypesAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemType>> GetItemTypesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/GetQuickReportItemTypes", ReplyAction="http://tempuri.org/ISMService/GetQuickReportItemTypesResponse")]
-        System.Threading.Tasks.Task<SmartClientWS.ItemType[]> GetQuickReportItemTypesAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemType>> GetQuickReportItemTypesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISMService/CreateItemType", ReplyAction="http://tempuri.org/ISMService/CreateItemTypeResponse")]
         System.Threading.Tasks.Task<SmartClientWS.IntBasicResult> CreateItemTypeAsync(SmartClientWS.ItemType newItemType);
@@ -20019,17 +20019,17 @@ namespace SmartClientWS
             return ((SmartClientWS.ISMService)(this)).DownloadListingReportAsync(inValue);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.StockListing[]> GetSimpleStockListingAsync(System.Nullable<System.DateTime> DateStart, System.Nullable<System.DateTime> DateEnd)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.StockListing>> GetSimpleStockListingAsync(System.Nullable<System.DateTime> DateStart, System.Nullable<System.DateTime> DateEnd)
         {
             return base.Channel.GetSimpleStockListingAsync(DateStart, DateEnd);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.StockListing[]> GetDetailedStockListingAsync(System.Nullable<System.DateTime> DateStart, System.Nullable<System.DateTime> DateEnd)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.StockListing>> GetDetailedStockListingAsync(System.Nullable<System.DateTime> DateStart, System.Nullable<System.DateTime> DateEnd)
         {
             return base.Channel.GetDetailedStockListingAsync(DateStart, DateEnd);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.Attachment[]> GetStockMovementAttachmentsAsync(int StockMovementID, bool IsTemporary, bool GetPath)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Attachment>> GetStockMovementAttachmentsAsync(int StockMovementID, bool IsTemporary, bool GetPath)
         {
             return base.Channel.GetStockMovementAttachmentsAsync(StockMovementID, IsTemporary, GetPath);
         }
@@ -20052,12 +20052,12 @@ namespace SmartClientWS
             return ((SmartClientWS.ISMService)(this)).DownloadRepairLabelAsync(inValue);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.IntBasicResult> MergeTicketsAsync(long[] TicketIDs, long IntoTicketID, int UserID)
+        public System.Threading.Tasks.Task<SmartClientWS.IntBasicResult> MergeTicketsAsync(System.Collections.Generic.List<long> TicketIDs, long IntoTicketID, int UserID)
         {
             return base.Channel.MergeTicketsAsync(TicketIDs, IntoTicketID, UserID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.IntBasicResult> AddExistingSubTicketsAsync(long[] TicketIDs, long IntoTicketID, int UserID)
+        public System.Threading.Tasks.Task<SmartClientWS.IntBasicResult> AddExistingSubTicketsAsync(System.Collections.Generic.List<long> TicketIDs, long IntoTicketID, int UserID)
         {
             return base.Channel.AddExistingSubTicketsAsync(TicketIDs, IntoTicketID, UserID);
         }
@@ -20067,7 +20067,7 @@ namespace SmartClientWS
             return base.Channel.TestVirusScanAsync();
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.SoftwareLicense[]> GetSoftwareLicensesAsync(int ClientID, int PartnerClient)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SoftwareLicense>> GetSoftwareLicensesAsync(int ClientID, int PartnerClient)
         {
             return base.Channel.GetSoftwareLicensesAsync(ClientID, PartnerClient);
         }
@@ -20077,12 +20077,12 @@ namespace SmartClientWS
             return base.Channel.GetSoftwareLicenseAsync(IDLicencaSoftware);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.HardwareLicense[]> GetHardwareLicensesAsync(int ClientID, int PartnerClient)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.HardwareLicense>> GetHardwareLicensesAsync(int ClientID, int PartnerClient)
         {
             return base.Channel.GetHardwareLicensesAsync(ClientID, PartnerClient);
         }
         
-        public System.Threading.Tasks.Task<string[]> GetLicenseTerminalModelsAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<string>> GetLicenseTerminalModelsAsync()
         {
             return base.Channel.GetLicenseTerminalModelsAsync();
         }
@@ -20092,17 +20092,17 @@ namespace SmartClientWS
             return base.Channel.GetLicenseTerminalModelAsync(key);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.SoftwareItem[]> GetLicenseSoftwaresAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SoftwareItem>> GetLicenseSoftwaresAsync()
         {
             return base.Channel.GetLicenseSoftwaresAsync();
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.LicenseModule[]> GetLicenseModulesAsync(string code, int IDLicencaSoftware)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.LicenseModule>> GetLicenseModulesAsync(string code, int IDLicencaSoftware)
         {
             return base.Channel.GetLicenseModulesAsync(code, IDLicencaSoftware);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.SoftwareLicenseActivation[]> GetSoftwareLicenseActivationsAsync(int IDLicencaSoftware)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SoftwareLicenseActivation>> GetSoftwareLicenseActivationsAsync(int IDLicencaSoftware)
         {
             return base.Channel.GetSoftwareLicenseActivationsAsync(IDLicencaSoftware);
         }
@@ -20192,7 +20192,7 @@ namespace SmartClientWS
             return base.Channel.UploadSmartClientFileAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.Attachment[]> GetSmartClientFilesAsync(long OriginID, SmartClientWS.ActionOrigin Origin, bool GetPath)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Attachment>> GetSmartClientFilesAsync(long OriginID, SmartClientWS.ActionOrigin Origin, bool GetPath)
         {
             return base.Channel.GetSmartClientFilesAsync(OriginID, Origin, GetPath);
         }
@@ -20222,7 +20222,7 @@ namespace SmartClientWS
             return base.Channel.SendPendingApprovalsNotificationAsync();
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.IntBasicResult> CreateTicketRepairAsync(long TicketID, int UserID, int[] Assigned)
+        public System.Threading.Tasks.Task<SmartClientWS.IntBasicResult> CreateTicketRepairAsync(long TicketID, int UserID, System.Collections.Generic.List<int> Assigned)
         {
             return base.Channel.CreateTicketRepairAsync(TicketID, UserID, Assigned);
         }
@@ -20268,7 +20268,7 @@ namespace SmartClientWS
             return base.Channel.UploadImageAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.BasicResult> AutomaticClientExitAsync(SmartClientWS.Product[] items, long OriginID, SmartClientWS.ActionOrigin Origin, int UserID)
+        public System.Threading.Tasks.Task<SmartClientWS.BasicResult> AutomaticClientExitAsync(System.Collections.Generic.List<SmartClientWS.Product> items, long OriginID, SmartClientWS.ActionOrigin Origin, int UserID)
         {
             return base.Channel.AutomaticClientExitAsync(items, OriginID, Origin, UserID);
         }
@@ -20308,7 +20308,7 @@ namespace SmartClientWS
             return base.Channel.ChangeTicketInvoiceStatusAsync(TicketID, Invoiced, UserID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.LongBasicResult> ChangeTicketResponseOriginAsync(long ResponseID, string Subject, string Note, long TicketID, int[] Assigned, int UserID)
+        public System.Threading.Tasks.Task<SmartClientWS.LongBasicResult> ChangeTicketResponseOriginAsync(long ResponseID, string Subject, string Note, long TicketID, System.Collections.Generic.List<int> Assigned, int UserID)
         {
             return base.Channel.ChangeTicketResponseOriginAsync(ResponseID, Subject, Note, TicketID, Assigned, UserID);
         }
@@ -20340,27 +20340,27 @@ namespace SmartClientWS
             return ((SmartClientWS.ISMService)(this)).DownloadMarkdownAsync(inValue);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.TicketsPerUserResult> GetTicketsPerUserAsync(int[] Users, int[] Types)
+        public System.Threading.Tasks.Task<SmartClientWS.TicketsPerUserResult> GetTicketsPerUserAsync(System.Collections.Generic.List<int> Users, System.Collections.Generic.List<int> Types)
         {
             return base.Channel.GetTicketsPerUserAsync(Users, Types);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.TicketsCreationTimesResult> GetTicketCreationAsync(int[] Users, int[] Types, int Months)
+        public System.Threading.Tasks.Task<SmartClientWS.TicketsCreationTimesResult> GetTicketCreationAsync(System.Collections.Generic.List<int> Users, System.Collections.Generic.List<int> Types, int Months)
         {
             return base.Channel.GetTicketCreationAsync(Users, Types, Months);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ResponseCreationResult> GetResponseCreationAsync(int[] Users, int[] Types, int days)
+        public System.Threading.Tasks.Task<SmartClientWS.ResponseCreationResult> GetResponseCreationAsync(System.Collections.Generic.List<int> Users, System.Collections.Generic.List<int> Types, int days)
         {
             return base.Channel.GetResponseCreationAsync(Users, Types, days);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.DashboardStatsResult> GetDashBoardStatsAsync(int[] Users, int[] Types, int days)
+        public System.Threading.Tasks.Task<SmartClientWS.DashboardStatsResult> GetDashBoardStatsAsync(System.Collections.Generic.List<int> Users, System.Collections.Generic.List<int> Types, int days)
         {
             return base.Channel.GetDashBoardStatsAsync(Users, Types, days);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.UserOldestTicketResult> UserOldestTicketAsync(int[] Users, int[] Types)
+        public System.Threading.Tasks.Task<SmartClientWS.UserOldestTicketResult> UserOldestTicketAsync(System.Collections.Generic.List<int> Users, System.Collections.Generic.List<int> Types)
         {
             return base.Channel.UserOldestTicketAsync(Users, Types);
         }
@@ -20385,7 +20385,7 @@ namespace SmartClientWS
             return base.Channel.FindGlobalNIFAsync(NIF);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.FindGlobalEntityByNIFResult[]> FindGlobalEntityByNIFAsync(string NIF)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.FindGlobalEntityByNIFResult>> FindGlobalEntityByNIFAsync(string NIF)
         {
             return base.Channel.FindGlobalEntityByNIFAsync(NIF);
         }
@@ -20415,7 +20415,7 @@ namespace SmartClientWS
             return base.Channel.SendMeetingNotificationAsync(MeetingID, UserID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.MeetingState[]> GetMeetingStatesAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.MeetingState>> GetMeetingStatesAsync()
         {
             return base.Channel.GetMeetingStatesAsync();
         }
@@ -20450,7 +20450,7 @@ namespace SmartClientWS
             return base.Channel.AddQuickFileToResponseAsync(AttachmentID, FileTypeID, TicketID, UserID, ResponseType);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.Attachment[]> GetEmailAttachmentsAsync(long TicketID, string TicketSessionID, bool getPath, int ResponseType, int UserID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Attachment>> GetEmailAttachmentsAsync(long TicketID, string TicketSessionID, bool getPath, int ResponseType, int UserID)
         {
             return base.Channel.GetEmailAttachmentsAsync(TicketID, TicketSessionID, getPath, ResponseType, UserID);
         }
@@ -20479,7 +20479,7 @@ namespace SmartClientWS
             return base.Channel.RemoveQuickAttachmentByIDAsync(ItemAttachmentID);
         }
         
-        public System.Threading.Tasks.Task<bool> RemoveQuickAttachmentAsync(string[] fileNames)
+        public System.Threading.Tasks.Task<bool> RemoveQuickAttachmentAsync(System.Collections.Generic.List<string> fileNames)
         {
             return base.Channel.RemoveQuickAttachmentAsync(fileNames);
         }
@@ -20489,12 +20489,12 @@ namespace SmartClientWS
             return base.Channel.UploadQuickAttachmentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.Attachment[]> GetQuickFilesAsync(bool getPath)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Attachment>> GetQuickFilesAsync(bool getPath)
         {
             return base.Channel.GetQuickFilesAsync(getPath);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.UserProfile[]> GetUserProfilesAsync(bool GetRoles, bool GetUsers)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.UserProfile>> GetUserProfilesAsync(bool GetRoles, bool GetUsers)
         {
             return base.Channel.GetUserProfilesAsync(GetRoles, GetUsers);
         }
@@ -20509,22 +20509,22 @@ namespace SmartClientWS
             return base.Channel.DeleteUserProfileAsync(UserProfileID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.UserRole[]> GetProfileRolesAsync(int UserProfileID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.UserRole>> GetProfileRolesAsync(int UserProfileID)
         {
             return base.Channel.GetProfileRolesAsync(UserProfileID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.BasicResult> UpdateUserProfileRolesAsync(SmartClientWS.UserRole[] roles, int UserProfileID, int[] SmartUsers)
+        public System.Threading.Tasks.Task<SmartClientWS.BasicResult> UpdateUserProfileRolesAsync(System.Collections.Generic.List<SmartClientWS.UserRole> roles, int UserProfileID, System.Collections.Generic.List<int> SmartUsers)
         {
             return base.Channel.UpdateUserProfileRolesAsync(roles, UserProfileID, SmartUsers);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.SmartUserTicketStats[]> GetSmartUserTicketStatsAsync(int Days, int UserID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SmartUserTicketStats>> GetSmartUserTicketStatsAsync(int Days, int UserID)
         {
             return base.Channel.GetSmartUserTicketStatsAsync(Days, UserID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.Ticket[]> GetBasicRepairTicketsAsync(int ClientID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Ticket>> GetBasicRepairTicketsAsync(int ClientID)
         {
             return base.Channel.GetBasicRepairTicketsAsync(ClientID);
         }
@@ -20534,7 +20534,7 @@ namespace SmartClientWS
             return base.Channel.UploadStockMovementFileAsync(request);
         }
         
-        public System.Threading.Tasks.Task<bool> RemoveStockMovementFileAsync(string[] fileNames, int StockMovement, bool TemporaryMovement)
+        public System.Threading.Tasks.Task<bool> RemoveStockMovementFileAsync(System.Collections.Generic.List<string> fileNames, int StockMovement, bool TemporaryMovement)
         {
             return base.Channel.RemoveStockMovementFileAsync(fileNames, StockMovement, TemporaryMovement);
         }
@@ -20671,7 +20671,7 @@ namespace SmartClientWS
             return base.Channel.GetRepairQuoteAsync(UserID, RepairQuoteID, GetItems, GetRepairResponsibles, GetRepair);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.Product[]> GetRepairQuoteItemsAsync(int RepairQuoteID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Product>> GetRepairQuoteItemsAsync(int RepairQuoteID)
         {
             return base.Channel.GetRepairQuoteItemsAsync(RepairQuoteID);
         }
@@ -20706,7 +20706,7 @@ namespace SmartClientWS
             return base.Channel.RemoveRepairFileByIDAsync(FileID, RepairID, RepairFormID);
         }
         
-        public System.Threading.Tasks.Task<bool> RemoveRepairFilesAsync(string[] fileNames, int RepairID, long RepairFormID, int UserID)
+        public System.Threading.Tasks.Task<bool> RemoveRepairFilesAsync(System.Collections.Generic.List<string> fileNames, int RepairID, long RepairFormID, int UserID)
         {
             return base.Channel.RemoveRepairFilesAsync(fileNames, RepairID, RepairFormID, UserID);
         }
@@ -20716,7 +20716,7 @@ namespace SmartClientWS
             return base.Channel.UploadRepairFileAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.RepairAttachment[]> GetRepairFilesAsync(int RepairID, long RepairFormID, bool GetPath)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.RepairAttachment>> GetRepairFilesAsync(int RepairID, long RepairFormID, bool GetPath)
         {
             return base.Channel.GetRepairFilesAsync(RepairID, RepairFormID, GetPath);
         }
@@ -20797,7 +20797,7 @@ namespace SmartClientWS
             return base.Channel.GetRepairFormAsync(ReportFormID, UserID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.RepairForm[]> GetRepairFormsAsync(bool UserFilter, int UserID, string ObservationsFilter, System.Nullable<bool> finished, int RepairID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.RepairForm>> GetRepairFormsAsync(bool UserFilter, int UserID, string ObservationsFilter, System.Nullable<bool> finished, int RepairID)
         {
             return base.Channel.GetRepairFormsAsync(UserFilter, UserID, ObservationsFilter, finished, RepairID);
         }
@@ -20941,7 +20941,7 @@ namespace SmartClientWS
             return base.Channel.UploadRepairQuoteFileAsync(request);
         }
         
-        public System.Threading.Tasks.Task<bool> RemoveRepairQuoteFilesAsync(string[] fileNames, int RepairQuoteID, int UserID)
+        public System.Threading.Tasks.Task<bool> RemoveRepairQuoteFilesAsync(System.Collections.Generic.List<string> fileNames, int RepairQuoteID, int UserID)
         {
             return base.Channel.RemoveRepairQuoteFilesAsync(fileNames, RepairQuoteID, UserID);
         }
@@ -20956,7 +20956,7 @@ namespace SmartClientWS
             return base.Channel.GetRepairQuoteFileAsync(FileID, GetPath);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.Attachment[]> GetRepairQuoteFilesAsync(int RepairQuoteID, bool GetPath)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Attachment>> GetRepairQuoteFilesAsync(int RepairQuoteID, bool GetPath)
         {
             return base.Channel.GetRepairQuoteFilesAsync(RepairQuoteID, GetPath);
         }
@@ -21029,12 +21029,12 @@ namespace SmartClientWS
             return base.Channel.GetLoginLogsAsync(UserID, ServerRequest);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ChangesLog[]> GetChangeLogsAsync(string typeFilter)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ChangesLog>> GetChangeLogsAsync(string typeFilter)
         {
             return base.Channel.GetChangeLogsAsync(typeFilter);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.Attachment[]> GetClientAttachmentsAsync(int ClientID, bool getPath)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Attachment>> GetClientAttachmentsAsync(int ClientID, bool getPath)
         {
             return base.Channel.GetClientAttachmentsAsync(ClientID, getPath);
         }
@@ -21049,7 +21049,7 @@ namespace SmartClientWS
             return base.Channel.UploadClientAttachmentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<bool> RemoveClientAttachmentAsync(string[] fileNames, int ClientID)
+        public System.Threading.Tasks.Task<bool> RemoveClientAttachmentAsync(System.Collections.Generic.List<string> fileNames, int ClientID)
         {
             return base.Channel.RemoveClientAttachmentAsync(fileNames, ClientID);
         }
@@ -21095,7 +21095,7 @@ namespace SmartClientWS
             return base.Channel.RollBackChangeAsync(ChangeLogID, UserID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.Attachment[]> GetContractAttachmentsAsync(int ContractID, bool getPath)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Attachment>> GetContractAttachmentsAsync(int ContractID, bool getPath)
         {
             return base.Channel.GetContractAttachmentsAsync(ContractID, getPath);
         }
@@ -21110,7 +21110,7 @@ namespace SmartClientWS
             return base.Channel.UploadContractAttachmentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<bool> RemoveContractAttachmentAsync(string[] fileNames, int ContractID)
+        public System.Threading.Tasks.Task<bool> RemoveContractAttachmentAsync(System.Collections.Generic.List<string> fileNames, int ContractID)
         {
             return base.Channel.RemoveContractAttachmentAsync(fileNames, ContractID);
         }
@@ -21134,7 +21134,7 @@ namespace SmartClientWS
             return ((SmartClientWS.ISMService)(this)).DownloadContractFileAsync(inValue);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.SupplierPerson[]> GetSupplierPersonsAsync(int SupplierID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SupplierPerson>> GetSupplierPersonsAsync(int SupplierID)
         {
             return base.Channel.GetSupplierPersonsAsync(SupplierID);
         }
@@ -21154,7 +21154,7 @@ namespace SmartClientWS
             return base.Channel.DeleteSupplierPersonsAsync(person, SupplierID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.BankDetail[]> GetSupplierBankDetailsAsync(int SupplierID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.BankDetail>> GetSupplierBankDetailsAsync(int SupplierID)
         {
             return base.Channel.GetSupplierBankDetailsAsync(SupplierID);
         }
@@ -21179,7 +21179,7 @@ namespace SmartClientWS
             return base.Channel.DeleteBankDetailAsync(newData);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.SupplierItem[]> GetSupplierItemsAsync(int SupplierID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SupplierItem>> GetSupplierItemsAsync(int SupplierID)
         {
             return base.Channel.GetSupplierItemsAsync(SupplierID);
         }
@@ -21204,7 +21204,7 @@ namespace SmartClientWS
             return base.Channel.DeleteSupplierItemAsync(newData, SupplierID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ItemSupplier[]> GetItemSuppliersAsync(int ItemID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemSupplier>> GetItemSuppliersAsync(int ItemID)
         {
             return base.Channel.GetItemSuppliersAsync(ItemID);
         }
@@ -21214,7 +21214,7 @@ namespace SmartClientWS
             return base.Channel.EditClientAsync(client, UserID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.Meeting[]> GetAllMeetingsAsync(System.DateTime Start, System.DateTime End, int[] AssignedFilter)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Meeting>> GetAllMeetingsAsync(System.DateTime Start, System.DateTime End, System.Collections.Generic.List<int> AssignedFilter)
         {
             return base.Channel.GetAllMeetingsAsync(Start, End, AssignedFilter);
         }
@@ -21269,7 +21269,7 @@ namespace SmartClientWS
             return base.Channel.GetPartnerClientsAsync(filter, OffsetNum, RowsCount, useOffset, ClientID, ActiveOnly, GetClients);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.SmartClientWindow[]> GetSmartClientWindowsAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SmartClientWindow>> GetSmartClientWindowsAsync()
         {
             return base.Channel.GetSmartClientWindowsAsync();
         }
@@ -21289,7 +21289,7 @@ namespace SmartClientWS
             return base.Channel.GetFileTypeAsync(FileTypeID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.FileType[]> GetFileTypesAsync(string WindowNameFilter)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.FileType>> GetFileTypesAsync(string WindowNameFilter)
         {
             return base.Channel.GetFileTypesAsync(WindowNameFilter);
         }
@@ -21329,7 +21329,7 @@ namespace SmartClientWS
             return base.Channel.UpdateTicketProgressAsync(TicketID, Value);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.BasicTicket[]> GetRelatedTicketsAsync(int ParentTicketID, int TicketID, int user)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.BasicTicket>> GetRelatedTicketsAsync(int ParentTicketID, int TicketID, int user)
         {
             return base.Channel.GetRelatedTicketsAsync(ParentTicketID, TicketID, user);
         }
@@ -21354,7 +21354,7 @@ namespace SmartClientWS
             return base.Channel.GetIvaAsync(time);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.IVARate[]> GetIVARatesAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.IVARate>> GetIVARatesAsync()
         {
             return base.Channel.GetIVARatesAsync();
         }
@@ -21404,7 +21404,7 @@ namespace SmartClientWS
             return base.Channel.DeleteTicketTaskAsync(data);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.TicketTask[]> GetTicketTasksAsync(int TicketID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.TicketTask>> GetTicketTasksAsync(int TicketID)
         {
             return base.Channel.GetTicketTasksAsync(TicketID);
         }
@@ -21419,12 +21419,12 @@ namespace SmartClientWS
             return base.Channel.ReopenTaskFormAsync(id, UserID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ContractTypeCategory[]> GetContractTypeCategoriesAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ContractTypeCategory>> GetContractTypeCategoriesAsync()
         {
             return base.Channel.GetContractTypeCategoriesAsync();
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.Contract[]> GetAllContractsHoursBankAsync(bool onlyActive)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Contract>> GetAllContractsHoursBankAsync(bool onlyActive)
         {
             return base.Channel.GetAllContractsHoursBankAsync(onlyActive);
         }
@@ -21459,12 +21459,12 @@ namespace SmartClientWS
             return base.Channel.UpdateTicketDevelopmentFinishedAsync(TicketID, DevelopmentFinished, UserID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ItemSubTypeGrid[]> GetItemSubTypesGridAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemSubTypeGrid>> GetItemSubTypesGridAsync()
         {
             return base.Channel.GetItemSubTypesGridAsync();
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ItemSubType[]> GetItemTypeItemSubTypesAsync(int ItemTypeID, bool OnlyChecked)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemSubType>> GetItemTypeItemSubTypesAsync(int ItemTypeID, bool OnlyChecked)
         {
             return base.Channel.GetItemTypeItemSubTypesAsync(ItemTypeID, OnlyChecked);
         }
@@ -21484,12 +21484,12 @@ namespace SmartClientWS
             return base.Channel.DeleteClientTypeAsync(newClientType);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ClientType[]> GetClientTypesAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ClientType>> GetClientTypesAsync()
         {
             return base.Channel.GetClientTypesAsync();
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.TicketDeleteReason[]> GetTicketDeleteReasonsAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.TicketDeleteReason>> GetTicketDeleteReasonsAsync()
         {
             return base.Channel.GetTicketDeleteReasonsAsync();
         }
@@ -21509,7 +21509,7 @@ namespace SmartClientWS
             return base.Channel.DeleteTicketDeleteReasonAsync(newTicketDeleteReason);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.TicketResponse[]> GetTicketResponsesAsync(long TicketID, bool GetReadReceipts, int ResponseType)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.TicketResponse>> GetTicketResponsesAsync(long TicketID, bool GetReadReceipts, int ResponseType)
         {
             return base.Channel.GetTicketResponsesAsync(TicketID, GetReadReceipts, ResponseType);
         }
@@ -21536,7 +21536,7 @@ namespace SmartClientWS
             return ((SmartClientWS.ISMService)(this)).DownloadServiceReportAsync(inValue);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.RegisterViewModel[]> GetTicketServiceReportsAsync(int TicketID, int UserID, bool SentOnly)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.RegisterViewModel>> GetTicketServiceReportsAsync(int TicketID, int UserID, bool SentOnly)
         {
             return base.Channel.GetTicketServiceReportsAsync(TicketID, UserID, SentOnly);
         }
@@ -21556,7 +21556,7 @@ namespace SmartClientWS
             return base.Channel.DeleteContractTypeAsync(newContractType);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.LimitType[]> GetAllLimitTypesAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.LimitType>> GetAllLimitTypesAsync()
         {
             return base.Channel.GetAllLimitTypesAsync();
         }
@@ -21581,7 +21581,7 @@ namespace SmartClientWS
             return base.Channel.CreateContractInvoicesUpToAsync(user, year);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.EmailBlacklist[]> GetBlacklistedEmailsAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.EmailBlacklist>> GetBlacklistedEmailsAsync()
         {
             return base.Channel.GetBlacklistedEmailsAsync();
         }
@@ -21601,7 +21601,7 @@ namespace SmartClientWS
             return base.Channel.DeleteEmailBlacklistAsync(newEmailBlacklist);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ReportDeleteReason[]> GetReportDeleteReasonsAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ReportDeleteReason>> GetReportDeleteReasonsAsync()
         {
             return base.Channel.GetReportDeleteReasonsAsync();
         }
@@ -21641,7 +21641,7 @@ namespace SmartClientWS
             return base.Channel.CreateOrEditItemAsync(item, UserID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.StockZone[]> GetStockZonesAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.StockZone>> GetStockZonesAsync()
         {
             return base.Channel.GetStockZonesAsync();
         }
@@ -21666,12 +21666,12 @@ namespace SmartClientWS
             return base.Channel.UploadItemAttachmentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<bool> RemoveItemAttachmentAsync(string[] fileNames, int ItemID)
+        public System.Threading.Tasks.Task<bool> RemoveItemAttachmentAsync(System.Collections.Generic.List<string> fileNames, int ItemID)
         {
             return base.Channel.RemoveItemAttachmentAsync(fileNames, ItemID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ItemAttachment[]> GetItemAttachmentsAsync(int ItemID, bool getPath)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemAttachment>> GetItemAttachmentsAsync(int ItemID, bool getPath)
         {
             return base.Channel.GetItemAttachmentsAsync(ItemID, getPath);
         }
@@ -21695,22 +21695,22 @@ namespace SmartClientWS
             return base.Channel.RemoveItemAttachmentByIDAsync(ItemAttachmentID, ItemID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ItemStockByZone[]> ItemStockByZoneAsync(int ItemID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemStockByZone>> ItemStockByZoneAsync(int ItemID)
         {
             return base.Channel.ItemStockByZoneAsync(ItemID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ItemStockMovement[]> GetItemStockMovementsAsync(int ItemID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemStockMovement>> GetItemStockMovementsAsync(int ItemID)
         {
             return base.Channel.GetItemStockMovementsAsync(ItemID);
         }
         
-        public System.Threading.Tasks.Task<string[]> GetItemStockMovementSerialNumbersAsync(int StockMovementID, int ItemID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<string>> GetItemStockMovementSerialNumbersAsync(int StockMovementID, int ItemID)
         {
             return base.Channel.GetItemStockMovementSerialNumbersAsync(StockMovementID, ItemID);
         }
         
-        public System.Threading.Tasks.Task<string[]> GetItemSerialNumbersInZoneAsync(int ZoneID, int ItemID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<string>> GetItemSerialNumbersInZoneAsync(int ZoneID, int ItemID)
         {
             return base.Channel.GetItemSerialNumbersInZoneAsync(ZoneID, ItemID);
         }
@@ -21750,22 +21750,22 @@ namespace SmartClientWS
             return base.Channel.UpdateTicketSeendFlagAsync(type, SeenFlag, TicketID, user, SendSignalRUpdate);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.SerialNumberInfo[]> GetClientSerialNumbersAsync(int ClientID, int ItemID, string FilterText, System.Nullable<bool> repairFilter)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SerialNumberInfo>> GetClientSerialNumbersAsync(int ClientID, int ItemID, string FilterText, System.Nullable<bool> repairFilter)
         {
             return base.Channel.GetClientSerialNumbersAsync(ClientID, ItemID, FilterText, repairFilter);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.SerialNumberInfo[]> GetPartnerClientSerialNumbersAsync(int PartnerClientID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SerialNumberInfo>> GetPartnerClientSerialNumbersAsync(int PartnerClientID)
         {
             return base.Channel.GetPartnerClientSerialNumbersAsync(PartnerClientID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.Supplier[]> GetSuppliersAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Supplier>> GetSuppliersAsync()
         {
             return base.Channel.GetSuppliersAsync();
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ItemStockMovement[]> GetItemStockMovementsWithSerialNumberAsync(int ItemID, string SerialNumber, bool OnlyAffected)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemStockMovement>> GetItemStockMovementsWithSerialNumberAsync(int ItemID, string SerialNumber, bool OnlyAffected)
         {
             return base.Channel.GetItemStockMovementsWithSerialNumberAsync(ItemID, SerialNumber, OnlyAffected);
         }
@@ -21795,7 +21795,7 @@ namespace SmartClientWS
             return base.Channel.DeleteClientItemAsync(data, ClientID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.StockMovement[]> GetTemporaryStockMovementsAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.StockMovement>> GetTemporaryStockMovementsAsync()
         {
             return base.Channel.GetTemporaryStockMovementsAsync();
         }
@@ -21830,7 +21830,7 @@ namespace SmartClientWS
             return base.Channel.CreateOrEditSuppplierAsync(supplier, UserID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.SerialNumberInfo[]> GetSupplierSerialNumbersAsync(int SupplierID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SerialNumberInfo>> GetSupplierSerialNumbersAsync(int SupplierID)
         {
             return base.Channel.GetSupplierSerialNumbersAsync(SupplierID);
         }
@@ -21850,7 +21850,7 @@ namespace SmartClientWS
             return base.Channel.DeleteSupplierSerialNumberAsync(data, SupplierID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ItemSubType[]> GetItemSubTypesAsync(int ItemTypeID, int ItemID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemSubType>> GetItemSubTypesAsync(int ItemTypeID, int ItemID)
         {
             return base.Channel.GetItemSubTypesAsync(ItemTypeID, ItemID);
         }
@@ -21870,7 +21870,7 @@ namespace SmartClientWS
             return ((SmartClientWS.ISMService)(this)).DownloadSerialNumbersReportAsync(inValue);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ItemImage[]> GetItemImagesAsync(int ItemID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemImage>> GetItemImagesAsync(int ItemID)
         {
             return base.Channel.GetItemImagesAsync(ItemID);
         }
@@ -21900,12 +21900,12 @@ namespace SmartClientWS
             return base.Channel.GetSmartUserByCardNumberAsync(CardNumber, picture, signature, emailSignature);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.FileType[]> GetItemFileTypesTypesAsync(int ItemID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.FileType>> GetItemFileTypesTypesAsync(int ItemID)
         {
             return base.Channel.GetItemFileTypesTypesAsync(ItemID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.SmartUser[]> GetClientsSmartUsersAsync(int UserID, bool pictures)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SmartUser>> GetClientsSmartUsersAsync(int UserID, bool pictures)
         {
             return base.Channel.GetClientsSmartUsersAsync(UserID, pictures);
         }
@@ -21930,7 +21930,7 @@ namespace SmartClientWS
             return base.Channel.UploadStreamAsync(request);
         }
         
-        public System.Threading.Tasks.Task<bool> RemoveFileAsync(string[] fileNames, System.Guid FormID)
+        public System.Threading.Tasks.Task<bool> RemoveFileAsync(System.Collections.Generic.List<string> fileNames, System.Guid FormID)
         {
             return base.Channel.RemoveFileAsync(fileNames, FormID);
         }
@@ -22008,7 +22008,7 @@ namespace SmartClientWS
             return base.Channel.SaveFormAsync(FormID, model, final, user);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.Attachment[]> GetAttachmentsAsync(System.Guid FormID, bool GetPath)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Attachment>> GetAttachmentsAsync(System.Guid FormID, bool GetPath)
         {
             return base.Channel.GetAttachmentsAsync(FormID, GetPath);
         }
@@ -22028,12 +22028,12 @@ namespace SmartClientWS
             return base.Channel.GetServicesAsync(state, user, userFilter, finished, ServerFilter);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.RegisterViewModel[]> GetMergeableServicesAsync(System.Guid FormID, int user)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.RegisterViewModel>> GetMergeableServicesAsync(System.Guid FormID, int user)
         {
             return base.Channel.GetMergeableServicesAsync(FormID, user);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ProductType[]> GetTypesAsync(string filter)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ProductType>> GetTypesAsync(string filter)
         {
             return base.Channel.GetTypesAsync(filter);
         }
@@ -22053,12 +22053,12 @@ namespace SmartClientWS
             return base.Channel.GetTicketsAsync(state, user, userFilter, onlyNA, TicketTypeIDFilter, FromDate, ToDate, ClientID, PartnerClientIDFilter, serverFilter);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.NewTicketResult> CreateTicketAsync(SmartClientWS.Ticket ticket, string Notify, string NotifyCc, int user, long ParentTicketID, int[] Assigned, bool NotifyAssigned, string NoteContent, SmartClientWS.ActionOrigin ticketOrigin, string OriginID, bool IgnorePartnerClient)
+        public System.Threading.Tasks.Task<SmartClientWS.NewTicketResult> CreateTicketAsync(SmartClientWS.Ticket ticket, string Notify, string NotifyCc, int user, long ParentTicketID, System.Collections.Generic.List<int> Assigned, bool NotifyAssigned, string NoteContent, SmartClientWS.ActionOrigin ticketOrigin, string OriginID, bool IgnorePartnerClient)
         {
             return base.Channel.CreateTicketAsync(ticket, Notify, NotifyCc, user, ParentTicketID, Assigned, NotifyAssigned, NoteContent, ticketOrigin, OriginID, IgnorePartnerClient);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.NewTicketResult> EditTicketAsync(int ClientID, SmartClientWS.TicketType type, string Notify, string NotifyCc, string State, int TicketID, int[] Assigned, int user, int PartnerClientID, SmartClientWS.Priority Priority)
+        public System.Threading.Tasks.Task<SmartClientWS.NewTicketResult> EditTicketAsync(int ClientID, SmartClientWS.TicketType type, string Notify, string NotifyCc, string State, int TicketID, System.Collections.Generic.List<int> Assigned, int user, int PartnerClientID, SmartClientWS.Priority Priority)
         {
             return base.Channel.EditTicketAsync(ClientID, type, Notify, NotifyCc, State, TicketID, Assigned, user, PartnerClientID, Priority);
         }
@@ -22078,7 +22078,7 @@ namespace SmartClientWS
             return base.Channel.GetTicketByIDAsync(TicketID, user, GetResponses);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.TicketNote[]> GetTicketNotesAsync(long TicketID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.TicketNote>> GetTicketNotesAsync(long TicketID)
         {
             return base.Channel.GetTicketNotesAsync(TicketID);
         }
@@ -22103,7 +22103,7 @@ namespace SmartClientWS
             return base.Channel.UploadEmailAttachmentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<bool> RemoveEmailAttachmentAsync(string[] fileNames, long TicketID, string TicketSession, int UserID)
+        public System.Threading.Tasks.Task<bool> RemoveEmailAttachmentAsync(System.Collections.Generic.List<string> fileNames, long TicketID, string TicketSession, int UserID)
         {
             return base.Channel.RemoveEmailAttachmentAsync(fileNames, TicketID, TicketSession, UserID);
         }
@@ -22113,12 +22113,12 @@ namespace SmartClientWS
             return base.Channel.AddResponseToTicketAsync(Data);
         }
         
-        public System.Threading.Tasks.Task<bool> AddEmailResponseToTicketAsync(string[] MessageIDs, string Email)
+        public System.Threading.Tasks.Task<bool> AddEmailResponseToTicketAsync(System.Collections.Generic.List<string> MessageIDs, string Email)
         {
             return base.Channel.AddEmailResponseToTicketAsync(MessageIDs, Email);
         }
         
-        public System.Threading.Tasks.Task<bool> AddEmailResponseToTicketFromMessageUniqueIDAsync(string[] UniqueIDs, string Email)
+        public System.Threading.Tasks.Task<bool> AddEmailResponseToTicketFromMessageUniqueIDAsync(System.Collections.Generic.List<string> UniqueIDs, string Email)
         {
             return base.Channel.AddEmailResponseToTicketFromMessageUniqueIDAsync(UniqueIDs, Email);
         }
@@ -22133,7 +22133,7 @@ namespace SmartClientWS
             return base.Channel.DeSignToTicketAsync(assign, TicketID, user, notify);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.SmartUser[]> GetSmartUsersAsync(string user, bool pictures, System.Nullable<bool> active)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.SmartUser>> GetSmartUsersAsync(string user, bool pictures, System.Nullable<bool> active)
         {
             return base.Channel.GetSmartUsersAsync(user, pictures, active);
         }
@@ -22158,7 +22158,7 @@ namespace SmartClientWS
             return base.Channel.CreateContractAsync(data, user);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ContractType[]> GetContractTypesAsync(int ContractTypeCategoryID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ContractType>> GetContractTypesAsync(int ContractTypeCategoryID)
         {
             return base.Channel.GetContractTypesAsync(ContractTypeCategoryID);
         }
@@ -22168,12 +22168,12 @@ namespace SmartClientWS
             return base.Channel.GetContractTypeAsync(ContractTypeID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ContractRenewal[]> GetRenewalTypesAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ContractRenewal>> GetRenewalTypesAsync()
         {
             return base.Channel.GetRenewalTypesAsync();
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.LimitType[]> GetLimitTypesAsync(int ContractTypeID, long[] Selected, bool getAll)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.LimitType>> GetLimitTypesAsync(int ContractTypeID, System.Collections.Generic.List<long> Selected, bool getAll)
         {
             return base.Channel.GetLimitTypesAsync(ContractTypeID, Selected, getAll);
         }
@@ -22198,7 +22198,7 @@ namespace SmartClientWS
             return base.Channel.GetContractsExpiringAsync(serverFilter);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ContractInvoice[]> GetContractInvoicesAsync(long ContractID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ContractInvoice>> GetContractInvoicesAsync(long ContractID)
         {
             return base.Channel.GetContractInvoicesAsync(ContractID);
         }
@@ -22208,27 +22208,27 @@ namespace SmartClientWS
             return base.Channel.GetClientAsync(id, notFoundName, GetContracts, getPersons, GetStats, GetCounts, GetSalesRepresentative, GetExtras);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ClientTotalTimeResult[]> GetClientSpentTimeAsync(int ClientID, int PartnerClientID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ClientTotalTimeResult>> GetClientSpentTimeAsync(int ClientID, int PartnerClientID)
         {
             return base.Channel.GetClientSpentTimeAsync(ClientID, PartnerClientID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.Person[]> GetClientPersonsAsync(int ClientID, int PartnerClientID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Person>> GetClientPersonsAsync(int ClientID, int PartnerClientID)
         {
             return base.Channel.GetClientPersonsAsync(ClientID, PartnerClientID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.Contract[]> GetClientContractsAsync(long ClientID, int PartnerClientID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.Contract>> GetClientContractsAsync(long ClientID, int PartnerClientID)
         {
             return base.Channel.GetClientContractsAsync(ClientID, PartnerClientID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ContractLimit[]> GetContractInvoiceLimitsAsync(long ContractID, long InvoiceID)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ContractLimit>> GetContractInvoiceLimitsAsync(long ContractID, long InvoiceID)
         {
             return base.Channel.GetContractInvoiceLimitsAsync(ContractID, InvoiceID);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.TicketType[]> GetTicketTypesAsync(System.Nullable<bool> ChildOnly)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.TicketType>> GetTicketTypesAsync(System.Nullable<bool> ChildOnly)
         {
             return base.Channel.GetTicketTypesAsync(ChildOnly);
         }
@@ -22253,27 +22253,27 @@ namespace SmartClientWS
             return base.Channel.DeleteTicketTypeAsync(newTicketType);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.UserReportStats[]> GetUserReportStatsAsync(int user)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.UserReportStats>> GetUserReportStatsAsync(int user)
         {
             return base.Channel.GetUserReportStatsAsync(user);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.TicketStats[]> GetTicketStatsByUserAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.TicketStats>> GetTicketStatsByUserAsync()
         {
             return base.Channel.GetTicketStatsByUserAsync();
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.UserRole[]> GetUserRolesAsync(int user)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.UserRole>> GetUserRolesAsync(int user)
         {
             return base.Channel.GetUserRolesAsync(user);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.UserRole[]> GetClientUserRolesAsync(int user)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.UserRole>> GetClientUserRolesAsync(int user)
         {
             return base.Channel.GetClientUserRolesAsync(user);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.BasicResult> UpdateUserWithRolesAsync(SmartClientWS.UserRole[] roles, int user, bool newPasswordFlag, bool UseLDAP, string newPassword, string CardNumber, bool Active, int UserProfileID)
+        public System.Threading.Tasks.Task<SmartClientWS.BasicResult> UpdateUserWithRolesAsync(System.Collections.Generic.List<SmartClientWS.UserRole> roles, int user, bool newPasswordFlag, bool UseLDAP, string newPassword, string CardNumber, bool Active, int UserProfileID)
         {
             return base.Channel.UpdateUserWithRolesAsync(roles, user, newPasswordFlag, UseLDAP, newPassword, CardNumber, Active, UserProfileID);
         }
@@ -22338,12 +22338,12 @@ namespace SmartClientWS
             return base.Channel.GetAllItemsAsync(ItemTypeID, filter, OffsetNum, RowsCount, useOffset, StockManagedOnly, StockZoneIDFilter, SerialNumberManagedOnly);
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ItemType[]> GetItemTypesAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemType>> GetItemTypesAsync()
         {
             return base.Channel.GetItemTypesAsync();
         }
         
-        public System.Threading.Tasks.Task<SmartClientWS.ItemType[]> GetQuickReportItemTypesAsync()
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SmartClientWS.ItemType>> GetQuickReportItemTypesAsync()
         {
             return base.Channel.GetQuickReportItemTypesAsync();
         }

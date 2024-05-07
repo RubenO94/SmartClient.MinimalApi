@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
+using SmartClient.MinimalAPI.Core.Domain.Resources;
 using SmartClient.MinimalAPI.Core.DTO;
+using SmartClient.MinimalAPI.Core.DTO.Tickets;
+using SmartClient.MinimalAPI.Core.Utils;
 using SmartClientMinimalApi.Core.Domain.Resources;
 using SmartClientMinimalApi.Core.ServicesContracts;
 using SmartClientWS;
@@ -12,54 +16,83 @@ namespace SmartClientMinimalApi.RouteGroups
     {
         public static RouteGroupBuilder TicketsAPI(this RouteGroupBuilder group)
         {
-            group.MapGet("/", async (HttpContext context, ISmartClientWebService clientWebService, [FromQuery] int Page = 0, [FromQuery] int PageSize = 20) =>
+
+            group.NewApiVersionSet()
+                .HasApiVersion(new Asp.Versioning.ApiVersion(1, 0))
+                .ReportApiVersions()
+                .Build();
+
+            group.MapGet("/", async (HttpContext context, ILoggerFactory loggerFactory, ISmartClientWebService clientWebService, [FromQuery] int Page = 0, [FromQuery] int PageSize = 20) =>
             {
-                var userID = Convert.ToInt32(context.User.FindFirstValue(ClaimTypes.NameIdentifier));
 
-                if (userID <= 0)
+                try
                 {
-                    return Results.BadRequest();
+                    var (isValid, userID) = AuthenticationUtils.CheckAuthenticatedUser(context.User);
+
+                    if (!isValid)
+                    {
+                        return ResultExtensions.ResultFailed($"Utilizador com ID {userID} não é válido");
+                    }
+
+                    var filters = new SmartClientWS.FilterRequest { Page = Page, PageSize = PageSize, Take = PageSize, Skip = PageSize * Page };
+                    filters.Filter = new Filter();
+                    filters.Filter.filters = new List<Filter> { new Filter { field = "TicketType.CreateServiceReport", value = true, @operator = "eq", logic = "AND" } };
+
+                    var result = await clientWebService.GetService().GetTicketsAsync("Pendente", userID, true, false, 0, null, null, null, null, filters);
+
+
+                    if (result == null)
+                    {
+                        throw new ArgumentNullException("Não foi possivel comunicar com o Web Service");
+                    }
+
+                    var tickets = result.Tickets.Select(tkt => tkt.ToResponseDTO()).ToList();
+                    return result.ToResult(tickets);
+                }
+                catch (Exception ex)
+                {
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(TicketsMapGroup)}.{TicketsAPI}");
+                    logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
+                    return ResultExtensions.ResultFailed(ex.Message, true);
                 }
 
-                var filters = new SmartClientWS.FilterRequest { Page = Page, PageSize = PageSize, Take = PageSize, Skip = PageSize * Page };
-                filters.Filter = new Filter();
-                filters.Filter.filters = new Filter[] { new Filter { field = "TicketType.CreateServiceReport", value = true, @operator = "eq", logic = "AND" } };
-
-                var result = await clientWebService.GetService().GetTicketsAsync("Pendente", userID, true, false, 0, null, null, null, null, filters);
-
-
-                if (result == null || !result.success)
-                {
-                    return Results.BadRequest(result.ToDataFailed());
-                }
-
-                return Results.Ok(result.ToDataSuccess(result.Tickets.Select(tkt => tkt.ToDTO()).ToList(), System.Net.HttpStatusCode.OK));
 
             });
 
-            group.MapGet("/repairTickets/{ClientID:int}", async (HttpContext context, ISmartClientWebService clientWebService, int ClientID, [FromQuery] int Page = 0, [FromQuery] int PageSize = 20) =>
+            group.MapGet("/repairTickets/{ClientID:int}", async (HttpContext context, ILoggerFactory loggerFactory, ISmartClientWebService clientWebService, int ClientID, [FromQuery] int Page = 0, [FromQuery] int PageSize = 20) =>
             {
-                var userID = Convert.ToInt32(context.User.FindFirstValue(ClaimTypes.NameIdentifier));
-
-                if (userID <= 0)
+                try
                 {
-                    return Results.BadRequest();
+                    var userID = Convert.ToInt32(context.User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+                    if (userID <= 0)
+                    {
+                        throw new ArgumentException($"Utilizador com ID {userID} não é válido");
+                    }
+
+                    if (ClientID <= 0)
+                    {
+                        throw new ArgumentException($"Cliente com ID {userID} não é válido");
+                    }
+
+                    var response = await clientWebService.GetService().GetBasicRepairTicketsAsync(ClientID);
+
+
+                    if (response == null)
+                    {
+                        throw new ArgumentNullException("Não foi possivel comunicar com o Web Service");
+                    }
+
+                    var ticketsDTO = response.Select(tkt => tkt.ToResponseDTO()).ToList();
+                    return ticketsDTO.ToResult(Page, PageSize);
+                }
+                catch (Exception ex)
+                {
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(TicketsMapGroup)}.{TicketsAPI}");
+                    logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
+                    return ResultExtensions.ResultFailed(ex.Message, true);
                 }
 
-                if(ClientID <= 0)
-                {
-                    return Results.BadRequest();
-                }
-
-                var result = await clientWebService.GetService().GetBasicRepairTicketsAsync(ClientID);
-
-
-                if (result == null)
-                {
-                    return Results.BadRequest(result.ToDataFailed());
-                }
-
-                return Results.Ok(result.ToDataSuccess());
             });
 
 

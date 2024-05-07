@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
+using SmartClient.MinimalAPI.Core.Domain.Resources;
+using SmartClient.MinimalAPI.Core.DTO.Authentications;
+using SmartClient.MinimalAPI.Core.DTO.SmartUsers;
 using SmartClientMinimalApi.Core.Domain.Resources;
-using SmartClientMinimalApi.Core.DTO;
 using SmartClientMinimalApi.Core.ServicesContracts;
-using System.Net;
-using System.Security.Claims;
 
 namespace SmartClientMinimalApi.RouteGroups
 {
@@ -12,49 +12,34 @@ namespace SmartClientMinimalApi.RouteGroups
     {
         public static RouteGroupBuilder AuthenticationAPI(this RouteGroupBuilder group)
         {
-            group.MapPost("/", async (HttpContext context, ISmartClientWebService clientWebService, IJwtService jwtService, [FromBody] AuthenticationRequestDTO request) =>
+            group.MapPost("/", async (HttpContext context, ILoggerFactory loggerFactory, ISmartClientWebService clientWebService, IJwtService jwtService, [FromBody] AuthenticationRequestDTO request) =>
             {
-                var result = await clientWebService.GetService().LoginRequestAsync(request.Email, request.Password, null);
-
-                if (result == null)
+                try
                 {
-                    var error = DataStateExtensions.CreateDataFailed(new Error("Ocorreu um erro inesperado"));
-                    return Results.BadRequest(error);
-                }
-                else
-                {
-                    var response = result.ToAuthenticationResponseDTO(jwtService);
+                    var response = await clientWebService.GetService().LoginRequestAsync(request.UserName, request.Password, null);
 
-                    return Results.Ok(response.ToDataSuccess());
+                    if (response == null)
+                    {
+                        throw new ArgumentException("Não foi possivel comunicar com o Web Service");
+                    }
+
+                    if (!response.success)
+                    {
+                        return ResultExtensions.ResultFailed(response.message, false, StatusCodes.Status400BadRequest);
+                    }
+
+                    var smartUserDTO = response.SmartUser.ToResponseDTO();
+                    var authDTO = jwtService.CreateJwtToken(smartUserDTO, response.role.ToList());
+
+                    return authDTO.ToResult();
                 }
-            })
-                .AllowAnonymous()
-                 .WithName("Login Request")
-               .WithOpenApi(x => new OpenApiOperation(x)
-               {
-                   Summary = "Iniciar sessão",
-                   Description = "Endpoint para iniciar sessão",
-                   Tags = new List<OpenApiTag> { new() { Name = "Authentication" } },
-                   RequestBody = new OpenApiRequestBody()
-                   {
-                       Content = new Dictionary<string, OpenApiMediaType>
-                       {
-                           ["application/json"] = new OpenApiMediaType
-                           {
-                               Schema = new OpenApiSchema
-                               {
-                                   Type = "object",
-                                   Required = new HashSet<string>() { "email", "password" },
-                                   Properties = new Dictionary<string, OpenApiSchema>
-                                   {
-                                       ["email"] = new OpenApiSchema { Type = "string", Format = "email" },
-                                       ["password"] = new OpenApiSchema { Type = "string", Format = "password" }
-                                   }
-                               }
-                           }
-                       }
-                   }
-               });
+                catch (Exception ex)
+                {
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(AuthenticationMapGroup)}.{AuthenticationAPI}");
+                    logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
+                    return ResultExtensions.ResultFailed(ex.Message, true);
+                }
+            }).AllowAnonymous();
             return group;
         }
     }

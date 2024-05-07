@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using SmartClient.MinimalAPI.Core.Domain.Resources;
+using SmartClient.MinimalApi.RouteGroups;
 using SmartClientMinimalApi.Core.ServicesContracts;
-using System.ComponentModel.DataAnnotations;
-using System.Security.Cryptography.X509Certificates;
 
 namespace SmartClientMinimalApi.RouteGroups
 {
@@ -10,19 +9,25 @@ namespace SmartClientMinimalApi.RouteGroups
         public static RouteGroupBuilder SmartUsersAPI(this RouteGroupBuilder group)
         {
 
-            group.MapGet("/", async (HttpContext context, ISmartClientWebService clientWebService) =>
+            group.MapGet("/", async (HttpContext context, ILoggerFactory loggerFactory, CancellationToken cancellationToken, ISmartClientWebService clientWebService) =>
             {
-                await context.Response.WriteAsync("GET - Hello World");
-            });
+                try
+                {
+                    // TODO
+                    await Task.Delay(10_000, cancellationToken);
 
-            group.MapPost("/", async (HttpContext context, ISmartClientWebService clientWebService) =>
-            {
-                var result = await clientWebService.GetService().LoginRequestAsync("ruben.oliveira", "!Manuel73981212", null);
-                await context.Response.WriteAsync("POST - Hello World");
-            });
+                    var message = "Finished slow delay of 10 seconds.";
 
-            group.MapPut("/put", async (HttpContext context) => {
-                return Results.BadRequest("ERRO");
+                    return Results.Ok(message);
+                }
+                catch (Exception ex)
+                {
+
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(SmartUsersMapGroup)}.{SmartUsersAPI}");
+                    logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
+                    return ResultExtensions.ResultFailed(ex.Message, true);
+                }
+
             });
 
             return group;
