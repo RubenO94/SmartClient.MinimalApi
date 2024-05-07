@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using SmartClient.MinimalAPI.Core.DTO.Authentications;
 using SmartClient.MinimalAPI.Core.DTO.StockMovements;
+using SmartClient.MinimalAPI.Core.DTO.Tickets;
 using SmartClientMinimalApi.Core.Domain.Resources;
 using SmartClientWS;
 using System.Text.Json.Serialization;
@@ -101,40 +102,6 @@ namespace SmartClient.MinimalAPI.Core.Domain.Resources
     /// </summary>
     public static class ResultExtensions
     {
-        /// <summary>
-        /// Converte um resultado básico em um resultado personalizado.
-        /// </summary>
-        /// <typeparam name="T">O tipo de dados do resultado.</typeparam>
-        /// <param name="result">O resultado básico a ser convertido.</param>
-        /// <param name="data">Os dados do resultado.</param>
-        /// <param name="statusCode">O código de status HTTP do resultado.</param>
-        /// <returns>O resultado personalizado convertido.</returns>
-        public static IResult ToResult<T>(this BasicResult? result, T? data, int? statusCode = null) where T : class
-        {
-
-            if (result == null)
-            {
-                return Results.StatusCode(statusCode ?? StatusCodes.Status500InternalServerError);
-            }
-
-            if (!result.success)
-            {
-                return Results.BadRequest(new ResultFailed<object>(statusCode ?? StatusCodes.Status500InternalServerError, new Error(result.message, result.exception)));
-            }
-
-            var totalCount = 0;
-
-            // Verifica se o objeto result possui a propriedade Count
-            var countProperty = result.GetType().GetProperty("Count");
-            if (countProperty != null && countProperty.PropertyType == typeof(int))
-            {
-                totalCount = (int)countProperty.GetValue(result)!;
-            }
-
-            return Results.Ok(new ResultSuccess<T>(statusCode ?? StatusCodes.Status200OK, totalCount, data));
-
-        }
-
         /// <summary>
         /// Converte uma resposta de autenticação em um resultado personalizado.
         /// </summary>
@@ -261,12 +228,15 @@ namespace SmartClient.MinimalAPI.Core.Domain.Resources
 
                 switch (result)
                 {
-                    case StockMovementResult subResult:
-                        return Results.Ok(new ResultSuccess<object>(statusCode ?? StatusCodes.Status200OK, totalCount, new { StockMovementID = subResult.StockMovementID}));
-                    case SaveFormResult subResult:
+                    case StockMovementResult stockMovementResult:
+                        return Results.Ok(new ResultSuccess<object>(statusCode ?? StatusCodes.Status200OK, totalCount, new { StockMovementID = stockMovementResult.StockMovementID}));
+                    case TicketsResult ticketsResult:
+                        var ticketsDto = ticketsResult.Tickets?.Select(tkt => tkt?.ToResponseDTO())?.ToList();
+                        return Results.Ok(new ResultSuccess<List<TicketResponseDTO?>>(statusCode ?? StatusCodes.Status200OK, totalCount, ticketsDto));
+                    case SaveFormResult saveFormResult:
                         // Manipular SaveFormResult
-                        return Results.Ok(new ResultSuccess<SaveFormResult>(statusCode ?? StatusCodes.Status200OK, subResult));
-                    case IntBasicResult subResult:
+                        return Results.Ok(new ResultSuccess<SaveFormResult>(statusCode ?? StatusCodes.Status200OK, saveFormResult));
+                    case IntBasicResult intBasicResult:
                         // Manipular IntBasicResult
                         // Exemplo: return Results.Ok(new ResultSuccess<IntBasicResult>(statusCode ?? StatusCodes.Status200OK, intBasicResult));
                         break;
@@ -295,10 +265,6 @@ namespace SmartClient.MinimalAPI.Core.Domain.Resources
                         // Manipular NewContractResult
                         // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
                         break;
-                    case TicketsResult subResult:
-                        // Manipular NewContractResult
-                        // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
-                        break;
                     case ContractsResult subResult:
                         // Manipular NewContractResult
                         // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
@@ -311,11 +277,9 @@ namespace SmartClient.MinimalAPI.Core.Domain.Resources
                         // Manipular NewContractResult
                         // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
                         break;
-
-                    // Adicione mais casos para outras subclasses de BasicResult conforme necessário
+                    case BasicResult basicResult:
+                        return Results.Ok(new ResultSuccess<object>(statusCode ?? StatusCodes.Status200OK, totalCount, new { Message = basicResult.message }));
                     default:
-                        // Manipular outros tipos de resultados
-                        // Exemplo: return Results.Ok(new ResultSuccess<T>(statusCode ?? StatusCodes.Status200OK, result));
                         break;
                 }
             }

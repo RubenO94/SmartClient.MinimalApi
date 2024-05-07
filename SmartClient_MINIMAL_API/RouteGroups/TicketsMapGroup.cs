@@ -46,8 +46,7 @@ namespace SmartClientMinimalApi.RouteGroups
                         throw new ArgumentNullException("Não foi possivel comunicar com o Web Service");
                     }
 
-                    var tickets = result.Tickets.Select(tkt => tkt.ToResponseDTO()).ToList();
-                    return result.ToResult(tickets);
+                    return result.ToResult();
                 }
                 catch (Exception ex)
                 {
