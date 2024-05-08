@@ -20,7 +20,7 @@ namespace SmartClient.MinimalApi.StartupSettings
             {
                 var openApiInfo = new OpenApiInfo()
                 {
-                    Title = $"SmartClient.WebApi v{description.ApiVersion}",
+                    Title = $"SmartClient.REST_API v{description.ApiVersion}",
                     Version = description.ApiVersion.ToString(),
                 };
 

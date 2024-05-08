@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Models;
 using SmartClient.MinimalAPI.Core.Domain.Resources;
 using SmartClient.MinimalAPI.Core.DTO.Meetings;
+using SmartClient.MinimalAPI.Core.Utils;
 using SmartClientMinimalApi.Core.ServicesContracts;
 using System.Security.Claims;
 
@@ -10,14 +12,26 @@ namespace SmartClient.MinimalApi.RouteGroups
     {
         public static RouteGroupBuilder ScheduleAPI(this RouteGroupBuilder group)
         {
+            // Route OpenApi Configurations
+            group
+                .MapToApiVersion(1)
+                .WithOpenApi(options =>
+            {
+                options.Tags = new List<OpenApiTag> { new OpenApiTag() { Name = "Schedule" } };
+
+                return options;
+            });
+
+            // Endpoints
+
 
             group.MapGet("/", async (HttpContext context, ILoggerFactory loggerFactory, ISmartClientWebService clientWebService, [FromQuery] DateTime Start, [FromQuery] DateTime End) =>
             {
                 try
                 {
-                    var userID = Convert.ToInt32(context.User.FindFirstValue(ClaimTypes.NameIdentifier));
+                    var (isValid, userID) = AuthenticationUtils.CheckAuthenticatedUser(context.User);
 
-                    if (userID <= 0)
+                    if (!isValid)
                     {
                         return ResultExtensions.ResultFailed($"Utilizador com ID {userID} não é válido");
                     }

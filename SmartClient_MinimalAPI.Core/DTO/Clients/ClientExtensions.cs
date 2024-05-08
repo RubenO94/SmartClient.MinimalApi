@@ -9,9 +9,9 @@ namespace SmartClient.MinimalAPI.Core.DTO.Clients
 {
     public static class ClientExtensions
     {
-        public static ClientResponseDTO? ToResponseDTO(this Client client)
+        public static ClientResponseDTO? ToResponseDTO(this Client? client)
         {
-            if(client.ID <= 0)
+            if(client == null || client.ID <= 0)
             {
                 return null;
             }

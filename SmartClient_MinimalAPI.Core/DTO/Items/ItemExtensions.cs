@@ -9,8 +9,10 @@ namespace SmartClient.MinimalAPI.Core.DTO.Items
 {
     public static class ItemExtensions
     {
-        public static ItemResponseDTO ToResponseDTO(this Item item)
+        public static ItemResponseDTO? ToResponseDTO(this Item? item)
         {
+            if(item == null || item.ItemID <= 0 ) return null;
+
             return new ItemResponseDTO
             {
                 ItemID = item.ItemID,

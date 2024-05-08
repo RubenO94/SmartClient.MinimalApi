@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using SmartClient.MinimalAPI.Core.DTO.Authentications;
+using SmartClient.MinimalAPI.Core.DTO.Clients;
+using SmartClient.MinimalAPI.Core.DTO.Items;
+using SmartClient.MinimalAPI.Core.DTO.SerialNumbers;
 using SmartClient.MinimalAPI.Core.DTO.StockMovements;
 using SmartClient.MinimalAPI.Core.DTO.Tickets;
 using SmartClientMinimalApi.Core.Domain.Resources;
@@ -186,6 +189,14 @@ namespace SmartClient.MinimalAPI.Core.Domain.Resources
                 return Results.StatusCode(statusCode ?? StatusCodes.Status500InternalServerError);
             }
 
+            int totalCount = default;
+
+            // Verifica se o objeto result possui a propriedade Count
+            var countProperty = result.GetType().GetProperty("Count");
+            if (countProperty != null && countProperty.PropertyType == typeof(int))
+            {
+                totalCount = (int)countProperty.GetValue(result)!;
+            }
 
             if (typeof(T).IsSubclassOf(typeof(BasicResult)))
             {
@@ -213,76 +224,71 @@ namespace SmartClient.MinimalAPI.Core.Domain.Resources
 
                 if (!success)
                 {
-                    return Results.BadRequest(new ResultFailed<object>(statusCode ?? StatusCodes.Status500InternalServerError, new Error(message, exceptionMessage)));
-                }
-
-                int totalCount = default;
-
-                // Verifica se o objeto result possui a propriedade Count
-                var countProperty = result.GetType().GetProperty("Count");
-                if (countProperty != null && countProperty.PropertyType == typeof(int))
-                {
-                    totalCount = (int)countProperty.GetValue(result)!;
-                }
-
-
-                switch (result)
-                {
-                    case StockMovementResult stockMovementResult:
-                        return Results.Ok(new ResultSuccess<object>(statusCode ?? StatusCodes.Status200OK, totalCount, new { StockMovementID = stockMovementResult.StockMovementID}));
-                    case TicketsResult ticketsResult:
-                        var ticketsDto = ticketsResult.Tickets?.Select(tkt => tkt?.ToResponseDTO())?.ToList();
-                        return Results.Ok(new ResultSuccess<List<TicketResponseDTO?>>(statusCode ?? StatusCodes.Status200OK, totalCount, ticketsDto));
-                    case SaveFormResult saveFormResult:
-                        // Manipular SaveFormResult
-                        return Results.Ok(new ResultSuccess<SaveFormResult>(statusCode ?? StatusCodes.Status200OK, saveFormResult));
-                    case IntBasicResult intBasicResult:
-                        // Manipular IntBasicResult
-                        // Exemplo: return Results.Ok(new ResultSuccess<IntBasicResult>(statusCode ?? StatusCodes.Status200OK, intBasicResult));
-                        break;
-
-                    case NewContractResult subResult:
-                        // Manipular NewContractResult
-                        // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
-                        break;
-                    case NewFormResult subResult:
-                        // Manipular NewContractResult
-                        // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
-                        break;
-                    case CheckInResult subResult:
-                        // Manipular NewContractResult
-                        // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
-                        break;
-                    case DeleteResult subResult:
-                        // Manipular NewContractResult
-                        // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
-                        break;
-                    case CustomFileInfo subResult:
-                        // Manipular NewContractResult
-                        // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
-                        break;
-                    case ServiceFormsResult subResult:
-                        // Manipular NewContractResult
-                        // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
-                        break;
-                    case ContractsResult subResult:
-                        // Manipular NewContractResult
-                        // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
-                        break;
-                    case SerialNumberInfoResult subResult:
-                        // Manipular NewContractResult
-                        // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
-                        break;
-                    case ItemResult subResult:
-                        // Manipular NewContractResult
-                        // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
-                        break;
-                    case BasicResult basicResult:
-                        return Results.Ok(new ResultSuccess<object>(statusCode ?? StatusCodes.Status200OK, totalCount, new { Message = basicResult.message }));
-                    default:
-                        break;
+                    return Results.BadRequest(new ResultFailed<object>(statusCode ?? StatusCodes.Status400BadRequest, new Error(message, exceptionMessage)));
                 }
             }
+
+            switch (result)
+            {
+                case ClientsResult clientsResult:
+                    var clientsDto = clientsResult.Clients.Select(cl => cl.ToResponseDTO()).ToList();
+                    return Results.Ok(new ResultSuccess<List<ClientResponseDTO?>>(statusCode ?? StatusCodes.Status200OK, totalCount, clientsDto));
+                case StockMovementResult stockMovementResult:
+                    return Results.Ok(new ResultSuccess<object>(statusCode ?? StatusCodes.Status200OK, totalCount, new { StockMovementID = stockMovementResult.StockMovementID }));
+                case TicketsResult ticketsResult:
+                    var ticketsDto = ticketsResult.Tickets?.Select(tkt => tkt?.ToResponseDTO())?.ToList();
+                    return Results.Ok(new ResultSuccess<List<TicketResponseDTO?>>(statusCode ?? StatusCodes.Status200OK, totalCount, ticketsDto));
+                case SaveFormResult saveFormResult:
+                    return Results.Ok(new ResultSuccess<SaveFormResult>(statusCode ?? StatusCodes.Status200OK, saveFormResult));
+                case ItemResult itemResult:
+                    var itemDto = itemResult.Item.ToResponseDTO();
+                    return Results.Ok(new ResultSuccess<ItemResponseDTO>(statusCode ?? StatusCodes.Status200OK, itemDto));
+                case ItemsResult itemsResult:
+                    var itemsDto = itemsResult.Items.Select(item => item.ToResponseDTO()).ToList();
+                    return Results.Ok(new ResultSuccess<List<ItemResponseDTO?>?>(statusCode ?? StatusCodes.Status200OK, totalCount, itemsDto));
+                case SerialNumberInfoResult serialNumberInfoResult:
+                    var serialnumberInfoDto = serialNumberInfoResult.ToResponseDTO();
+                    return Results.Ok(new ResultSuccess<SerialNumberInfoResponseDTO?>(statusCode ?? StatusCodes.Status200OK, serialnumberInfoDto));
+                case IntBasicResult intBasicResult:
+                    // Manipular IntBasicResult
+                    // Exemplo: return Results.Ok(new ResultSuccess<IntBasicResult>(statusCode ?? StatusCodes.Status200OK, intBasicResult));
+                    break;
+
+                case NewContractResult subResult:
+                    // Manipular NewContractResult
+                    // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
+                    break;
+                case NewFormResult formResult:
+                    return Results.Ok(new ResultSuccess<object>(statusCode ?? StatusCodes.Status201Created, new { Id = formResult.ID }));
+                case CheckInResult subResult:
+                    // Manipular NewContractResult
+                    // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
+                    break;
+                case DeleteResult subResult:
+                    // Manipular NewContractResult
+                    // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
+                    break;
+                case CustomFileInfo subResult:
+                    // Manipular NewContractResult
+                    // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
+                    break;
+                case ServiceFormsResult subResult:
+                    // Manipular NewContractResult
+                    // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
+                    break;
+                case ContractsResult subResult:
+                    // Manipular NewContractResult
+                    // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
+                    break;
+
+
+                case BasicResult basicResult:
+                    return Results.Ok(new ResultSuccess<object>(statusCode ?? StatusCodes.Status200OK, totalCount == 0 ? default : totalCount, new { Message = basicResult.message }));
+                default:
+                    break;
+            }
+
+
 
             return Results.Ok(new ResultSuccess<T>(statusCode ?? StatusCodes.Status200OK, result));
         }

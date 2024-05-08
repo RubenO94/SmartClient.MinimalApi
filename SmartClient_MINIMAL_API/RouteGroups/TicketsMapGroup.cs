@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.OutputCaching;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using SmartClient.MinimalAPI.Core.Domain.Resources;
 using SmartClient.MinimalAPI.Core.DTO;
 using SmartClient.MinimalAPI.Core.DTO.Tickets;
@@ -16,11 +18,17 @@ namespace SmartClientMinimalApi.RouteGroups
     {
         public static RouteGroupBuilder TicketsAPI(this RouteGroupBuilder group)
         {
+            // Route Configurations
+            group
+                .MapToApiVersion(1)
+                .WithOpenApi(options =>
+            {
+                options.Tags = new List<OpenApiTag> { new OpenApiTag() { Name = "Tickets" } };
 
-            group.NewApiVersionSet()
-                .HasApiVersion(new Asp.Versioning.ApiVersion(1, 0))
-                .ReportApiVersions()
-                .Build();
+                return options;
+            });
+
+            // Endpoints
 
             group.MapGet("/", async (HttpContext context, ILoggerFactory loggerFactory, ISmartClientWebService clientWebService, [FromQuery] int Page = 0, [FromQuery] int PageSize = 20) =>
             {
@@ -56,22 +64,26 @@ namespace SmartClientMinimalApi.RouteGroups
                 }
 
 
+            }).CacheOutput(policy =>
+            {
+                policy.SetVaryByQuery("Page", "PageSize");
+                policy.Expire(TimeSpan.FromSeconds(180));
             });
 
             group.MapGet("/repairTickets/{ClientID:int}", async (HttpContext context, ILoggerFactory loggerFactory, ISmartClientWebService clientWebService, int ClientID, [FromQuery] int Page = 0, [FromQuery] int PageSize = 20) =>
             {
                 try
                 {
-                    var userID = Convert.ToInt32(context.User.FindFirstValue(ClaimTypes.NameIdentifier));
+                    var (isValid, userID) = AuthenticationUtils.CheckAuthenticatedUser(context.User);
 
-                    if (userID <= 0)
+                    if (!isValid)
                     {
-                        throw new ArgumentException($"Utilizador com ID {userID} não é válido");
+                        return ResultExtensions.ResultFailed($"Utilizador com ID {userID} não é válido");
                     }
 
                     if (ClientID <= 0)
                     {
-                        throw new ArgumentException($"Cliente com ID {userID} não é válido");
+                        throw new ArgumentException($"Cliente com ID {ClientID} não é válido");
                     }
 
                     var response = await clientWebService.GetService().GetBasicRepairTicketsAsync(ClientID);
@@ -84,6 +96,42 @@ namespace SmartClientMinimalApi.RouteGroups
 
                     var ticketsDTO = response.Select(tkt => tkt.ToResponseDTO()).ToList();
                     return ticketsDTO.ToResult(Page, PageSize);
+                }
+                catch (Exception ex)
+                {
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(TicketsMapGroup)}.{TicketsAPI}");
+                    logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
+                    return ResultExtensions.ResultFailed(ex.Message, true);
+                }
+
+            });
+
+            group.MapPost("{id:long}/reports", async (HttpContext context, ILoggerFactory loggerFactory, ISmartClientWebService clientWebService, long id) =>
+            {
+                try
+                {
+                    var (isValid, userID) = AuthenticationUtils.CheckAuthenticatedUser(context.User);
+
+                    if (!isValid)
+                    {
+                        return ResultExtensions.ResultFailed($"Utilizador com ID {userID} não é válido");
+                    }
+
+                    if (id <= 0)
+                    {
+                        throw new ArgumentException($"Ticket com ID {id} não é válido");
+                    }
+
+                    var response = await clientWebService.GetService().NewFormAsync(userID, id);
+
+
+                    if (response == null)
+                    {
+                        throw new ArgumentNullException("Não foi possivel comunicar com o Web Service");
+                    }
+
+                    
+                    return response.ToResult();
                 }
                 catch (Exception ex)
                 {

@@ -1,6 +1,7 @@
 ﻿using SmartClient.MinimalAPI.Core.Domain.Resources;
 using SmartClient.MinimalApi.RouteGroups;
 using SmartClientMinimalApi.Core.ServicesContracts;
+using Microsoft.OpenApi.Models;
 
 namespace SmartClientMinimalApi.RouteGroups
 {
@@ -8,6 +9,18 @@ namespace SmartClientMinimalApi.RouteGroups
     {
         public static RouteGroupBuilder SmartUsersAPI(this RouteGroupBuilder group)
         {
+            // Route OpenApi Configurations
+            group
+                .MapToApiVersion(1)
+                .WithOpenApi(options =>
+            {
+                options.Tags = new List<OpenApiTag> { new OpenApiTag() { Name = "SmartUsers" } };
+
+                return options;
+            });
+
+            // Endpoints
+
 
             group.MapGet("/", async (HttpContext context, ILoggerFactory loggerFactory, CancellationToken cancellationToken, ISmartClientWebService clientWebService) =>
             {

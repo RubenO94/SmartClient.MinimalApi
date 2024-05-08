@@ -1,29 +1,27 @@
-﻿using Microsoft.Extensions.DependencyInjection.Extensions;
-using SmartClientMinimalApi.StartupSettings;
+﻿using SmartClientMinimalApi.StartupSettings;
 using SmartClientMinimalApi.Core.Domain.ApplicationContracts;
 using SmartClientMinimalApi.Core.Services;
 using SmartClientMinimalApi.Core.ServicesContracts;
-using SmartClientWS;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.OpenApi.Models;
 using Asp.Versioning;
 using SmartClient.MinimalApi.StartupSettings;
+using SmartClient.MinimalApi.StartupSettings.RouteConstraints;
 
 namespace SmartClientMinimalApi.StartupExtensions
 {
-    public static class ConfigureServiceExtension
+    public static class ConfigureServicesExtension
     {
         public static IServiceCollection ConfigureServices(this IServiceCollection services, IConfiguration configuration)
         {
+            services.ConfigureOptions<ConfigureSwaggerGenOptions>();
+            services.Configure<RouteOptions>(options =>
+         options.ConstraintMap.Add("serialNumber", typeof(SerialNumberRouteConstraint)));
+
+
             services.AddSingleton<IAppSettings, AppSettings>();
-
             services.AddTransient<IJwtService, JwtService>();
-
             services.AddScoped<ISmartClientWebService, SmartClientWebService>();
 
             #region OpenApi
@@ -97,7 +95,7 @@ namespace SmartClientMinimalApi.StartupExtensions
             services.AddResponseCaching();
             services.AddOutputCache(options =>
             {
-                options.AddBasePolicy(builder => builder.Expire(TimeSpan.FromSeconds(60)));
+                options.AddBasePolicy(OutputCacheWithAuthPolicy.Instance);
             });
             #endregion
 

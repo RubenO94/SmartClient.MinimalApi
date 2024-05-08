@@ -19,9 +19,12 @@ builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider services, 
 
 // ConfigureServiceExtension
 builder.Services.ConfigureServices(builder.Configuration);
-builder.Services.ConfigureOptions<ConfigureSwaggerGenOptions>();
 
 var app = builder.Build();
+
+// Caching server-side
+app.UseOutputCache();
+
 
 // Api Versions
 var apiVersionSet = app.NewApiVersionSet()
@@ -33,19 +36,19 @@ var apiVersionSet = app.NewApiVersionSet()
 // Set Api versions
 var versionedGroups = app.MapGroup("api/v{version:apiVersion}").WithApiVersionSet(apiVersionSet);
 
-var apiVersion1 = versionedGroups.MapToApiVersion(1);
-apiVersion1.AddEndpointFilter<ValidationFilter>();
 // Route Groups
-apiVersion1.MapGroup("authentication").AuthenticationAPI();
-apiVersion1.MapGroup("tickets").TicketsAPI().RequireAuthorization();
-apiVersion1.MapGroup("stockMovements").StockMovementsAPI().RequireAuthorization();
-apiVersion1.MapGroup("smartUsers").SmartUsersAPI().RequireAuthorization();
-apiVersion1.MapGroup("schedule").ScheduleAPI();
+versionedGroups.MapGroup("authentication").AuthenticationV1();
+
+versionedGroups.MapGroup("clients").ClientsAPI().RequireAuthorization();
+versionedGroups.MapGroup("items").ItemsAPI().RequireAuthorization();
+versionedGroups.MapGroup("tickets").TicketsAPI().RequireAuthorization();
+versionedGroups.MapGroup("stockMovements").StockMovementsAPI().RequireAuthorization();
+versionedGroups.MapGroup("smartUsers").SmartUsersAPI().RequireAuthorization();
+versionedGroups.MapGroup("schedule").ScheduleAPI().RequireAuthorization();
 
 
 
-app.UseOutputCache();
-app.UseResponseCaching();
+
 
 app.UseHttpLogging();
 

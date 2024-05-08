@@ -9,9 +9,9 @@ namespace SmartClient.MinimalAPI.Core.DTO.Clients.PartnerClients
 {
     public static class PartnerClientExtensions
     {
-        public static PartnerClientResponseDTO? ToResponseDTO(this PartnerClient partnerClient)
+        public static PartnerClientResponseDTO? ToResponseDTO(this PartnerClient? partnerClient)
         {
-            if (partnerClient.PartnerClientID <= 0)
+            if (partnerClient == null || partnerClient.PartnerClientID <= 00)
             {
                 return null;
             }

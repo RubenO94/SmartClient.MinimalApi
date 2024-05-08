@@ -10,9 +10,9 @@ namespace SmartClient.MinimalAPI.Core.DTO.Suppliers
 {
     public static class SupplierExtensions
     {
-        public static SupplierResponseDTO? ToResponseDTO(this Supplier supplier)
+        public static SupplierResponseDTO? ToResponseDTO(this Supplier? supplier)
         {
-            if (supplier.SupplierID <= 0)
+            if (supplier == null || supplier.SupplierID <= 0)
             {
                 return null;
             }
