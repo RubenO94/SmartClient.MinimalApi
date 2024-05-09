@@ -1,11 +1,9 @@
-using SmartClient.MinimalApi.EndpointFilters;
-using SmartClientMinimalApi.RouteGroups;
 using SmartClientMinimalApi.StartupExtensions;
 using Serilog;
-using SmartClient.MinimalApi.RouteGroups;
 using Asp.Versioning.ApiExplorer;
-using SmartClient.MinimalApi.StartupSettings;
-using Microsoft.AspNetCore.Builder;
+using SmartClient.MinimalApi.RouteGroups.v1;
+using SmartClientMinimalApi.RouteGroups;
+using SmartClient.MinimalApi.RouteGroups;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,13 +36,16 @@ var versionedGroups = app.MapGroup("api/v{version:apiVersion}").WithApiVersionSe
 
 // Route Groups
 versionedGroups.MapGroup("authentication").AuthenticationV1();
+versionedGroups.MapGroup("clients").ClientsV1();
+versionedGroups.MapGroup("items").ItemsV1();
+versionedGroups.MapGroup("reports").ReportsV1();
+versionedGroups.MapGroup("schedule").ScheduleV1();
+versionedGroups.MapGroup("smartUsers").SmartUsersV1();
+versionedGroups.MapGroup("stockMovements").StockMovementsV1();
+versionedGroups.MapGroup("stockZones").StockZonesV1();
+versionedGroups.MapGroup("suppliers").SuppliersV1();
+versionedGroups.MapGroup("tickets").TicketsV1();
 
-versionedGroups.MapGroup("clients").ClientsAPI().RequireAuthorization();
-versionedGroups.MapGroup("items").ItemsAPI().RequireAuthorization();
-versionedGroups.MapGroup("tickets").TicketsAPI().RequireAuthorization();
-versionedGroups.MapGroup("stockMovements").StockMovementsAPI().RequireAuthorization();
-versionedGroups.MapGroup("smartUsers").SmartUsersAPI().RequireAuthorization();
-versionedGroups.MapGroup("schedule").ScheduleAPI().RequireAuthorization();
 
 
 

@@ -2,6 +2,7 @@
 using SmartClient.MinimalAPI.Core.DTO.Authentications;
 using SmartClient.MinimalAPI.Core.DTO.Clients;
 using SmartClient.MinimalAPI.Core.DTO.Items;
+using SmartClient.MinimalAPI.Core.DTO.Reports;
 using SmartClient.MinimalAPI.Core.DTO.SerialNumbers;
 using SmartClient.MinimalAPI.Core.DTO.StockMovements;
 using SmartClient.MinimalAPI.Core.DTO.Tickets;
@@ -167,7 +168,7 @@ namespace SmartClient.MinimalAPI.Core.Domain.Resources
             if (page.HasValue && pageSize.HasValue && page >= 0 && pageSize > 0)
             {
                 var data = result.Skip(page.Value * pageSize.Value).Take(pageSize.Value).ToList();
-                Results.Ok(new ResultSuccess<List<T>>(statusCode ?? StatusCodes.Status200OK, result.Count(), data));
+                return Results.Ok(new ResultSuccess<List<T>>(statusCode ?? StatusCodes.Status200OK, result.Count(), data));
             }
 
             return Results.Ok(new ResultSuccess<List<T>>(statusCode ?? StatusCodes.Status200OK, result.Count(), result.ToList()));
@@ -272,16 +273,13 @@ namespace SmartClient.MinimalAPI.Core.Domain.Resources
                     // Manipular NewContractResult
                     // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
                     break;
-                case ServiceFormsResult subResult:
-                    // Manipular NewContractResult
-                    // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
-                    break;
+                case ServiceFormsResult serviceFormsResult:
+                    var reportsDto = serviceFormsResult.Data.Select(r => r.ToResponseDTO()).ToList();
+                    return Results.Ok(new ResultSuccess<List<ReportResponseDTO>>(statusCode ?? StatusCodes.Status200OK, serviceFormsResult.Count, reportsDto));
                 case ContractsResult subResult:
                     // Manipular NewContractResult
                     // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
                     break;
-
-
                 case BasicResult basicResult:
                     return Results.Ok(new ResultSuccess<object>(statusCode ?? StatusCodes.Status200OK, totalCount == 0 ? default : totalCount, new { Message = basicResult.message }));
                 default:

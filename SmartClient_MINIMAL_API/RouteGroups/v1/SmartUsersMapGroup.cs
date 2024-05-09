@@ -3,14 +3,15 @@ using SmartClient.MinimalApi.RouteGroups;
 using SmartClientMinimalApi.Core.ServicesContracts;
 using Microsoft.OpenApi.Models;
 
-namespace SmartClientMinimalApi.RouteGroups
+namespace SmartClient.MinimalApi.RouteGroups.v1
 {
     public static class SmartUsersMapGroup
     {
-        public static RouteGroupBuilder SmartUsersAPI(this RouteGroupBuilder group)
+        public static RouteGroupBuilder SmartUsersV1(this RouteGroupBuilder group)
         {
-            // Route OpenApi Configurations
+            // Route Configurations
             group
+                .RequireAuthorization()
                 .MapToApiVersion(1)
                 .WithOpenApi(options =>
             {
@@ -36,7 +37,7 @@ namespace SmartClientMinimalApi.RouteGroups
                 catch (Exception ex)
                 {
 
-                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(SmartUsersMapGroup)}.{SmartUsersAPI}");
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(SmartUsersMapGroup)}.{SmartUsersV1}");
                     logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
                     return ResultExtensions.ResultFailed(ex.Message, true);
                 }

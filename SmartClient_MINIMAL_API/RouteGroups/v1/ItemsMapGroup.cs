@@ -1,19 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.OpenApi.Models;
+using SmartClient.MinimalApi.EndpointFilters;
 using SmartClient.MinimalAPI.Core.Domain.Resources;
-using SmartClient.MinimalAPI.Core.Utils;
 using SmartClientMinimalApi.Core.ServicesContracts;
-using SmartClientWS;
 
 namespace SmartClient.MinimalApi.RouteGroups
 {
     public static class ItemsMapGroup
     {
-        public static RouteGroupBuilder ItemsAPI(this RouteGroupBuilder group)
+        public static RouteGroupBuilder ItemsV1(this RouteGroupBuilder group)
         {
-            // Route OpenApi Configurations
+            // Route Configurations
             group
+                .RequireAuthorization()
+                .AddEndpointFilter<UserValidationFilter>()
                 .MapToApiVersion(1)
                 .WithOpenApi(options =>
             {
@@ -28,13 +28,6 @@ namespace SmartClient.MinimalApi.RouteGroups
             {
                 try
                 {
-                    var (isValid, userID) = AuthenticationUtils.CheckAuthenticatedUser(context.User);
-
-                    if (!isValid)
-                    {
-                        return ResultExtensions.ResultFailed($"Utilizador com ID {userID} não é válido");
-                    }
-
                     if (filter == null) filter = string.Empty;
 
                     var offSetNum = Page * PageSize;
@@ -54,7 +47,7 @@ namespace SmartClient.MinimalApi.RouteGroups
                 catch (Exception ex)
                 {
 
-                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(ItemsMapGroup)}.{ItemsAPI}");
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(ItemsMapGroup)}.{ItemsV1}");
                     logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
                     return ResultExtensions.ResultFailed(ex.Message, true);
                 }
@@ -65,12 +58,6 @@ namespace SmartClient.MinimalApi.RouteGroups
             {
                 try
                 {
-                    var (isValid, userID) = AuthenticationUtils.CheckAuthenticatedUser(context.User);
-
-                    if (!isValid)
-                    {
-                        return ResultExtensions.ResultFailed($"Utilizador com ID {userID} não é válido");
-                    }
 
                    if(string.IsNullOrEmpty(id))
                     {
@@ -92,7 +79,7 @@ namespace SmartClient.MinimalApi.RouteGroups
                 catch (Exception ex)
                 {
 
-                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(ItemsMapGroup)}.{ItemsAPI}");
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(ItemsMapGroup)}.{ItemsV1}");
                     logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
                     return ResultExtensions.ResultFailed(ex.Message, true);
                 }

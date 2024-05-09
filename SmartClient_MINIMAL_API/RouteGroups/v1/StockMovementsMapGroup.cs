@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SmartClient.MinimalAPI.Core.Domain.Resources;
+using SmartClient.MinimalAPI.Core.DTO.Attachments;
 using SmartClient.MinimalAPI.Core.DTO.StockMovements;
 using SmartClient.MinimalAPI.Core.Utils;
 using SmartClientMinimalApi.Core.Domain.Resources;
@@ -10,15 +11,16 @@ using SmartClientMinimalApi.RouteGroups;
 using SmartClientWS;
 using System.Security.Claims;
 
-namespace SmartClient.MinimalApi.RouteGroups
+namespace SmartClient.MinimalApi.RouteGroups.v1
 {
     public static class StockMovementsMapGroup
     {
 
-        public static RouteGroupBuilder StockMovementsAPI(this RouteGroupBuilder group)
+        public static RouteGroupBuilder StockMovementsV1(this RouteGroupBuilder group)
         {
-            // Route OpenApi Configurations
+            // Route Configurations
             group
+                .RequireAuthorization()
                 .MapToApiVersion(1)
                 .WithOpenApi(options =>
             {
@@ -34,7 +36,7 @@ namespace SmartClient.MinimalApi.RouteGroups
 
                 try
                 {
-                    var filters = new SmartClientWS.FilterRequest { Page = Page, PageSize = PageSize, Take = PageSize, Skip = PageSize * Page };
+                    var filters = new FilterRequest { Page = Page, PageSize = PageSize, Take = PageSize, Skip = PageSize * Page };
 
                     var response = await clientWebService.GetService().GetStockMovementsAsync(filters, true, false);
 
@@ -48,7 +50,7 @@ namespace SmartClient.MinimalApi.RouteGroups
                 }
                 catch (Exception ex)
                 {
-                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(StockMovementsMapGroup)}.{StockMovementsAPI}");
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(StockMovementsMapGroup)}.{StockMovementsV1}");
                     logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
                     return ResultExtensions.ResultFailed(ex.Message, true);
                 }
@@ -81,7 +83,7 @@ namespace SmartClient.MinimalApi.RouteGroups
                 }
                 catch (Exception ex)
                 {
-                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(StockMovementsMapGroup)}.{StockMovementsAPI}");
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(StockMovementsMapGroup)}.{StockMovementsV1}");
                     logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
                     return ResultExtensions.ResultFailed(ex.Message, true);
                 }
@@ -103,7 +105,7 @@ namespace SmartClient.MinimalApi.RouteGroups
                         return ResultExtensions.ResultFailed($"Utilizador com ID {userID} não é válido");
                     }
 
-                    if(request == null)
+                    if (request == null)
                     {
                         return ResultExtensions.ResultFailed($"Corpo da requisição em falta");
                     }
@@ -129,7 +131,7 @@ namespace SmartClient.MinimalApi.RouteGroups
                 }
                 catch (Exception ex)
                 {
-                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(StockMovementsMapGroup)}.{StockMovementsAPI}");
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(StockMovementsMapGroup)}.{StockMovementsV1}");
                     logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
                     return ResultExtensions.ResultFailed(ex.Message, true);
                 }
@@ -158,7 +160,7 @@ namespace SmartClient.MinimalApi.RouteGroups
                 }
                 catch (Exception ex)
                 {
-                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(StockMovementsMapGroup)}.{StockMovementsAPI}");
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(StockMovementsMapGroup)}.{StockMovementsV1}");
                     logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
                     return ResultExtensions.ResultFailed(ex.Message, true);
                 }
@@ -188,7 +190,7 @@ namespace SmartClient.MinimalApi.RouteGroups
                 }
                 catch (Exception ex)
                 {
-                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(StockMovementsMapGroup)}.{StockMovementsAPI}");
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(StockMovementsMapGroup)}.{StockMovementsV1}");
                     logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
                     return ResultExtensions.ResultFailed(ex.Message, true);
                 }
@@ -223,7 +225,137 @@ namespace SmartClient.MinimalApi.RouteGroups
                 }
                 catch (Exception ex)
                 {
-                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(StockMovementsMapGroup)}.{StockMovementsAPI}");
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(StockMovementsMapGroup)}.{StockMovementsV1}");
+                    logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
+                    return ResultExtensions.ResultFailed(ex.Message, true);
+                }
+
+            });
+
+            group.MapGet("temp/{id:int}/files", async (HttpContext context, ILoggerFactory loggerFactory, ISmartClientWebService clientWebService, int id, [FromQuery] int Page = 0, [FromQuery] int PageSize = 20) =>
+            {
+                var (isValid, userID) = AuthenticationUtils.CheckAuthenticatedUser(context.User);
+
+                if (!isValid)
+                {
+                    return ResultExtensions.ResultFailed($"Utilizador com ID {userID} não é válido");
+                }
+
+                if (id <= 0)
+                {
+                    return ResultExtensions.ResultFailed($"O parâmetro '{nameof(id)}' não é válido");
+                }
+
+                try
+                {
+
+                    var response = await clientWebService.GetService().GetStockMovementAttachmentsAsync(id, true, false);
+
+
+                    if (response == null)
+                    {
+                        throw new ArgumentException("Não foi possivel comunicar com o Web Service");
+                    }
+
+                    var attachementsDto = response.Select(attach => attach.ToResponseDTO()).ToList();
+                    return attachementsDto.ToResult(Page, PageSize);
+                }
+                catch (Exception ex)
+                {
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(StockMovementsMapGroup)}.{StockMovementsV1}");
+                    logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
+                    return ResultExtensions.ResultFailed(ex.Message, true);
+                }
+
+            });
+
+            group.MapPost("temp/{id:int}/files", async (HttpContext context, ILoggerFactory loggerFactory, ISmartClientWebService clientWebService, int id, IFormFile file) =>
+            {
+                var (isValid, userID) = AuthenticationUtils.CheckAuthenticatedUser(context.User);
+
+                if (!isValid)
+                {
+                    return ResultExtensions.ResultFailed($"Utilizador com ID {userID} não é válido");
+                }
+                
+                if(file == null || file.Length <= 0)
+                {
+                    return ResultExtensions.ResultFailed($"O parâmetro '{nameof(file)}' é obrigatório");
+                }
+
+                try
+                {
+
+                    using var fileStream = file.OpenReadStream();
+
+                    var remoteFileInfo = new RemoteFileInfo()
+                    {
+                        ExternalLink = false,
+                        FileByteStream = fileStream,
+                        FileID = id,
+                        FileName = file.FileName,
+                        Length = file.Length,
+                        FormID = Guid.Empty,
+                        ResponseType = 0,
+                        TicketID = 0,
+                        TicketSession = null,
+                        UserID = userID
+                    };
+
+                    var response = await clientWebService.GetService().UploadStockMovementFileAsync(remoteFileInfo);
+
+
+                    if (response == null)
+                    {
+                        throw new ArgumentException("Não foi possivel comunicar com o Web Service");
+                    }
+
+                    return response.ToResult();
+                }
+                catch (Exception ex)
+                {
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(StockMovementsMapGroup)}.{StockMovementsV1}");
+                    logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
+                    return ResultExtensions.ResultFailed(ex.Message, true);
+                }
+
+            });
+
+
+            group.MapDelete("temp/{id:int}/files/{fileId:int}", async (HttpContext context, ILoggerFactory loggerFactory, ISmartClientWebService clientWebService, int id, int fileId) =>
+            {
+                var (isValid, userID) = AuthenticationUtils.CheckAuthenticatedUser(context.User);
+
+                if (!isValid)
+                {
+                    return ResultExtensions.ResultFailed($"Utilizador com ID {userID} não é válido");
+                }
+
+                if (id <= 0)
+                {
+                    return ResultExtensions.ResultFailed($"O parâmetro '{nameof(id)}' com valor '{id}' não é válido");
+                }
+
+                if (fileId <= 0)
+                {
+                    return ResultExtensions.ResultFailed($"O parâmetro '{nameof(fileId)}' com valor '{fileId}' não é válido");
+                }
+
+                try
+                {
+
+                    var response = await clientWebService.GetService().RemoveStockMovementFileByIDAsync(fileId);
+
+                    if (!response)
+                    {
+                        ResultExtensions.ResultFailed($"Não foi possivél eliminar o ficheiro com o ID '{fileId}' do movimento de stock '{id}'");
+                    }
+
+                    return Results.NoContent();
+                }
+                catch (Exception ex)
+                {
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(StockMovementsMapGroup)}.{StockMovementsV1}");
                     logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
                     return ResultExtensions.ResultFailed(ex.Message, true);
                 }

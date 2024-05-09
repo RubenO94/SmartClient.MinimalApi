@@ -6,14 +6,15 @@ using SmartClient.MinimalAPI.Core.Utils;
 using SmartClientMinimalApi.Core.ServicesContracts;
 using System.Security.Claims;
 
-namespace SmartClient.MinimalApi.RouteGroups
+namespace SmartClient.MinimalApi.RouteGroups.v1
 {
     public static class ScheduleMapGroup
     {
-        public static RouteGroupBuilder ScheduleAPI(this RouteGroupBuilder group)
+        public static RouteGroupBuilder ScheduleV1(this RouteGroupBuilder group)
         {
-            // Route OpenApi Configurations
+            // Route Configurations
             group
+                .RequireAuthorization()
                 .MapToApiVersion(1)
                 .WithOpenApi(options =>
             {
@@ -38,7 +39,7 @@ namespace SmartClient.MinimalApi.RouteGroups
 
                     var response = await clientWebService.GetService().GetAllMeetingsAsync(Start, End, new List<int> { userID });
 
-                    if(response == null)
+                    if (response == null)
                     {
                         throw new ArgumentException("Scheduler nulo");
                     }
@@ -50,12 +51,12 @@ namespace SmartClient.MinimalApi.RouteGroups
                 catch (Exception ex)
                 {
 
-                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(RouteGroupBuilder)}.{ScheduleAPI}");
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(RouteGroupBuilder)}.{ScheduleV1}");
                     logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
                     return ResultExtensions.ResultFailed(ex.Message, true);
                 }
 
-            }).CacheOutput( options =>
+            }).CacheOutput(options =>
             {
                 options.Expire(TimeSpan.FromSeconds(120));
             });

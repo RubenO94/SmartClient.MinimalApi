@@ -1,19 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using SmartClient.MinimalApi.EndpointFilters;
 using SmartClient.MinimalAPI.Core.Domain.Resources;
-using SmartClient.MinimalAPI.Core.Utils;
 using SmartClientMinimalApi.Core.ServicesContracts;
 using SmartClientWS;
 
-namespace SmartClient.MinimalApi.RouteGroups
+namespace SmartClient.MinimalApi.RouteGroups.v1
 {
     public static class ClientsMapGroup
     {
-        public static RouteGroupBuilder ClientsAPI(this RouteGroupBuilder group)
+        public static RouteGroupBuilder ClientsV1(this RouteGroupBuilder group)
         {
-            // Route OpenApi Configurations
+            // Route Configurations
             group
+                .RequireAuthorization()
+                .AddEndpointFilter<UserValidationFilter>()
                 .MapToApiVersion(1)
                 .WithOpenApi(options =>
                 {
@@ -29,13 +30,6 @@ namespace SmartClient.MinimalApi.RouteGroups
 
                 try
                 {
-                    var (isValid, userID) = AuthenticationUtils.CheckAuthenticatedUser(context.User);
-
-                    if (!isValid)
-                    {
-                        return ResultExtensions.ResultFailed($"Utilizador com ID {userID} não é válido");
-                    }
-
                     var filters = new FilterRequest
                     {
                         Page = Page,
@@ -57,14 +51,14 @@ namespace SmartClient.MinimalApi.RouteGroups
 
 
                 }
-                catch (Exception ex) 
+                catch (Exception ex)
                 {
-                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(StockMovementsMapGroup)}.{ClientsAPI}");
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(StockMovementsMapGroup)}.{ClientsV1}");
                     logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
                     return ResultExtensions.ResultFailed(ex.Message, true);
-                } 
-               
-                
+                }
+
+
             });
 
 

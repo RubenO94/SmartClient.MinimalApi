@@ -1,25 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.OutputCaching;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SmartClient.MinimalAPI.Core.Domain.Resources;
-using SmartClient.MinimalAPI.Core.DTO;
 using SmartClient.MinimalAPI.Core.DTO.Tickets;
 using SmartClient.MinimalAPI.Core.Utils;
-using SmartClientMinimalApi.Core.Domain.Resources;
 using SmartClientMinimalApi.Core.ServicesContracts;
 using SmartClientWS;
-using System.Security.Claims;
 
 namespace SmartClientMinimalApi.RouteGroups
 {
     public static class TicketsMapGroup
     {
-        public static RouteGroupBuilder TicketsAPI(this RouteGroupBuilder group)
+        public static RouteGroupBuilder TicketsV1(this RouteGroupBuilder group)
         {
             // Route Configurations
             group
+                .RequireAuthorization()
                 .MapToApiVersion(1)
                 .WithOpenApi(options =>
             {
@@ -58,7 +53,7 @@ namespace SmartClientMinimalApi.RouteGroups
                 }
                 catch (Exception ex)
                 {
-                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(TicketsMapGroup)}.{TicketsAPI}");
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(TicketsMapGroup)}.{TicketsV1}");
                     logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
                     return ResultExtensions.ResultFailed(ex.Message, true);
                 }
@@ -99,7 +94,7 @@ namespace SmartClientMinimalApi.RouteGroups
                 }
                 catch (Exception ex)
                 {
-                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(TicketsMapGroup)}.{TicketsAPI}");
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(TicketsMapGroup)}.{TicketsV1}");
                     logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
                     return ResultExtensions.ResultFailed(ex.Message, true);
                 }
@@ -135,7 +130,7 @@ namespace SmartClientMinimalApi.RouteGroups
                 }
                 catch (Exception ex)
                 {
-                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(TicketsMapGroup)}.{TicketsAPI}");
+                    var logger = loggerFactory.CreateLogger($"RouteGroups.{nameof(TicketsMapGroup)}.{TicketsV1}");
                     logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
                     return ResultExtensions.ResultFailed(ex.Message, true);
                 }

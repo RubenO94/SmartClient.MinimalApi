@@ -15,8 +15,8 @@ namespace SmartClient.MinimalAPI.Core.DTO.StockZones
                 Repair = stockZone.Repair,
                 MinimumStockManaged = stockZone.MinimumStockManaged,
                 GenerateShippingGuide = stockZone.GenerateShippingGuide,
-                ShippingGuideEmails = stockZone.ShippingGuideEmails?.Split(";").ToList(),
-                MinimumStockEmails = stockZone.MinimumStockEmails?.Split(";").ToList(),  
+                ShippingGuideEmails = stockZone.ShippingGuideEmails?.Split(";").Where(s => !string.IsNullOrEmpty(s)).ToList(),
+                MinimumStockEmails = stockZone.MinimumStockEmails?.Split(";").Where(s => !string.IsNullOrEmpty(s)).ToList(),  
             };
         }
     }
