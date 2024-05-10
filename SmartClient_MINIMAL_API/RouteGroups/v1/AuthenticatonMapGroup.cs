@@ -3,6 +3,7 @@ using Microsoft.OpenApi.Models;
 using SmartClient.MinimalAPI.Core.Domain.Resources;
 using SmartClient.MinimalAPI.Core.DTO.Authentications;
 using SmartClient.MinimalAPI.Core.DTO.SmartUsers;
+using SmartClient.MinimalAPI.Core.Utils;
 using SmartClientMinimalApi.Core.Domain.Resources;
 using SmartClientMinimalApi.Core.ServicesContracts;
 
@@ -61,7 +62,7 @@ namespace SmartClientMinimalApi.RouteGroups
                     logger.LogError($"Path:{context.Request.Path} - Error: {ex.Message}");
                     return ResultExtensions.ResultFailed(ex.Message, true);
                 }
-            }).AllowAnonymous();
+            }).AllowAnonymous().Validate<AuthenticationRequestDTO>();
 
             return group;
         }

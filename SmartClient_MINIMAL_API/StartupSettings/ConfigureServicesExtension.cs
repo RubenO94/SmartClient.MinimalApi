@@ -8,6 +8,7 @@ using System.Security.Claims;
 using Asp.Versioning;
 using SmartClient.MinimalApi.StartupSettings;
 using SmartClient.MinimalApi.StartupSettings.RouteConstraints;
+using Microsoft.AspNetCore.StaticFiles;
 
 namespace SmartClientMinimalApi.StartupExtensions
 {
@@ -23,6 +24,7 @@ namespace SmartClientMinimalApi.StartupExtensions
             services.AddSingleton<IAppSettings, AppSettings>();
             services.AddTransient<IJwtService, JwtService>();
             services.AddScoped<ISmartClientWebService, SmartClientWebService>();
+            services.AddScoped<FileExtensionContentTypeProvider>();
 
             #region OpenApi
             services.AddEndpointsApiExplorer();

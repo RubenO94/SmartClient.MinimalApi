@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SmartClient.MinimalAPI.Core.DTO.Authentications
 {
-    public class AuthenticationResponseDTO : ResponseDTO
+    public class AuthenticationResponseDTO
     {
         public SmartUserResponseDTO? User { get; set; }
         public string? Token { get; set; }

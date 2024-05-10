@@ -19,7 +19,7 @@ namespace SmartClient.MinimalAPI.Core.DTO.Contracts
         public bool Requisition {  get; set; }
         public decimal Total {  get; set; }
         public ClientResponseDTO? Client { get; set; }
-        public PartnerClientResponseDTO? Partner { get; set; }
+        public PartnerClientResponseDTO? PartnerClient { get; set; }
         public ContractType? Type { get; set; }
         public List<ContractLimitResponseDTO>? Limits { get; set; }
         public ContractRenewal? Renewal { get; set; }

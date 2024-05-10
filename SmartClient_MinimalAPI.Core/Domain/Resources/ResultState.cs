@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.AspNetCore.Http;
 using SmartClient.MinimalAPI.Core.DTO.Authentications;
 using SmartClient.MinimalAPI.Core.DTO.Clients;
 using SmartClient.MinimalAPI.Core.DTO.Items;
@@ -254,17 +255,16 @@ namespace SmartClient.MinimalAPI.Core.Domain.Resources
                     // Manipular IntBasicResult
                     // Exemplo: return Results.Ok(new ResultSuccess<IntBasicResult>(statusCode ?? StatusCodes.Status200OK, intBasicResult));
                     break;
-
+                
                 case NewContractResult subResult:
                     // Manipular NewContractResult
                     // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
                     break;
                 case NewFormResult formResult:
                     return Results.Ok(new ResultSuccess<object>(statusCode ?? StatusCodes.Status201Created, new { Id = formResult.ID }));
-                case CheckInResult subResult:
-                    // Manipular NewContractResult
-                    // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
-                    break;
+                case CheckInResult checkInResult:
+                    var reportDetailDto = checkInResult.Form.ToDetailResponseDTO();
+                    return Results.Ok(new ResultSuccess<ReportDetailResponseDTO?>(statusCode ?? StatusCodes.Status200OK, reportDetailDto));
                 case DeleteResult subResult:
                     // Manipular NewContractResult
                     // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));

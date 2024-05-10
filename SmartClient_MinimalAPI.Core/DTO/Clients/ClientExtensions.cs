@@ -1,4 +1,5 @@
-﻿using SmartClientWS;
+﻿using SmartClient.MinimalAPI.Core.DTO.Persons;
+using SmartClientWS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace SmartClient.MinimalAPI.Core.DTO.Clients
                 ClientName = client.Name,
                 Active = client.Active,
                 NIF = client.NIF,
+                Persons = client?.Persons?.Select(person => person.ToResponseDTO()).ToList(),
             };
         }
     }
