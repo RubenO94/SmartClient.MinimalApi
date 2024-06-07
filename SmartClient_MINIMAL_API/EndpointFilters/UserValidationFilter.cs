@@ -22,7 +22,7 @@ namespace SmartClient.MinimalApi.EndpointFilters
                 var (isValid, userID) = AuthenticationUtils.CheckAuthenticatedUser(context.HttpContext.User);
 
                 if (!isValid)
-                {
+                {       
                     _logger.LogError($"Path:{context.HttpContext.Request.Path} - Error: Tentativa de acesso com um acess_token inválido");
                     return Results.Unauthorized();
                 }

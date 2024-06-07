@@ -26,5 +26,24 @@ namespace SmartClient.MinimalAPI.Core.DTO.Items.Products
 
             };
         }
+
+        public static Product ToProductEntity(this ProductUpdateRequestDTO dto)
+        {
+            return new Product
+            {
+                RowID = dto.RowID,
+                Description = new ProductType() { ID = dto.ProductTypeID, Name = dto.ProductTypeName},
+                SerialNumber = dto.SerialNumber,
+                Quantity = dto.Quantity,
+                PriceUn = dto.PriceUn,
+                Discount = dto.Discount,
+                Warranty = dto.Warranty,
+                ItemID = dto.ItemID,
+                Loan = dto.Loan,
+                Location = new StockZone() {  StockZoneID  = dto.StockZoneID },
+                Picture = dto.Picture,
+                ProductDescription = dto.Description
+            };
+        }
     }
 }

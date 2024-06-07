@@ -27,7 +27,7 @@ namespace SmartClient.MinimalApi.RouteGroups.v1
 
             // Endpoints:
 
-            group.MapGet("/", async (HttpContext context, ILoggerFactory loggerFactory, ISmartClientWebService clientWebService, [FromQuery] int Page = 0, [FromQuery] int PageSize = 20) =>
+            group.MapGet("/", async (HttpContext context, ILoggerFactory loggerFactory, ISmartClientWebService clientWebService, [FromQuery] string? name, [FromQuery] int Page = 0, [FromQuery] int PageSize = 20) =>
             {
 
                 try
@@ -39,7 +39,7 @@ namespace SmartClient.MinimalApi.RouteGroups.v1
                         throw new ArgumentException("Não foi possivel comunicar com o Web Service");
                     }
 
-                    var suppliersDto = response.Select(supplier => supplier.ToResponseDTO()).ToList();
+                    var suppliersDto = response.Where(s => s.Name.Contains(name ?? string.Empty)).Select(supplier => supplier.ToResponseDTO()).ToList();
                     return suppliersDto.ToResult(Page, PageSize);
 
 

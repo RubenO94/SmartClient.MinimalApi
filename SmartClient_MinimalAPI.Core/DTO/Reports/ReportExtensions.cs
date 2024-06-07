@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.TagHelpers.Cache;
-using Microsoft.AspNetCore.StaticFiles;
+﻿using Microsoft.AspNetCore.StaticFiles;
 using SmartClient.MinimalAPI.Core.DTO.Attachments;
 using SmartClient.MinimalAPI.Core.DTO.Clients;
 using SmartClient.MinimalAPI.Core.DTO.Clients.PartnerClients;
@@ -9,12 +8,6 @@ using SmartClient.MinimalAPI.Core.DTO.Reports.ReportDescriptions;
 using SmartClient.MinimalAPI.Core.DTO.Reports.ReportImages;
 using SmartClientMinimalApi.Core.ServicesContracts;
 using SmartClientWS;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 using Attachment = SmartClientWS.Attachment;
 
 namespace SmartClient.MinimalAPI.Core.DTO.Reports
@@ -50,7 +43,7 @@ namespace SmartClient.MinimalAPI.Core.DTO.Reports
                 UserImageBase64 = string.IsNullOrEmpty(registerViewModel?.UserImage) ? null : registerViewModel?.UserImage,
                 Address = registerViewModel?.Address,
                 CanEdit = registerViewModel?.CanEdit ?? false,
-                Attachments = registerViewModel?.Attachments?.Select(attch => attch.ToResponseDTO()).ToList(),
+                Attachments = registerViewModel?.Attachments?.Select(attch => attch?.ToResponseDTO()).ToList(),
                 Client = registerViewModel?.Client?.ToResponseDTO(),
                 Contract = registerViewModel?.Contract?.ToResponseDTO(),
                 MaintenanceContract = registerViewModel?.MaintenanceContract ?? false,
@@ -137,5 +130,52 @@ namespace SmartClient.MinimalAPI.Core.DTO.Reports
 
             return reportImages;
         }
+
+        public static RegisterViewModel ToRegisterViewModel(this ReportUpdateRequestDTO dto)
+        {
+            return new RegisterViewModel()
+            {
+                ID = dto.ID,
+                IVA = dto.IVA,
+                Date = dto.Date,
+                Address = dto.Address,
+                Subject = dto.Subject,
+                Client = new Client { ID = dto.ClientID },
+                Faturar = dto.IsToInvoice ? "Sim" : "Não",
+                Kms = dto.Kms,
+                Present = dto.Present,
+                State = dto.State,
+                Vehicle = dto.Vehicle,
+                SendEmail = dto.SendEmail,
+                Person = dto.Person,
+                Contact = dto.Contact,
+                Finished = dto.Finished,
+                Email = dto.Email,
+                FinalClient = dto.FinalClient,
+                Contract = new Contract { ContractID = dto.ContractID, End = dto.ContractExpiration },
+                Merged = dto.MergedForms?.Select(formID => new RegisterViewModel { FormID = formID }).ToList(),
+                PartnerClient = new PartnerClient { PartnerClientID = dto.PartnerClientID },
+                FastServiceReportFlag = dto.FastServiceReportFlag,
+                AddReportToTicketAttachments = dto.AddReportToTicketAttachments,
+                Observations = dto.Observations,
+                MaintenanceContract = dto.MaintenanceContract,
+                Products = dto.Products?.Select(product => product.ToProductEntity()).ToList(),
+                Descriptions = dto.Descriptions?.Select(description => description.ToServiceDescriptionEntity()).ToList()
+            };
+        }
+
+        public static ServiceDescription ToServiceDescriptionEntity(this ReportDescriptionUpdateRequestDTO dto)
+        {
+            if(dto.Start == null) throw new ArgumentNullException(nameof(dto.Start), $"Parametro {nameof(dto.Start)} não pode ser nulo ou vazio.");
+            if (dto.End == null) throw new ArgumentNullException(nameof(dto.End), $"Parametro {nameof(dto.End)} não pode ser nulo ou vazio.");
+            
+            return new ServiceDescription()
+            {
+                RowID = dto.RowID,
+                Start = dto.Start.Value,
+                End = dto.End.Value,
+                Bill = dto.Invoice
+            };
+        } 
     }
 }

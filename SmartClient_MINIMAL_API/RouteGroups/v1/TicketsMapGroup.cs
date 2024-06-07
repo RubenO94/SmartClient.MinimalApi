@@ -41,7 +41,7 @@ namespace SmartClientMinimalApi.RouteGroups
                     filters.Filter = new Filter();
                     filters.Filter.filters = new List<Filter> { new Filter { field = "TicketType.CreateServiceReport", value = true, @operator = "eq", logic = "AND" } };
 
-                    var result = await clientWebService.GetService().GetTicketsAsync("Pendente", userID, true, false, 0, null, null, null, null, filters);
+                    var result = await clientWebService.GetService().GetTicketsAsync("Pendente", userID, false, false, 0, null, null, null, null, filters);
 
 
                     if (result == null)

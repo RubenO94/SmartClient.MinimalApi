@@ -51,8 +51,21 @@ namespace SmartClientMinimalApi.RouteGroups
                         return ResultExtensions.ResultFailed(response.message, false, StatusCodes.Status400BadRequest);
                     }
 
+
+
                     var smartUserDTO = response.SmartUser.ToResponseDTO();
+
+                    // Get ProfileImage
+                    var userResponse = await clientWebService.GetService().GetSmartUserAsync(smartUserDTO.UserID, true, false, false);
+
+                    var base64 = userResponse?.Image ?? "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==";
+
+                    smartUserDTO.ImageBase64 = base64;
+
+                    //
+
                     var authDTO = jwtService.CreateJwtToken(smartUserDTO, response.role.ToList());
+
 
                     return authDTO.ToResult();
                 }

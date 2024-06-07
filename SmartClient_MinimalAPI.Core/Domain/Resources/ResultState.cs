@@ -255,7 +255,7 @@ namespace SmartClient.MinimalAPI.Core.Domain.Resources
                     // Manipular IntBasicResult
                     // Exemplo: return Results.Ok(new ResultSuccess<IntBasicResult>(statusCode ?? StatusCodes.Status200OK, intBasicResult));
                     break;
-                
+
                 case NewContractResult subResult:
                     // Manipular NewContractResult
                     // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
@@ -280,6 +280,8 @@ namespace SmartClient.MinimalAPI.Core.Domain.Resources
                     // Manipular NewContractResult
                     // Exemplo: return Results.Ok(new ResultSuccess<NewContractResult>(statusCode ?? StatusCodes.Status200OK, newContractResult));
                     break;
+                case UploadResult uploadResult:
+                    return Results.Ok(new ResultSuccess<object>(statusCode ?? StatusCodes.Status201Created, new { AttachmentID = uploadResult.AttachmentID, Name = uploadResult.NewName }));
                 case BasicResult basicResult:
                     return Results.Ok(new ResultSuccess<object>(statusCode ?? StatusCodes.Status200OK, totalCount == 0 ? default : totalCount, new { Message = basicResult.message }));
                 default:

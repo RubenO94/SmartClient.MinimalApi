@@ -193,30 +193,23 @@ namespace SmartClient.MinimalApi.RouteGroups.v1
                         return ResultExtensions.ResultFailed($"Utilizador com ID {userID} não é válido");
                     }
 
-                    if(reportUpdate == null) return ResultExtensions.ResultFailed($"Corpo do relatório atulizado é obrigatório");
+                    if (reportUpdate == null) return ResultExtensions.ResultFailed($"Corpo do relatório atulizado é obrigatório");
 
 
 
-                    if (finish)
-                    {
-                        // TODO
-                    }
+                    if (finish) reportUpdate.Finished = true;
 
-                    var reportResult = await clientWebService.GetService().GetFormByIDAsync(id, userID);
+                    var registerViewModel = reportUpdate.ToRegisterViewModel();
 
-                    if (reportResult == null) return ResultExtensions.ResultFailed($"Relatório com ID {id} não é válido");
+                    var updateResponse = await clientWebService.GetService().SaveFormAsync(reportUpdate.ID, registerViewModel, finish, userID);
 
-
-                    var response = await clientWebService.GetService().GetDateCheckInAsync(userID, reportResult.ID, date.Value);
-
-
-                    if (response == null)
+                    if (updateResponse == null)
                     {
                         throw new ArgumentNullException("Não foi possivel comunicar com o Web Service");
                     }
 
+                    return updateResponse.ToResult();
 
-                    return response.ToResult();
                 }
                 catch (Exception ex)
                 {
